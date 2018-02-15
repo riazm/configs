@@ -1,0 +1,27 @@
+;; ;; ;;Turn off tabs
+(setq w3m-use-tab-menubar 0)
+(setq w3m-use-toolbar 0)
+(setq w3m-cookie-accept-bad-cookies t)
+(setq w3m-use-cookies t)
+(setq w3m-add-referer t)
+(setq w3m-follow-redirection 5)
+(setq w3m-home-page "http://wiki/AudioCPU")
+(setq w3m-use-form t)
+(setq w3m-use-tab 0)
+(require 'w3m-search)
+
+(eval-after-load "w3m-search"
+  '(progn
+     (add-to-list 'w3m-search-engine-alist
+                  '("csrwiki"
+                    "http://wiki/index.php?title=Special%3ASearch&search=%s"
+                    nil))
+     (add-to-list 'w3m-uri-replace-alist
+                  '("\\`cw:" w3m-search-uri-replace "csrwiki"))))
+
+;; Gmail
+(defun w3m-auto-logon-gmail ()
+ "Auto logon gmail"
+ (interactive)
+ (w3m-goto-url-new-session "http://mail.google.com/mail/h/h4339zs3i3b6/?zy=n&f=1")
+ )

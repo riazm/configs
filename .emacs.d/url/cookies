@@ -1,0 +1,26 @@
+;; Emacs-W3 HTTP cookies file
+;; Automatically generated file!!! DO NOT EDIT!!!
+
+(setq url-cookie-storage
+ '((".google.co.uk"
+  [url-cookie "PREF" "ID=c3c1a943c3bd4aa1:U=561ff62b632f660c:FF=0:TM=1415783900:LM=1415783907:S=hXhYNZqORsFGt3Iz" "11-Nov-2016 09:18:27.00 GMT" "/" ".google.co.uk" nil])
+ ("wiki"
+  [url-cookie "wikidbToken" "64024a6246d79315ff482da3b41394de" "21-Aug-2015 10:19:40.00 GMT" "/" "wiki" nil]
+  [url-cookie "wikidbUserName" "Riaz.Moola" "21-Aug-2015 10:19:40.00 GMT" "/" "wiki" nil]
+  [url-cookie "wikidbUserID" "3262" "21-Aug-2015 10:19:40.00 GMT" "/" "wiki" nil])
+ (".care-tags.org"
+  [url-cookie "phpbb3_6dmx5_u" "1" "13-Nov-2015 14:33:11.00 GMT" "/" ".care-tags.org" nil]
+  [url-cookie "HttpOnly" nil "13-Nov-2015 14:33:11.00 GMT" "/" ".care-tags.org" nil]
+  [url-cookie "phpbb3_6dmx5_k" "" "13-Nov-2015 14:33:11.00 GMT" "/" ".care-tags.org" nil]
+  [url-cookie "phpbb3_6dmx5_sid" "fe6f50d75e6bb020986b8b025218e0c9" "13-Nov-2015 14:33:11.00 GMT" "/" ".care-tags.org" nil])
+ (".stackoverflow.com"
+  [url-cookie "HttpOnly" nil "01-Jan-2055 00:00:00.00 GMT" "/" ".stackoverflow.com" nil]
+  [url-cookie "prov" "e75cf5ea-86f5-479d-bcef-d803e1c0bac1" "01-Jan-2055 00:00:00.00 GMT" "/" ".stackoverflow.com" nil]))
+)
+(setq url-cookie-secure-storage
+ 'nil)
+
+;; Local Variables:
+;; version-control: never
+;; no-byte-compile: t
+;; End:
