@@ -32,7 +32,7 @@
 (when (>= emacs-major-version 24)
   (require 'package)
   (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t)
-  (add-to-list 'package-archives '("marmalade" . "https://marmalade-repo.org/packages/"))
+  (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/"))
   (package-initialize)
   )
 
@@ -52,7 +52,7 @@
     (("CSR wiki" "http://wiki/" "rm10" "Domino1800" "Main Page"))))
  '(package-selected-packages
    (quote
-    (ssh-agency ssh w3m elpy org-journal web-mode js2-mode flycheck magit writeroom-mode twittering-mode pastebin mediawiki markdown-mode flycheck-tcl flycheck-package dark-souls ctags csv-mode company)))
+    (exec-path-from-shell tern js3-mode ssh-agency ssh w3m elpy org-journal web-mode js2-mode flycheck magit writeroom-mode pastebin mediawiki markdown-mode flycheck-tcl flycheck-package dark-souls ctags csv-mode company)))
  '(tcl-auto-newline nil))
 
 (put 'narrow-to-region 'disabled nil)
@@ -201,7 +201,8 @@
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 (setq-default js-indent-level 2)
 
-(add-to-list 'load-path "/home/r/bin/tern/emacs/")
+;; Update this or js2 mode won't work
+(add-to-list 'load-path "/home/rmoola/bin/tern/emacs/")
 (autoload 'tern-mode "tern.el" nil t)
 (add-hook 'js-mode-hook (lambda () (tern-mode t)))
 
@@ -217,7 +218,7 @@
     '(json-jsonlist)))
 
 ;; https://github.com/purcell/exec-path-from-shell
-;; only need exec-path-from-shell on OSX
+;; only need exec-path-from-shell on OSX OR IF USING NVM
 ;; this hopefully sets up path and other vars better
 (when (memq window-system '(mac ns))
   (exec-path-from-shell-initialize))
