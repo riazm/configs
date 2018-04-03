@@ -69,7 +69,6 @@ eslint --init
 ```
 or copy .eslint.rc.* into file
 
-
 # slack
 
 just get it 
@@ -92,6 +91,14 @@ nvm install 4.2.3
 nvm use 8.9.4nvm install 8.9.4
 ```
 
+# e2e tests
+## JDK for selenium webdriver
 
+sudo apt-get install jdk
 
+## webdriver-manager
+install using latest version of node so that you get the latest webdriver
 
+## environment
+HUB_FIXTURE_CLOUD_API_HOST
+    

@@ -1,25 +1,4 @@
-;;; Commentary: 
-
-;;p4 integratior
-;;(add-to-list 'load-path "~/.emacs.d/p4")
-;;(load-library "p4")
-
-;;; Code:
-(setq temporary-file-directory "~/.autosaves/")
-(setq backup-directory-alist
-      `((".*" . ,temporary-file-directory)))
-(setq auto-save-file-name-transforms
-      `((".*" ,temporary-file-directory t)))
-(setq auto-save-interval 50)
-
-;; keybo macro to list of param for doxygen comments
-(fset 'riaz-build-param-list
-      (lambda (&optional arg) "Keyboard macro." (interactive "p") (kmacro-exec-ring-item (quote ([67108896 134217842 134217834 M-return 35 32 64 112 97 114 97 109 91 105 110 93 134217835 21 67108896 21 67108896 134217842] 0 "%d")) arg)))
-
-;;Solarized
-(add-to-list 'load-path "~/.emacs.d/emacs-color-theme-solarized")
-(load-theme 'solarized-dark)
-
+t
 ;; EXUBERANT ctags not normal ctags
 (setq path-to-ctags "/usr/bin/ctags") ;; <- your exuberant ctags path here
 (defun create-tags (dir-name)
@@ -45,14 +24,15 @@
  '(canlock-password "41fca07147d8079925eb3f447acd09118c25942c")
  '(custom-safe-themes
    (quote
-    ("12b6c73d2985afdc01619d8b527483cfcdaf01300b0d6a7ee821e8aa5d1944d8" "abba1c64e90bcfc6288c62bed95cc00dfa058cd9" default)))
+    ("e9460a84d876da407d9e6accf9ceba453e2f86f8b86076f37c08ad155de8223c" "12b6c73d2985afdc01619d8b527483cfcdaf01300b0d6a7ee821e8aa5d1944d8" "abba1c64e90bcfc6288c62bed95cc00dfa058cd9" default)))
+ '(electric-pair-mode t)
  '(global-flycheck-mode t)
  '(mediawiki-site-alist
    (quote
     (("CSR wiki" "http://wiki/" "rm10" "Domino1800" "Main Page"))))
  '(package-selected-packages
    (quote
-    (exec-path-from-shell tern js3-mode ssh-agency ssh w3m elpy org-journal web-mode js2-mode flycheck magit writeroom-mode pastebin mediawiki markdown-mode flycheck-tcl flycheck-package dark-souls ctags csv-mode company)))
+    (atom-dark-theme color-theme-modern confluence twittering-mode company-tern exec-path-from-shell tern js3-mode ssh-agency ssh w3m elpy org-journal web-mode js2-mode flycheck magit writeroom-mode pastebin mediawiki markdown-mode flycheck-tcl flycheck-package dark-souls ctags csv-mode company)))
  '(tcl-auto-newline nil))
 
 (put 'narrow-to-region 'disabled nil)
@@ -110,7 +90,6 @@
 (setq-default indent-tabs-mode nil) 
 (setq-default tab-width 2) ; or any other preferred value
 (setq-default standard-indent 2)
-
 
 ;; ErgoEmacs
 (setenv "ERGOEMACS_KEYBOARD_LAYOUT" "dv") ; US Dvorak layout
@@ -271,13 +250,14 @@ This one changes the cursor color on each blink. Define colors in `blink-cursor-
   (internal-show-cursor nil (not (internal-show-cursor-p)))
   )
 
+;; confluence wiki stuff
+ '(confluence-url "https://confluence.checkit.net")
 
 
-
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(default ((t (:inherit nil :stipple nil :background "#042028" :foreground "#708183" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 120 :width normal :foundry "unknown" :family "Ubuntu Mono"))))
- '(p4-diff-ins-face ((t (:foreground "yellow"))) t))
+;; (custom-set-faces
+;;  ;; custom-set-faces was added by Custom.
+;;  ;; If you edit it by hand, you could mess it up, so be careful.
+;;  ;; Your init file should contain only one such instance.
+;;  ;; If there is more than one, they won't work right.
+;;  '(default ((t (:inherit nil :stipple nil :background "#042028" :foreground "#708183" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 120 :width normal :foundry "unknown" :family "Ubuntu Mono"))))
+;;  '(p4-diff-ins-face ((t (:foreground "yellow"))) t))
