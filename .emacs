@@ -29,7 +29,6 @@ t
  '(global-flycheck-mode t)
  '(mediawiki-site-alist
    (quote
-    (("CSR wiki" "http://wiki/" "rm10" "Domino1800" "Main Page"))))
  '(package-selected-packages
    (quote
     (atom-dark-theme color-theme-modern confluence twittering-mode company-tern exec-path-from-shell tern js3-mode ssh-agency ssh w3m elpy org-journal web-mode js2-mode flycheck magit writeroom-mode pastebin mediawiki markdown-mode flycheck-tcl flycheck-package dark-souls ctags csv-mode company)))
@@ -178,6 +177,7 @@ t
 
 ;; use  js2 mode instead of javascript mode
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
+(setq-default js2-basic-offset 2)
 (setq-default js-indent-level 2)
 
 ;; Update this or js2 mode won't work
