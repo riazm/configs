@@ -1,4 +1,3 @@
-t
 ;; EXUBERANT ctags not normal ctags
 (setq path-to-ctags "/usr/bin/ctags") ;; <- your exuberant ctags path here
 (defun create-tags (dir-name)
@@ -27,8 +26,7 @@ t
     ("e9460a84d876da407d9e6accf9ceba453e2f86f8b86076f37c08ad155de8223c" "12b6c73d2985afdc01619d8b527483cfcdaf01300b0d6a7ee821e8aa5d1944d8" "abba1c64e90bcfc6288c62bed95cc00dfa058cd9" default)))
  '(electric-pair-mode t)
  '(global-flycheck-mode t)
- '(mediawiki-site-alist
-   (quote
+ '(global-company-mode t)
  '(package-selected-packages
    (quote
     (atom-dark-theme color-theme-modern confluence twittering-mode company-tern exec-path-from-shell tern js3-mode ssh-agency ssh w3m elpy org-journal web-mode js2-mode flycheck magit writeroom-mode pastebin mediawiki markdown-mode flycheck-tcl flycheck-package dark-souls ctags csv-mode company)))

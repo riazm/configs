@@ -1,259 +1,192 @@
-##
-# @brief
-# start a FATS crescendo emulator run
-# 
-# @details
-# Will run a FATS crescendo emulator run, selecting appropriate firmware and 
-# an appropriate test run depending on the jenkins job which has called it
-# jenkins jobs ending with trig - triggered test run and latest trig build
-# jenkins jobs ending with daily - daily test run and latest daily build
-# jenkins jobs ending with weekly - weekend test run and latest weekend build
-#
-# Assumes the following are environment variables (should be the case if run from a Jenkins job)
-# - $BUILD_JOB_NAME 
-# - $BUILD_JOB_NUMBER
-# - $BUILD_TAG
-# - $SCRATCH_BUILD_DEPOT
-# - $SCRATCH_TEST_HTML
-# - $JOB_NAME 
-# - $NODE_NAME
-# - $GORDON_BT_BUILD
-#
-# @param[in] fatsRoot root directory where FATS is checked out. Should contain run.fats.tcl
-# @param[in] branch name of the branch to test (kymera_crescendo, crescendo)
-# @param[in] config name of the build config to be tested (amber_rom, gordon, crescendo)
-# 
-# @return error code 0 means success 1 means failure to parse job type
-# 
+'use strict';
 
-# use extended glob
-shopt -s extglob
+const app = require('../../server/server.js'),
+  fixtures = require('@checkit/checkit-database-fixtures')(app);
 
-##
-# @brief
-# Get the location of the firmware to be used
-# 
-# @details
-# The procedure sets the fwLoc and previnLoc variables
-# fwLoc is set using the latest available firmware directory, if the one linked to BUILD_JOB_NUMBER is not 
-# there. The expected location of the firmware is
-# $SCRATCH_BUILD_DEPOT/${branchName}_build_output_/${depotLocation}/${buildConfig}/${BUILD_JOB_NUMBER}
-# If that is not there, the procedure tries to use the latest available under 
-# $SCRATCH_BUILD_DEPOT/${branchName}_build_output_/${depotLocation}/${buildConfig}
-#
-# For gordon based build configurations, the fwDir is used to set previnLoc as the kap file present under fwDir
-# abd fwLoc is set using the environment variable $GORDON_BT_BUILD
-# For other configs, previnLoc is not set and fwLoc is set as the xuv file present under fwDir
-#
-# @return nothing
-#
-getFwLocation ()
-    {
-    fwDir="$SCRATCH_BUILD_DEPOT/${branchName}_build_output/${depotLocation}/${buildConfig}/${BUILD_JOB_NUMBER}"
-    if [ ! -d "$fwDir" ]
-    then
-        echo "Results for latest build job $buildConfig number $BUILD_JOB_NUMBER not available \
-            ($BUILD_JOB_RESULT): use latest triggered"
-        fwDir=`ls -1td $SCRATCH_BUILD_DEPOT/${branchName}_build_output/triggered/${buildConfig}/* | head -n 1`
-    fi
-    case $buildConfig in
-        gordon?(_cvc_test) )
-            fwFile=`ls $fwDir/*.kap`
-            previnLoc="-previn_location $fwFile"
-            fwLoc="$GORDON_BT_BUILD"
-            ;;
-        *)
-            previnLoc=""
-            fwLoc=`ls $fwDir/*.xuv`
-            ;;
-    esac
-            
+module.exports = {
+  createMainFixture: createMainFixture,
+  createAclFixture: createAclFixture
+};
+
+function createMainFixture() {
+  //  Elektron
+  //    Elektron Burger Van
+  //      Kitchen
+  //        Sub Kitchen
+  //      Kitchen 2
+  //    I am deleted
+
+  let customer,
+    token,
+    user,
+    user2,
+    vanSafetyManager,
+    root,
+    burgerVan,
+    kitchen,
+    subKitchen,
+    kitchen2,
+    deleted,
+    handheld,
+    zigbeeDevice,
+    hub;
+
+  fixtures.tearDown();
+  customer = new fixtures.Customer();
+
+  user = customer.addUser();
+  user2 = customer.addUser();
+  vanSafetyManager = customer.addUser();
+  root = customer.addLocation({ name: 'Elektron' });
+
+  handheld = customer.addHandheld();
+  zigbeeDevice = customer.addZigbeeDevice({
+    type: 'K100',
+    displayName: 'temperature',
+    productId: 100,
+    macAddress: 'AA-BB-CC-DD-EE'
+  });
+  root.putZigbeeDevice(zigbeeDevice);
+
+  hub = customer.addHub({
+    displayName: 'hub1',
+    serialNumber: 123,
+    localId: '001'
+  });
+  root.putHub(hub);
+
+  return root.get()
+    .then(rootData => {
+      burgerVan = customer.addLocation({
+        name: 'Elektron Burger Van',
+        parentEntityId: rootData.id.entityId,
+        localId: '001'
+      });
+      root.putSafetyManager(user);
+      burgerVan.putAdministrator(user);
+      burgerVan.putSafetyManager(vanSafetyManager);
+      burgerVan.putHandheld(handheld);
+      deleted = customer.addLocation({ name: 'I am deleted', parentEntityId: rootData.id.entityId });
+      deleted.putHandheld(handheld);
+      deleted.putAdministrator(user);
+      return burgerVan.get();
+    })
+    .then(burgerVanData => {
+      kitchen = customer.addLocation({ name: 'Kitchen', parentEntityId: burgerVanData.id.entityId });
+      kitchen2 = customer.addLocation({ name: 'Kitchen 2', parentEntityId: burgerVanData.id.entityId });
+      kitchen2.putAdministrator(user2);
+      kitchen2.putSafetyManager(user2);
+      return Promise.all([ kitchen.get(), kitchen2.get() ]);
+    })
+    .then(kitchensData => {
+      subKitchen = customer.addLocation({ name: 'Sub Kitchen', parentEntityId: kitchensData[0].id.entityId });
+      return zigbeeDevice.get();
+    })
+    .then(zigbeeDeviceData => {
+      customer.addReport({
+        zigbeeReport: {
+          zigbeeDeviceId: {
+            entityId: zigbeeDeviceData.id.entityId,
+            version: zigbeeDeviceData.id.version
+          },
+          value: 300
+        },
+        eventType: 'zigbeeReport',
+        observedTime: 1453469542000,
+        observedTimeZoneId: 'Europe/London',
+        locationId: {
+          entityId: root.resolvedData.id.entityId,
+          version: root.resolvedData.id.version
+        }
+      });
+
+      customer.addReport({
+        checkReport: {
+          name: 'Test 1'
+        },
+        eventType: 'checkReport',
+        observedTime: 1440403048536.0000000000000000,
+        locationId: {
+          entityId: root.resolvedData.id.entityId,
+          version: root.resolvedData.id.version
+        },
+        raisesAlert: true
+      });
+
+
+      customer.addReport({
+        eventType: 'zigbeeBatteryAlert',
+        observedTime: 1440403048536.0000000000000000,
+        locationId: {
+          entityId: root.resolvedData.id.entityId,
+          version: root.resolvedData.id.version
+        },
+        raisesAlert: true
+      });
+
+      customer.addReport({
+        eventType: 'jobOverdue',
+        observedTime: 1440403048536.0000000000000000,
+        locationId: {
+          entityId: root.resolvedData.id.entityId,
+          version: root.resolvedData.id.version
+        },
+        raisesAlert: true
+      });
+
+      customer.addReport({
+        sensorAlert: {
+          value: 2
+        },
+        eventType: 'sensorAlert',
+        observedTime: 1462802045688,
+        locationId: {
+          entityId: root.resolvedData.id.entityId,
+          version: root.resolvedData.id.version
+        },
+        raisesAlert: true
+      });
+    })
+    .then(() => user.accessToken)
+    .then(_token => token = _token.id)
+    .then(() => fixtures.afterFlow())
+    .then(() => {
+      return {
+        customer: customer,
+        token: token,
+        user: user,
+        user2: user2,
+        root: root,
+        burgerVan: burgerVan,
+        kitchen: kitchen,
+        subKitchen: subKitchen,
+        kitchen2: kitchen2,
+        deleted: deleted,
+        handheld: handheld,
+        zigbeeDevice: zigbeeDevice,
+        hub: hub,
+        vanSafetyManager: vanSafetyManager
+      };
+    });
 }
 
-##
-# @brief
-# Get some of the parameters to be passed to FATS
-# 
-# @details
-#
-# @return an error if finding an unexpected key
- #
- getFatsParams ()
- {
-     case $testTarget in 
-         *crescendo* )
-             fatsRunOptions="$fatsRunOptions -nocoredump"
-             # depending on the config we should run different builds
-             case $buildConfig in
-                 crescendo* )
-                     testRun="crescendo_emu_${testDuration}"
-                     ;;
-                 amber* )
-                     testRun="kymera_amber_${testDuration}"
-                     ;;
-                 * )
-                     echo "buildConfig $buildConfig does not begin with crescendo or amber, no test campaign"
-                     exit 1
-                     ;;
-             esac
-             ;;
-         
-         *amber* | *gordon* | *kas* )
-             ;;
-         * )
-             echo "Error: unknown test target $testTarget"
-             exit 1
-             ;;
-     esac
- }
-
- ##
- # @brief
- # Extract command line parameters into variables
- # 
- # @details
- # the expected key values are 
- # - "-fatsRoot value": used to set rootDir
- # - "-branch value": used to set branchName
- # - "-config value": used to set buildConfig
- # - "-fatsOpt value": used to set fatsRunOptions
- # - "-testRun value": used to set testRun
- # The procedure goes through the parameter passed to the script 
- # expecting the format to be a succession of "key value". 
- # It does it by a succession of  
- # - checking the key as parameter 1 ( $1 )
- # - checking the value as parameter 2 ( $2 )
- # - shifting the parameter list by 2
- # 
- # @param[in] $@ parameters passed to the script
- #
- # @return an error if finding an unexpected key
- #
- getCmdLineParams()
- {
-     fatsRunOptions=""
-     # Extract input parameters as "key value" pairs
-     while [[ $# > 1 ]]
-     do
-         case $1 in
-             -fatsRoot*)
-                 rootDir=$2
-                 ;;
-             -branch*)
-                 branchName=$2
-                 ;;
-             -config*)
-                 buildConfig=$2
-                 ;;
-             -fatsOpt*)
-                 fatsRunOptions="$fatsRunOptions $2"
-                 ;;
-             -testRun*)
-                 testRun=$2
-                 ;;
-             *)
-                 echo "$0: ERROR: Unrecognised Command Parameter $1"
-                 exit 1
-                 ;;
-         esac
-         # shift by 2 to access  the next "key value" pair as parameter 1 and 2
-         shift 2
-     done
- }
-
- ##
- # @brief
- # Get the depot location based the duration field of the job name
- # 
- # @details
- # The procedure sets the depotLocation variable
- #
- # the mapping is
- # - trig in the name: get build form the triggered subdirectory
- # - daily in the name: get build form the daily_builds subdirectory
- # - weekly in the name: get build form the weekly_builds subdirectory
- #
- # The procedure as well change the testDuration from weekly to wkd 
- # to be used in the campaign name if needed
- #
- # @return error if getting an unknown test duration
- #
- getDepotLocation()
- {
-     case $testDuration in
-         trig )
-             depotLocation="triggered" 
-             ;;
-         daily )
-             depotLocation="daily_builds" 
-             ;;
-         weekly )
-             depotLocation="weekly_builds"
-             testDuration="wkd" 
-             ;;
-         * )
-             echo "Error: $JOB_NAME does not end with trig, daily or weekly, not a known job type"
-             exit 1 
-             ;;
-     esac
- }
-
- ##
- # @brief
- # if we have a BUILD_TAG from Jenkins that contains an = we can't use that for
- # folders so we should make our own build tag, this will be used as our fats
- # output directory so all our results will go there
- #
- # @return nothing
- # 
- getBuildTag()
- {
-     case $BUILD_TAG in
-         *=* )
-             BUILD_TAG="${branchName}-${buildConfig}-${testDuration}-${BUILD_NUMBER}"
-             ;;
-         * )
-             
-             echo "using $BUILD_TAG as the build tag"
-             ;;
-     esac
- }
-
-
-##### MAIN #####
-
-# print the env variables
-echo "BUILD_JOB_NAME $BUILD_JOB_NAME"
-echo "BUILD_JOB_NUMBER $BUILD_JOB_NUMBER"
-echo "BUILD_TAG $BUILD_TAG"
-echo "SCRATCH_BUILD_DEPOT $SCRATCH_BUILD_DEPOT"
-echo "SCRATCH_TEST_HTML $SCRATCH_TEST_HTML"
-echo "JOB_NAME  $JOB_NAME "
-echo "NODE_NAME $NODE_NAME"
-echo "GORDON_BT_BUILD $GORDON_BT_BUILD"
-echo "FATS_DIR $FATS_DIR"
-
-getCmdLineParams $@
-
-# Set which build to flash and what test to run
-testTarget=`echo $JOB_NAME | sed 's/FATS_\(.\+\)_\(trig\|daily\|weekly\).*/\1/'`
-testDuration=`echo $JOB_NAME | sed 's/FATS_\(.\+\)_\(trig\|daily\|weekly\).*/\2/'`
-
-# check if our build tag is acceptable as a name
-getBuildTag
-
-# get the depot location and the test duration
-getDepotLocation
-
-# glue the test duration to the test target and get the rom name
-getFatsParams
-
-# Get either the firmware related to the triggering job,or just the latest firmware
-getFwLocation
-
-# Root directory is where the FATS perforce checkout is located
-cd $rootDir
-
-# run Fats
-tclsh run_fats.tcl -logDirName $BUILD_TAG -test_run $testRun -firmware_location $fwLoc $previnLoc $fatsRunOptions $netLoc > last_run.log
-exit ${PIPESTATUS[0]} 
+/**
+ * Create a simple ACL fixture test
+ * @returns {Promise.<TResult>|*}
+ */
+function createAclFixture() {
+  fixtures.tearDown();
+  let customer = new fixtures.Customer();
+  let root = customer.addLocation();
+  let admin1 = customer.addUser();
+  let admin2 = customer.addUser();
+  let supervisor = customer.addUser();
+  customer.addTeam().putSupervisor(supervisor);
+  root.addChild().addChild().putAdministrator(admin1).putAdministrator(admin2);
+  root.addChild().addChild();
+  root.addChild().addChild().putAdministrator(admin1).putAdministrator(admin2);
+  return fixtures.afterFlow()
+    .then(() => {
+      return {admin1: admin1, admin2: admin2, supervisor: supervisor };
+    });
+}

@@ -2,32 +2,714 @@
 ;; --------------------------------------------------------------------------
 ;; Desktop File for Emacs
 ;; --------------------------------------------------------------------------
-;; Created Mon Jan 22 14:28:18 2018
+;; Created Fri Aug 17 10:53:24 2018
 ;; Desktop file format version 206
-;; Emacs version 25.2.1
+;; Emacs version 25.3.2
 
 ;; Global section:
-(setq desktop-saved-frameset [frameset 1 (23141 62722 795865 688000) (desktop . "208") "r@r-VirtualBox" nil nil ((((tty-type . "xterm") (tty . "/dev/tty") (display-type . color) (background-mode . dark) (foreground-color . "#708183") (cursor-color . "#042028") (background-color . "#042028") (menu-bar-lines . 0) (tool-bar-lines . 0) (vertical-scroll-bars) (font . "tty") (height . 51) (width . 185) (modeline . t) (unsplittable) (frameset--id . "7395-2004-4BA1-3D7A") (frameset--mini t) (minibuffer . t)) ((min-height . 4) (min-width . 10) (min-height-ignore . 2) (min-width-ignore . 2) (min-height-safe . 1) (min-width-safe . 2) (min-pixel-height . 4) (min-pixel-width . 10) (min-pixel-height-ignore . 2) (min-pixel-width-ignore . 2) (min-pixel-height-safe . 1) (min-pixel-width-safe . 2)) leaf (pixel-width . 185) (pixel-height . 50) (total-width . 185) (total-height . 50) (normal-height . 1.0) (normal-width . 1.0) (buffer "*Ibuffer*" (selected . t) (hscroll . 0) (fringes 0 0 nil) (margins nil) (scroll-bars nil 0 t nil 0 t) (vscroll . 0) (dedicated) (point . 147) (start . 1))))])
+(setq desktop-saved-frameset [frameset 1 (23414 39700 976792 440000) (desktop . "208") "rmoola@rmoola-linux" nil nil ((((font-backend xft x) (font . "-DAMA-Ubuntu Mono-normal-normal-normal-*-16-*-*-*-m-0-iso10646-1") (font-parameter) (border-width . 0) (internal-border-width . 0) (right-divider-width . 0) (bottom-divider-width . 0) (vertical-scroll-bars) (horizontal-scroll-bars) (foreground-color . "#708183") (background-color . "#042028") (mouse-color . "black") (border-color . "black") (screen-gamma) (line-spacing) (left-fringe . 8) (right-fringe . 8) (scroll-bar-foreground) (scroll-bar-background) (menu-bar-lines . 0) (tool-bar-lines . 0) (title) (wait-for-wm . t) (tool-bar-position . top) (icon-type . t) (auto-raise) (auto-lower) (cursor-type . box) (scroll-bar-width . 0) (scroll-bar-height . 0) (alpha) (fullscreen . maximized) (display-type . color) (background-mode . dark) (cursor-color . "#92c48f") (sticky) (environment) (frameset--id . "DDB2-0E1B-89F2-E0C7") (frameset--mini t . t) (modeline . t) (minibuffer . t) (unsplittable) (icon-name) (display . ":0") (explicit-name) (visibility . t) (height . 58) (width . 199) (left . 67) (top . 27)) ((min-height . 8) (min-width . 20) (min-height-ignore . 6) (min-width-ignore . 8) (min-height-safe . 2) (min-width-safe . 4) (min-pixel-height . 136) (min-pixel-width . 160) (min-pixel-height-ignore . 102) (min-pixel-width-ignore . 64) (min-pixel-height-safe . 34) (min-pixel-width-safe . 32)) hc (pixel-width . 1613) (pixel-height . 978) (total-width . 202) (total-height . 57) (normal-height . 1.0) (normal-width . 1.0) (combination-limit) (leaf (pixel-width . 805) (pixel-height . 978) (total-width . 101) (total-height . 57) (normal-height . 1.0) (normal-width . 0.5) (buffer "2017.org" (selected) (hscroll . 0) (fringes 8 8 nil) (margins nil) (scroll-bars nil 0 t nil 0 t) (vscroll . 0) (dedicated) (point . 87244) (start . 81039))) (vc (last . t) (pixel-width . 808) (pixel-height . 978) (total-width . 101) (total-height . 57) (normal-height . 1.0) (normal-width . 0.5) (combination-limit) (leaf (pixel-width . 808) (pixel-height . 463) (total-width . 101) (total-height . 27) (normal-height . 0.4703001639790562) (normal-width . 1.0) (buffer ".bashrc" (selected) (hscroll . 0) (fringes 8 8 nil) (margins nil) (scroll-bars nil 0 t nil 0 t) (vscroll . 0) (dedicated) (point . 4035) (start . 3586))) (leaf (last . t) (pixel-width . 808) (pixel-height . 515) (total-width . 101) (total-height . 30) (normal-height . 0.5296998360209437) (normal-width . 1.0) (buffer "magit: rmoola" (selected . t) (hscroll . 0) (fringes 8 8 nil) (margins nil) (scroll-bars nil 0 t nil 0 t) (vscroll . 0) (dedicated) (point . 189) (start . 1))))))])
 (setq extended-command-history '("eval-region" "org-time-stamp" "eval-region" "find-file" "eval-region" "goto-line" "dired" "global-visual-line-mode" "visual-line-mode" "grep" "eval-region" "visual-line-mode" "org-mode" "eval-region" "mark-paragraph" "eval-region" "customize-face" "set-default-font" "customize-face" "grep" "clipboard-kill-ring-save" "grep" "p4-revert" "p4-form-commit" "p4-submit" "eval-region" "p4-form-commit" "p4-submit" "eval-region" "ido-mode"))
-(setq file-name-history '("/home/r/Projects/checkit-web-ui/README.md" "/home/r/.android/adb_usb.ini" "/etc/udev/rules.d/51-android.rules" "/mnt/develop/android-handheld/src/AutomationTests/testInfoEho.py" "/mnt/develop/android-handheld/src/AutomationTests/testLogin.py" "/mnt/develop/android-handheld/src/AutomationTests/CatfConfig.py" "/mnt/develop/csd-13-trace.log" "/mnt/h/log/csd-13-trace.log" "/mnt/dropbox/rhymes/laura.txt" "/mnt/h/log/bikerules.org" "/mnt/develop/CSD-362-sealedsensor.json" "/mnt/develop/CSD-362-LPScontact.json" "/mnt/develop/CSD-362-LPShumtemp.json" "/mnt/develop/creatework.py" "/mnt/develop/CSD-362-sealedsensor.json" "/mnt/develop/CSD-362-LPS-temp.json" "/mnt/develop/CSD-362-LPScontact.json" "/mnt/develop/CSD-362-LPStemp.json" "/mnt/develop/CSD-362zme.json" "/mnt/dropbox/rhymes/misc.txt" "/mnt/dropbox/rhymes/26poemsaboutfoodandanimals.txt" "/mnt/dropbox/rhymes/misc.txt" "/mnt/develop/android-handheld/src/AutomationTests/" "/mnt/develop/android-handheld/src/AutomationTests/CatfBaseTest.py" "/home/r/.recentf" "/scp:jenkins@192.168.100.250:~/.bashrc" "/sshx:jenkins@192.168.100.250:~/.bashrc" "/ssh:jenkins@192.168.100.250:" "/home/r/.bashrc" "/mnt/dropbox/acronym.md" "/home/r/.bashrc-anaconda2.bak" "/mnt/develop/checkit-webengine/tests/e2e/library/library.js" "/mnt/develop/checkit-webengine/tests/e2e/library/messageAnalysis/messageAnalysis.js" "/mnt/develop/checkit-webengine/tests/e2e/library/messageAnalysis/setvars.sh" "/mnt/develop/checkit-webengine/tests/e2e/library/messageAnalysis/messageAnalysis.md" "/mnt/develop/checkit-webengine/tests/e2e/library/hub_command.exp" "/mnt/develop/checkit-webengine/tests/e2e/physicalDeviceTests/performance_cpuFree.spec.js" "/sudo:r@localhost:/home/r/.bashrc" "/ssh:jenkins@192.168.100.250:" "/ssh:jenkins@192.168.100.250" "/mnt/dropbox/seinfeld.md" "/sshx:jenkins@192.168.100.250:.bashrc" "/jenkins@192.168.100.250" "/mnt/h/log/2017.org" "/mnt/h/mqtt/mqttAuthentication.json" "/mnt/h/log/20161222.org" "/home/r/Projects/checkit-mqtt/certs/getHubCerts.js" "/mnt/h/log/20161220.org" "/mnt/h/log/20161216.org" "/mnt/develop/android-handheld/.git/config" "/mnt/develop/android-handheld/src/AutomationTests/CatfConfig.py" "/mnt/develop/android-handheld/src/AutomationTests/testLogin.py" "/mnt/develop/android-handheld/" "/mnt/develop/android-handheld/src/AutomationTests/" "/mnt/develop/android-handheld/src/AutomationTests/CatfConfig.py" "/mnt/develop/android-handheld/src/AutomationTests/CatfDevice.py" "/mnt/develop/android-handheld/src/AutomationTests/CatfBaseTest.py" "/mnt/h/log/20161130.org" "/mnt/h/log/20161124.org" "/mnt/h/log/" "/mnt/h/log/20161208.org" "/home/r/linux_protractor_environ.sh" "/home/r/Projects/webui-scratch/src/app/filters/time-ago.filter.spec.js" "/home/r/Projects/webui-scratch/src/app/filters/time-ago.filter.js" "/mnt/h/log/20161208.org" "/etc/rc.local" "/mnt/h/log/20161121" "/mnt/log/20161207.org" "/mnt/log/20161206.org" "/mnt/log/20161205.org" "/mnt/log/20161202.org" "/mnt/log/20161201.org" "/mnt/log/20161130.org" "/mnt/log/20161130" "/mnt/log/20161129.org" "/mnt/log/20161128.org" "/home/r/linux_protractor_environ.sh" "/home/r/.emacs" "~/Downloads/test/package.json" "~/Downloads/test/test.js" "/home/r/Projects/elektron/checkit/hub/applications/webengine/tests/e2e/continuousTests/commonTests.spec.js" "/home/r/Projects/elektron/checkit/hub/applications/webengine/tests/e2e/physicalDeviceTests/performance_webSocketSpeed.spec.js" "/home/r/Projects/elektron/checkit/hub/applications/webengine/tests/e2e/continuousTests/eventError.suite.js" "/home/r/Projects/elektron/checkit/hub/applications/webengine/tests/e2e/continuousTests/library.spec.js" "~/.eslintrc" "/home/r/Projects/elektron/checkit/hub/applications/webengine/tests/e2e/continuousTests/commonTests.spec.js" "/home/r/Projects/elektron/checkit/hub/applications/webengine/tests/e2e/continuousTests/README.md" "/mnt/log/20161125.org" "/mnt/log/20161124" "~/Downloads/git_tutorial/work/hello/b.html" "/home/r/Downloads/git_tutorial/work/hello/hello.html" "/home/r/.bashrc" "/home/r/Projects/elektron/checkit/test/automation/cli_interface/library/cli_interface/cli_ember.py" "/home/r/Projects/elektron/checkit/test/automation/arduino/sketches/blink_detect/blink_detect.ino" "/home/r/Projects/elektron/checkit/test/automation/arduino/sketches/ProbeTest/ProbeTest.ino" "/mnt/log/20161125.org" "/mnt/log/20161124.org" "/mnt/log/20161123.md" "/mnt/log/20161124" "/home/r/.emacs"))
-(setq grep-history '("grep --color -nHr -e \"checkElementExists\"" "grep --color -nH -e \"Could not get\"" "grep --color -nH -e launchAppium" "grep --color -nHr -e findInText ." "grep --color -nH -e findInText ." "grep --color -nH -e findInText" "grep --color -nHr -e testLoginValidAll" "grep --color -nHr -e staging" "grep --color -nHr -e password ." "grep --color -nHr -e serial ." "grep --color -nHr -e hub ." "grep --color -nHr -e serial ." "grep --color -nH -e serial ." "grep --color -nH -e . serial" "grep --color -nH -e serial" "grep --color -nH -e readme" "grep --color -nHr -e setting ." "grep --color -nHr -e password ." "grep --color -nHr -e hub ." "grep --color -nHr -e json ." "grep --color -nHr -e serial ." "grep --color -nH -e serial ." "grep --color -nH -e ./ serial" "grep -nHr -e \"FATS::HOST_AUDIO::getConfigData\" ./*" "grep -nHr -e \"FATS::HOST_AUDIO::configureHost\" ./*" "grep -nHr -e \"FATS::HOST_AUDIO_configureHost\" ./*" "grep -nHr -e \"MURPHY::AUDIO::config\" ./*" "grep -nHr -e \"tcArray\" ./*" "grep -nHr -e \"buildTestArray\" ./*" "grep -nHr -e \"getCODECConfig\" ./*"))
+(setq file-name-history '("/home/rmoola/.gitignore" "/home/rmoola/bin/env-setup.sh" "/home/rmoola/.aws/config" "/home/rmoola/.aws/credentials" "/home/rmoola/Projects/sandbox/checkit-hub-tests/README.md" "~/Projects/checkit-hub-tests/ssm-configuration-adapter.js" "/home/rmoola/Projects/checkit-application-bootstrapper/src/ssm-configuration-adapter.js" "/home/rmoola/Projects/checkit-application-bootstrapper/bootstrap.js" "/home/rmoola/.aws/credentials" "/home/rmoola/Projects/checkit-hub-tests/e2e/pages/hub-ui.js" "/home/rmoola/Projects/checkit-hub-tests/e2e/pages/utils.js" "/home/rmoola/Projects/sandbox/checkit-hub-tests/package.json" "/home/rmoola/Projects/checkit-hub-tests/e2e/pages/hub-ui-login.js" "/home/rmoola/Projects/checkit-hub-tests/e2e/specs/role-based-access.spec.js" "/home/rmoola/Projects/checkit-hub-fixtures/src/config/index.js" "/home/rmoola/Projects/sandbox/checkit-hub-tests/e2e/config.js" "/home/rmoola/remote_protractor_environ.sh" "/home/rmoola/Projects/checkit-hub-tests/e2e/elements/AutocompleteElement.js" "~/Projects/checkit-hub-tests/e2e/elements/" "/home/rmoola/Projects/checkit-hub-tests/e2e/elements/AutoCompleteElement.js" "/home/rmoola/Projects/checkit-hub-tests/e2e/pages/hub-ui-location.js" "/home/rmoola/.bashrc" "/home/rmoola/Projects/sandbox/checkit-webengine/hub-api/hapi.js" "/home/rmoola/Projects/sandbox/checkit-webengine/hub-api/hapi.interface.js" "/home/rmoola/Projects/sandbox/checkit-hub-tests/node_modules/@checkit/checkit-hub-fixtures/src/hapi/hub-ws.js" "/home/rmoola/Projects/sandbox/checkit-hub-tests/api/hapi.events.js" "/home/rmoola/Projects/sandbox/checkit-hub-tests/node_modules/@checkit/checkit-hub-fixtures/package.json" "/home/rmoola/Projects/sandbox/checkit-hub-tests/package.json" "/home/rmoola/Projects/sandbox/checkit-hub-tests/api/index.js" "~/Projects/sandbox/checkit-hub-tests/ssm-configuratior-adapter.js" "/home/rmoola/Projects/sandbox/checkit-hub-tests/Jenkinsfile" "/home/rmoola/Projects/sandbox/checkit-hub-tests/node_modules/@checkit/checkit-hub-fixtures/src/index.js" "/home/rmoola/Projects/sandbox/checkit-hub-tests/node_modules/checkit-webengine/hub-api/hapi.js" "/home/rmoola/Projects/sandbox/checkit-hub-tests/node_modules/@checkit/checkit-hub-fixtures/src/hapi/hub-ws.js" "/home/rmoola/Projects/sandbox/checkit-hub-tests/node_modules/@checkit/checkit-hub-fixtures/src/config/index.js" "/home/rmoola/Projects/sandbox/checkit-hub-tests/api/hapi.events.js" "/home/rmoola/Projects/sandbox/checkit-hub-tests/api/index.js" "/home/rmoola/Projects/sandbox/checkit-hub-fixtures/package.json" "/home/rmoola/Projects/sandbox/checkit-hub-tests/node_modules/@checkit/checkit-hub-fixtures/package.json" "/home/rmoola/Projects/sandbox/checkit-hub-tests/package.json" "~/Projects/sandbox/checkit-hub-tests/api/hapi.events.js" "~/Projects/sandbox/checkit-hub-tests/api/mqtt.events.js" "/home/rmoola/Documents/Twine/Stories/Pern_s Prada Pandemonium.html" "/home/rmoola/Projects/sandbox/checkit-hub-tests/node_modules/checkit-webengine/hub-api/hapi.ws.js" "/home/rmoola/Projects/sandbox/checkit-hub-tests/node_modules/checkit-webengine/hub-api/hapi.interface.js" "/home/rmoola/Projects/sandbox/checkit-hub-tests/node_modules/checkit-webengine/hub-api/hapi.js" "/home/rmoola/Projects/sandbox/checkit-hub-tests/node_modules/@checkit/checkit-hub-fixtures/src/config/index.js" "/home/rmoola/Projects/sandbox/checkit-hub-tests/node_modules/@checkit/checkit-hub-fixtures/src/hapi/index.js" "/home/rmoola/Projects/sandbox/checkit-hub-tests/node_modules/@checkit/checkit-hub-fixtures/src/hapi/hub-ws.js" "/home/rmoola/Projects/sandbox/checkit-hub-tests/package.json" "/home/rmoola/Projects/sandbox/checkit-hub-tests/api/index.js" "/home/rmoola/Projects/sandbox/checkit-hub-fixtures/package.json" "/home/rmoola/Projects/sandbox/checkit-hub-tests/node_modules/@checkit/checkit-hub-fixtures/src/app/authenticate.ws.js" "/home/rmoola/Projects/sandbox/checkit-hub-tests/node_modules/@checkit/checkit-hub-fixtures/src/hapi/index.js" "/home/rmoola/Projects/sandbox/checkit-hub-tests/api/index.js" "/home/rmoola/Projects/sandbox/checkit-hub-tests/node_modules/@checkit/checkit-hub-fixtures/src/index.js" "/home/rmoola/Projects/sandbox/checkit-hub-tests/node_modules/@checkit/checkit-hub-fixtures/src/app/index.spec.js" "/home/rmoola/Projects/sandbox/checkit-hub-tests/node_modules/@checkit/checkit-hub-fixtures/src/hub/index.js" "/home/rmoola/Projects/sandbox/checkit-hub-tests/node_modules/@checkit/checkit-hub-fixtures/src/config/index.js" "/home/rmoola/Projects/sandbox/checkit-hub-tests/node_modules/@checkit/checkit-hub-fixtures/src/hub/index.js" "/home/rmoola/Projects/sandbox/checkit-hub-tests/node_modules/@checkit/checkit-hub-fixtures/src/app/index.js" "/home/rmoola/Projects/sandbox/checkit-hub-fixtures/src/app/index.js" "/home/rmoola/Projects/sandbox/checkit-hub-fixtures/src/hub/index.js" "/home/rmoola/Projects/sandbox/checkit-hub-fixtures/src/app/index.js" "/home/rmoola/Projects/sandbox/checkit-hub-fixtures/src/hub/index.js" "/home/rmoola/Projects/sandbox/checkit-hub-tests/node_modules/@checkit/checkit-hub-fixtures/src/hub/index.js" "/home/rmoola/Projects/sandbox/checkit-hub-tests/node_modules/@checkit/checkit-hub-fixtures/src/hub/index.spec.js" "/home/rmoola/Projects/sandbox/checkit-hub-fixtures/src/hub/index.js" "~/Projects/sandbox/checkit-hub-tests/api/api.spec.js" "/home/rmoola/Projects/sandbox/checkit-hub-tests/package.json" "/home/rmoola/Projects/sandbox/checkit-hub-tests/api/index.js" "/home/rmoola/Projects/sandbox/checkit-hub-fixtures/circle.yml" "/home/rmoola/Projects/sandbox/checkit-hub-fixtures/src/app/authenticate.ws.spec.js" "/home/rmoola/Projects/sandbox/checkit-hub-fixtures/.gitignore" "/home/rmoola/Projects/sandbox/checkit-hub-fixtures/src/mqtt/mqtt.js" "/home/rmoola/Projects/sandbox/checkit-hub-fixtures/src/hapi/event.js" "/home/rmoola/Projects/sandbox/checkit-hub-fixtures/src/app/index.js" "/home/rmoola/Projects/sandbox/checkit-hub-fixtures/src/app/authenticate.ws.spec.js" "/home/rmoola/Projects/sandbox/checkit-hub-fixtures/src/app/authenticate.ws.js" "/home/rmoola/Projects/sandbox/checkit-hub-fixtures/circle.yml" "/home/rmoola/Projects/sandbox/checkit-webengine/.circleci/config.yml" "/home/rmoola/Dropbox/rhymes/misc.txt" "/home/rmoola/Projects/sandbox/checkit-hub-fixtures/src/zigbeeDevice/device.spec.js" "~/Projects/sandbox/checkit-hub-tests/websocket/index.js" "/home/rmoola/Projects/sandbox/checkit-hub-fixtures/src/app/index.js" "/home/rmoola/Projects/sandbox/checkit-hub-tests/README.md" "/home/rmoola/Projects/sandbox/checkit-hub-fixtures/src/app/index.spec.js" "/home/rmoola/Projects/sandbox/checkit-hub-fixtures/src/hapi/event.js" "/home/rmoola/Projects/sandbox/checkit-hub-fixtures/src/hapi/event.spec.js" "~/Projects/sandbox/checkit-hub-fixtures/src/hapi/response.spec.js" "/home/rmoola/Projects/sandbox/checkit-hub-fixtures/node_modules/checkit-webengine/hub-api/hapi.js" "/home/rmoola/Projects/sandbox/checkit-hub-fixtures/README.md" "/home/rmoola/Projects/sandbox/checkit-webengine/config.js" "/home/rmoola/Projects/sandbox/checkit-hub-fixtures/src/hapi/index.js" "/home/rmoola/Projects/sandbox/checkit-hub-fixtures/src/hub/index.js" "/home/rmoola/Projects/sandbox/checkit-hub-fixtures/src/index.js" "/home/rmoola/Projects/sandbox/checkit-hub-fixtures/src/hapi/event.spec.js" "/home/rmoola/Projects/sandbox/checkit-hub-fixtures/src/hapi/request.spec.js" "/home/rmoola/Projects/sandbox/checkit-hub-fixtures/src/hapi/event.spec.js" "/home/rmoola/Projects/checkit-webengine/hub-api/hapi.js"))
+(setq grep-history '("grep --color -nHr -e \"should get the coordinator status\" ../*" "grep --color -nH -e getCoordinatorStatus ./*" "grep --color -nHr -e 'post' ../../../checkit-webengine/hub-websvr/websvr.js " "grep --color -nHr -e 'request' ../" "grep --color -nHr -e ../ 'request'" "grep --color -nHr -e 'node-ssh' ../*" "grep --color -nHr -e 'e2e' .*" "grep --color -nHr -e '(\\'debug\\')' .*" "grep --color -nHr -e 'console.log' e2e" "grep --color -nHr -e 'console.log' lib" "grep --color -nHr -e 'console.log' src" "grep --color -nHr -e src" "grep --color -nHr -e 'console.log'" "grep --color -nHr -e 'function addHub' ../../../*" "grep --color -nHr -e 'function addHub' ../../*" "grep --color -nHr -e 'addHub' ../*" "grep --color -nHr -e 'h1 span a' ./*" "grep --color -nHr -e 'accessTolen' ../*" "grep --color -nHr -e 'accessTolen' /../*" "grep --color -nHr -e 'addHub' ./*" "grep --color -nHr -e 'addHub' ../../../*" "grep --color -nHr -e 'addHub' ./*" "grep --color -nHr -e 'addHub' ../../*" "grep --color -nHr -e 'addHub' ../../../*" "grep --color -nHr -e 'addHub' ../../*" "grep --color -nH -e 'addHub' ../../*" "grep --color -nH -e ../*  'addHub' " "grep --color -nH -e 'addHub' ../*" "grep --color -nH -e 'SSHClient Session alerady' ./lib/*" "grep --color -nH -e SSHClient ./lib/*"))
 (setq compile-history nil)
-(setq minibuffer-history '("magit-status" "clipboard-kill-ring-save" "whitespace-mode" "clipboard-kill-ring-save" "kill-rectangle" "clipboard-kill-ring-save" "yank-rectangle" "kill-rectangle" "clipboard-kill-ring-save" "yank-rectangle" "copy-rectangle-as-kill" "clipboard-kill-ring-save" "string-insert-rectangle" "clipboard-kill-ring-save" "yank-rectangle" "kill-rectangle" "clipboard-kill-ring-save" "string-insert-rectangle" "clipboard-kill-ring-save" "cua-mode" "." ":" "." ":" "cua-replace-in-rectangle" "cua-mode" "replace-string" "cua-mode" "replace-string" "rectangle-mark-mode" "replace-string" "clipboard-kill-ring-save" "string-insert-rectangle" "clipboard-kill-ring-save" "string-insert-rectangle" "clipboard-kill-ring-save" "replace-string" "kill-rectangle" "yank-rectangle" "clipboard-kill-ring-save" "org-time-stamp" "clipboard-kill-ring-save" "yank-rectangle" "copy-rectangle-as-kill" "yank" "copy-rectangle-as-kill" "clipboard-kill-ring-save" "yank-rectangle" "copy-rectangle-as-kill" "clipboard-kill-ring-save"))
-(setq query-replace-history '("riaz" "endtoend" "riaz" "endtoend" "." ":" ":" "." ":" "." ":" " " "" "-" "Petitioner" "petitioner" "Respondent" "respondent" "checkit-riaz" "checkit-tim" "" " " "" " " "myUser" "jenkins" "192.168.XXX.XXX" "192.168.100.250" "checkit-riaz" "checkit-endtoend" "$audioInt" "CODEC1" "CODEC1" "PCM1m" "PCM1m" "1124" "FFFF" "FFFF" "SBC_TEST_TUNNEL_DECODE" "AUDIO_DATA_SERVICE_LOOPBACK" "AUDIO_DATA_SERVICE_LOOPBACK" "remotePath" "remoteDir" "remoteDir" "$eventList" "-" "-" "devHost" "hostName" "hostName" "05b0" "06b0" "06b0" "06b" "05b" "05b" "06b" "06b" "05b" "05b"))
+(setq minibuffer-history '("magit" "twittering-edit-post-status" "clipboard-kill-ring-save" "twittering-edit-post-status" "clipboard-kill-ring-save" "twittering-edit-post-status" "clipboard-kill-ring-save" "magit" "clipboard-kill-ring-save" "magit" "js2-mode" "websocket-tests" "clipboard-kill-ring-save" "twittering-edit-post-status" "magit" "clipboard-kill-ring-save" "origin" "magit" "rename-file" "make-directory" "magit" "clipboard-kill-ring-save" "magit" "clipboard-kill-ring-save" "twittering-edit-post-status" "5193988" "twit" "clipboard-kill-ring-save" "origin" "magit" "clipboard-kill-ring-save" "magit-status" "magit" "magit-status" "On https-modifications: http compatible" "magit" "w3m" "visual-line-mode" "revert-buffer" "test-results.xml" "magit-status" "revert-buffer" "clipboard-kill-ring-save" "solarized-dark" "load-theme" "visual-line-mode" "revert-buffer" "clipboard-kill-ring-save" "magit" "twittering-edit-post-status"))
+(setq query-replace-history '("console.log" "debug" "SENSOR" "HUB" "HUB" "APP" "debug" "console.log" "RELOADOTAFILES" "REFRESHPARENT" "reloadOtaFiles" "refreshParent" "REFRESHPARENT" "NETWORKSCAN" "refreshParent" "networkScan" "networkScan" "hubGetStatus" "getRouterTable" "channelEnergyScan" "config.hapiWebSocket" "hapi" "function()" "function ()" "" "data." "" "Item can be gift wrapped" "handhelds" "handHelds" "Handhelds" "HandHelds" "debug" "console.log" "handhelds" "hh" "handhelds" "hh" "y" "s" "firstItem" "items" "localhost" "$MY_IP" "instance" "MY_IP" "$MY_IP" "localhost" "'" "\"" "readlineStdout" "SSHClientSession.child.stdout" ".execCommand" ".write" "this.connection" "SSHClient" "'" "\"" "===" "=="))
 (setq read-expression-history nil)
 (setq regexp-history '("jenkins" "192.168.100.250" "checkit-endtoend"))
-(setq regexp-search-ring '("RUN"))
-(setq search-ring '("selenium" "string" "staging" "new custome" "find" "find(" "install" "csd-123" ".conf" "csd-13" "udev" "dvorak" "ci-de" "waitfor" "waitFor" "wi"))
+(setq regexp-search-ring '("2017" "RUN"))
+(setq search-ring '(" sed " "ssh " "wifi" "alias" "version" " sed " "git logis" "source" "npm login" "chickpeas" "port" "e2e" "server" "rmoola" "git fetch" "hapiWsOpen"))
 (setq shell-command-history '("ssh-add ~/.ssh/id_rsa" "ssh-add .ssh/id_rsa" "eval \"$(ssh-agent)\"" "ssh-add ~/.ssh/id_rsa" "eval \"$(ssh-agent)\"" "ssh-add ~/.ssh/id_rsa" "ssh-add .ssh/id_rsa" "eval \"$(ssh-agent)\"" "eslint -v" "GREP" "grep" "wc" "CLIP" "GNUS-OTHER" "yes" "p4 edit prod_tone_test.tcl" "p4 login" "p4 edit prod_tone_test.tcl"))
 (setq tags-file-name "/mnt/develop/android-handheld/src/AutomationTests/TAGS")
 (setq register-alist (list (list 82 "Unprintable entity" (let ((mk (make-marker))) (add-hook 'desktop-delay-hook `(lambda nil (set-marker ,mk ,nil (get-buffer ," *temp*")))) mk)) (desktop-list* 101 (let ((mk (make-marker))) (add-hook 'desktop-delay-hook `(lambda nil (set-marker ,mk ,nil (get-buffer ," *temp*")))) mk)) (desktop-list* 106 (let ((mk (make-marker))) (add-hook 'desktop-delay-hook `(lambda nil (set-marker ,mk ,nil (get-buffer ," *temp*")))) mk)) '(97 file-query "/home/rm10/perforce/test/private/rm10/libs/hydra/common_accmd.tcl" 13815)))
 
 ;; Buffer section -- buffers listed in same order as in buffer list:
 (desktop-create-buffer 206
-  "/home/r/Projects/checkit-hub-tests/e2e/e2e_environment.sh"
-  "e2e_environment.sh"
+  "/home/rmoola/.bashrc"
+  ".bashrc"
   'sh-mode
-  '(flycheck-mode ergoemacs-mode)
+  '(flycheck-mode company-mode ergoemacs-mode)
+  4035
+  '(4028 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/rmoola/2017.org"
+  "2017.org"
+  'org-mode
+  '(visual-line-mode flycheck-mode company-mode ergoemacs-mode)
+  87244
+  '(87234 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix) (truncate-lines)))
+
+(desktop-create-buffer 206
+  "/home/rmoola/.gitignore"
+  ".gitignore"
+  'fundamental-mode
+  '(company-mode ergoemacs-mode)
+  47
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/rmoola/Dropbox/rhymes/misc.txt"
+  "misc.txt"
+  'text-mode
+  '(flycheck-mode company-mode ergoemacs-mode)
+  18137
+  '(17789 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-dos)))
+
+(desktop-create-buffer 206
+  "/home/rmoola/Projects/sandbox/checkit-hub-tests/Jenkinsfile"
+  "Jenkinsfile"
+  'js2-mode
+  '(flycheck-mode company-mode ergoemacs-mode tern-mode auto-revert-mode)
+  344
+  '(207 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/rmoola/hub-ws.sh"
+  "hub-ws.sh"
+  'sh-mode
+  '(flycheck-mode company-mode ergoemacs-mode)
+  2945
+  '(3294 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix)))
+
+(desktop-create-buffer 206
+  "/home/rmoola/Projects/sandbox/checkit-hub-tests/README.md"
+  "README.md"
+  'markdown-mode
+  '(flycheck-mode company-mode ergoemacs-mode auto-revert-mode)
+  679
+  '(679 nil)
+  nil
+  nil
+  '((tab-width . 4) (buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/rmoola/.aws/config"
+  "config"
+  'conf-unix-mode
+  '(flycheck-mode company-mode ergoemacs-mode)
+  44
+  '(44 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/rmoola/Projects/checkit-hub-tests/ssm-configuration-adapter.js"
+  "ssm-configuration-adapter.js"
+  'js2-mode
+  '(flycheck-mode company-mode ergoemacs-mode tern-mode)
+  530
+  '(512 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix)))
+
+(desktop-create-buffer 206
+  "/home/rmoola/Projects/checkit-application-bootstrapper/src/ssm-configuration-adapter.js"
+  "ssm-configuration-adapter.js"
+  'js2-mode
+  '(flycheck-mode company-mode ergoemacs-mode tern-mode auto-revert-mode)
+  1072
+  '(1 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/rmoola/Projects/checkit-hub-tests/e2e/specs/role-based-access.spec.js"
+  "role-based-access.spec.js"
+  'js2-mode
+  '(flycheck-mode company-mode ergoemacs-mode tern-mode auto-revert-mode)
+  1484
+  '(1289 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/rmoola/Dropbox/seinfeld.md"
+  "seinfeld.md"
+  'markdown-mode
+  '(visual-line-mode flycheck-mode company-mode ergoemacs-mode)
+  7649
+  '(3210 nil)
+  nil
+  nil
+  '((tab-width . 4) (buffer-file-coding-system . undecided-unix) (truncate-lines)))
+
+(desktop-create-buffer 206
+  "/home/rmoola/remote_protractor_environ.sh"
+  "remote_protractor_environ.sh"
+  'sh-mode
+  '(flycheck-mode company-mode ergoemacs-mode)
+  2076
+  '(1941 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/rmoola/Projects/checkit-hub-tests/e2e/pages/hub-ui-login.js"
+  "hub-ui-login.js"
+  'js2-mode
+  '(flycheck-mode company-mode ergoemacs-mode tern-mode auto-revert-mode)
+  591
+  '(729 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/rmoola/Projects/sandbox/checkit-hub-tests/package.json"
+  "package.json"
+  'js-mode
+  '(flycheck-mode company-mode ergoemacs-mode tern-mode auto-revert-mode)
+  1430
+  '(904 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/rmoola/Projects/checkit-hub-fixtures/src/config/index.js"
+  "index.js"
+  'js2-mode
+  '(flycheck-mode company-mode ergoemacs-mode tern-mode auto-revert-mode)
+  534
+  '(458 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/rmoola/Projects/checkit-hub-tests/e2e/pages/hub-ui.js"
+  "hub-ui.js"
+  'js2-mode
+  '(flycheck-mode company-mode ergoemacs-mode tern-mode auto-revert-mode)
+  870
+  '(210 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/rmoola/Projects/checkit-hub-tests/e2e/elements/AutocompleteElement.js"
+  "AutocompleteElement.js"
+  'js2-mode
+  '(flycheck-mode company-mode ergoemacs-mode tern-mode)
+  269
+  '(420 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/rmoola/Projects/checkit-hub-tests/e2e/pages/hub-ui-location.js"
+  "hub-ui-location.js"
+  'js2-mode
+  '(flycheck-mode company-mode ergoemacs-mode tern-mode auto-revert-mode)
+  697
+  '(22 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/rmoola/Dropbox/stairwell.org"
+  "stairwell.org"
+  'org-mode
+  '(visual-line-mode flycheck-mode company-mode ergoemacs-mode)
+  67276
+  '(17479 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix) (truncate-lines)))
+
+(desktop-create-buffer 206
+  "/home/rmoola/Projects/sandbox/checkit-hub-tests/node_modules/@checkit/checkit-hub-fixtures/src/hapi/hub-ws.js"
+  "hub-ws.js"
+  'js2-mode
+  '(flycheck-mode company-mode ergoemacs-mode tern-mode auto-revert-mode)
+  722
+  '(2908 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/rmoola/Projects/sandbox/checkit-webengine/hub-api/hapi.js"
+  "hapi.js"
+  'js2-mode
+  '(flycheck-mode company-mode ergoemacs-mode tern-mode auto-revert-mode)
+  45694
+  '(39518 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/rmoola/Projects/sandbox/checkit-webengine/hub-api/hapi.interface.js"
+  "hapi.interface.js"
+  'js2-mode
+  '(flycheck-mode company-mode ergoemacs-mode tern-mode auto-revert-mode)
+  10562
+  '(1 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-dos)))
+
+(desktop-create-buffer 206
+  "/home/rmoola/Projects/sandbox/checkit-hub-tests/node_modules/@checkit/checkit-hub-fixtures/src/index.js"
+  "index.js"
+  'js2-mode
+  '(flycheck-mode company-mode ergoemacs-mode tern-mode auto-revert-mode)
+  472
+  '(472 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/rmoola/Projects/sandbox/checkit-hub-tests/api/hapi.events.js"
+  "hapi.events.js"
+  'js2-mode
+  '(flycheck-mode company-mode ergoemacs-mode tern-mode auto-revert-mode)
+  2605
+  '(1124 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/rmoola/Projects/sandbox/checkit-hub-tests/api/index.js"
+  "index.js"
+  'js2-mode
+  '(flycheck-mode company-mode ergoemacs-mode tern-mode auto-revert-mode)
+  1027
+  '(546 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/rmoola/Projects/checkit-hub-fixtures/package.json"
+  "package.json"
+  'js-mode
+  '(flycheck-mode company-mode ergoemacs-mode tern-mode auto-revert-mode)
+  1067
+  '(1072 t)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/rmoola/Projects/sandbox/checkit-hub-tests/node_modules/@checkit/checkit-hub-fixtures/src/config/index.js"
+  "index.js"
+  'js2-mode
+  '(flycheck-mode company-mode ergoemacs-mode tern-mode auto-revert-mode)
+  566
+  '(499 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/rmoola/Projects/sandbox/checkit-hub-tests/node_modules/checkit-webengine/hub-api/hapi.js"
+  "hapi.js"
+  'js2-mode
+  '(flycheck-mode company-mode ergoemacs-mode tern-mode auto-revert-mode)
+  1440
+  '(45640 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/rmoola/Projects/sandbox/checkit-hub-tests/node_modules/checkit-webengine/hub-api/hapi.ws.js"
+  "hapi.ws.js"
+  'js2-mode
+  '(flycheck-mode company-mode ergoemacs-mode tern-mode)
+  1826
+  '(4937 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/rmoola/Projects/sandbox/checkit-hub-tests/api/mqtt.events.js"
+  "mqtt.events.js"
+  'js2-mode
+  '(flycheck-mode company-mode ergoemacs-mode tern-mode auto-revert-mode)
+  548
+  '(548 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix)))
+
+(desktop-create-buffer 206
+  "/home/rmoola/Projects/sandbox/checkit-hub-tests/node_modules/@checkit/checkit-hub-fixtures/src/app/index.js"
+  "index.js"
+  'js2-mode
+  '(flycheck-mode company-mode ergoemacs-mode tern-mode auto-revert-mode)
+  2400
+  '(2323 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/rmoola/Projects/sandbox/checkit-hub-tests/node_modules/@checkit/checkit-hub-fixtures/src/app/authenticate.ws.js"
+  "authenticate.ws.js"
+  'js2-mode
+  '(flycheck-mode company-mode ergoemacs-mode tern-mode auto-revert-mode)
+  768
+  '(768 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/rmoola/Projects/sandbox/checkit-hub-fixtures/src/hub/index.js"
+  "index.js"
+  'js2-mode
+  '(flycheck-mode company-mode ergoemacs-mode tern-mode auto-revert-mode)
+  2375
+  '(2114 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/rmoola/Projects/sandbox/checkit-webengine/.circleci/config.yml"
+  "config.yml"
+  'conf-colon-mode
+  '(flycheck-mode company-mode ergoemacs-mode auto-revert-mode)
+  1564
+  '(1927 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/rmoola/Projects/sandbox/checkit-hub-fixtures/circle.yml"
+  "circle.yml"
+  'fundamental-mode
+  '(company-mode ergoemacs-mode auto-revert-mode)
+  60
+  '(160 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/rmoola/Projects/sandbox/checkit-hub-fixtures/src/app/authenticate.ws.spec.js"
+  "authenticate.ws.spec.js"
+  'js2-mode
+  '(flycheck-mode company-mode ergoemacs-mode tern-mode auto-revert-mode)
+  807
+  '(541 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/rmoola/Projects/sandbox/checkit-hub-fixtures/.gitignore"
+  ".gitignore"
+  'fundamental-mode
+  '(company-mode ergoemacs-mode auto-revert-mode)
+  122
+  '(87 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/rmoola/Projects/sandbox/checkit-hub-fixtures/src/mqtt/mqtt.js"
+  "mqtt.js"
+  'js2-mode
+  '(flycheck-mode company-mode ergoemacs-mode tern-mode auto-revert-mode)
+  2199
+  '(1548 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/rmoola/Projects/sandbox/checkit-hub-fixtures/src/hapi/hub-ws.spec.js"
+  "hub-ws.spec.js"
+  'js2-mode
+  '(flycheck-mode company-mode ergoemacs-mode tern-mode auto-revert-mode)
+  857
+  '(2825 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/rmoola/Projects/sandbox/checkit-hub-fixtures/src/hapi/event.js"
+  "event.js"
+  'js2-mode
+  '(flycheck-mode company-mode ergoemacs-mode tern-mode auto-revert-mode)
+  4604
+  '(439 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/rmoola/Projects/sandbox/checkit-hub-fixtures/src/app/authenticate.ws.js"
+  "authenticate.ws.js"
+  'js2-mode
+  '(flycheck-mode company-mode ergoemacs-mode tern-mode auto-revert-mode)
+  292
+  '(292 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/rmoola/Projects/sandbox/checkit-hub-fixtures/src/hapi/event.spec.js"
+  "event.spec.js"
+  'js2-mode
+  '(flycheck-mode company-mode ergoemacs-mode tern-mode auto-revert-mode)
+  714
+  '(634 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/rmoola/Projects/sandbox/checkit-hub-fixtures/src/hapi/index.js"
+  "index.js"
+  'js2-mode
+  '(flycheck-mode company-mode ergoemacs-mode tern-mode auto-revert-mode)
+  220
+  '(239 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/rmoola/Projects/sandbox/checkit-hub-fixtures/node_modules/checkit-webengine/hub-api/hapi.js"
+  "hapi.js"
+  'js2-mode
+  '(flycheck-mode company-mode ergoemacs-mode tern-mode)
+  38271
+  '(13685 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/rmoola/Projects/checkit-webengine/hub-api/hapi.js"
+  "hapi.js"
+  'js2-mode
+  '(flycheck-mode company-mode ergoemacs-mode tern-mode auto-revert-mode)
+  34507
+  '(1022 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/rmoola/Projects/sandbox/checkit-hub-fixtures/src/hapi/request.spec.js"
+  "request.spec.js"
+  'js2-mode
+  '(flycheck-mode company-mode ergoemacs-mode tern-mode auto-revert-mode)
+  793
+  '(793 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/rmoola/Projects/sandbox/checkit-hub-fixtures/src/mqtt/index.js"
+  "index.js"
+  'js2-mode
+  '(flycheck-mode company-mode ergoemacs-mode tern-mode auto-revert-mode)
+  743
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/rmoola/Projects/sandbox/checkit-webengine/hub-api/hapi.zigbee.js"
+  "hapi.zigbee.js"
+  'js2-mode
+  '(flycheck-mode company-mode ergoemacs-mode tern-mode auto-revert-mode)
+  819
+  '(2251 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/rmoola/Projects/sandbox/checkit-webengine/hub-api/hapi.request.js"
+  "hapi.request.js"
+  'js2-mode
+  '(flycheck-mode company-mode ergoemacs-mode tern-mode auto-revert-mode)
+  24921
+  '(25083 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-dos)))
+
+(desktop-create-buffer 206
+  "/home/rmoola/Projects/sandbox/checkit-webengine/hub-api/hapi.execute.js"
+  "hapi.execute.js"
+  'js2-mode
+  '(flycheck-mode company-mode ergoemacs-mode tern-mode auto-revert-mode)
+  6238
+  '(4843 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-dos)))
+
+(desktop-create-buffer 206
+  "/home/rmoola/Projects/sandbox/checkit-webengine/hub-api/hapi.ws.js"
+  "hapi.ws.js"
+  'js2-mode
+  '(flycheck-mode company-mode ergoemacs-mode tern-mode auto-revert-mode)
+  7317
+  '(1775 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/rmoola/Projects/sandbox/checkit-hub-fixtures/src/raspberry/index.js"
+  "index.js"
+  'js2-mode
+  '(flycheck-mode company-mode ergoemacs-mode tern-mode auto-revert-mode)
+  548
+  '(397 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/rmoola/Projects/sandbox/checkit-webengine/hub-websvr/websvr.js"
+  "websvr.js"
+  'js2-mode
+  '(flycheck-mode company-mode ergoemacs-mode tern-mode auto-revert-mode)
+  5007
+  '(4630 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/rmoola/Projects/sandbox/checkit-hub-fixtures/node_modules/checkit-webengine/app.js"
+  "app.js"
+  'js2-mode
+  '(flycheck-mode company-mode ergoemacs-mode tern-mode)
+  1502
+  '(1502 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/rmoola/Projects/checkit-hub-fixtures/node_modules/@checkit/checkit-database-fixtures/index.js"
+  "index.js"
+  'js2-mode
+  '(flycheck-mode company-mode ergoemacs-mode tern-mode)
+  3155
+  '(3155 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/rmoola/tmp/hangups_manual_login.py"
+  "hangups_manual_login.py"
+  'python-mode
+  '(flycheck-mode company-mode ergoemacs-mode)
+  545
+  '(1 nil)
+  nil
+  nil
+  '((tab-width . 8) (indent-tabs-mode) (buffer-file-coding-system . utf-8-unix)))
+
+(desktop-create-buffer 206
+  "/home/rmoola/Projects/checkit-hub-tests/e2e/protractor.conf.js"
+  "protractor.conf.js"
+  'js2-mode
+  '(flycheck-mode company-mode ergoemacs-mode tern-mode auto-revert-mode)
+  923
+  '(923 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/rmoola/Projects/checkit-hub-fixtures/src/database/cloud/db.js"
+  "db.js"
+  'js2-mode
+  '(flycheck-mode company-mode ergoemacs-mode tern-mode auto-revert-mode)
+  1292
+  '(1022 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/rmoola/Projects/checkit-hub-fixtures/src/database/cloud/index.js"
+  "index.js"
+  'js2-mode
+  '(flycheck-mode company-mode ergoemacs-mode tern-mode auto-revert-mode)
+  435
+  '(435 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/rmoola/Projects/checkit-hub-fixtures/src/hub/index.js"
+  "index.js"
+  'js2-mode
+  '(flycheck-mode company-mode ergoemacs-mode tern-mode auto-revert-mode)
+  733
+  '(51 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/rmoola/local_protractor_environ.sh"
+  "local_protractor_environ.sh"
+  'sh-mode
+  '(flycheck-mode company-mode ergoemacs-mode)
+  1458
+  '(177 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/rmoola/linux_protractor_environ.sh"
+  "linux_protractor_environ.sh"
+  'sh-mode
+  '(flycheck-mode company-mode ergoemacs-mode)
   1
   '(nil nil)
   nil
@@ -35,519 +717,167 @@
   '((buffer-file-coding-system . undecided-unix)))
 
 (desktop-create-buffer 206
-  "/mnt/h/log/2017.org"
-  "2017.org"
-  'org-mode
-  '(visual-line-mode flycheck-mode ergoemacs-mode)
-  43846
-  '(4131 nil)
+  "/home/rmoola/Projects/checkit-hub-tests/e2e/pages/hub-ui-device.js"
+  "hub-ui-device.js"
+  'js2-mode
+  '(flycheck-mode company-mode ergoemacs-mode tern-mode auto-revert-mode)
+  1
+  '(nil nil)
   nil
   nil
-  '((buffer-file-coding-system . utf-8-dos) (truncate-lines)))
+  '((buffer-file-coding-system . undecided-unix)))
 
 (desktop-create-buffer 206
-  "/home/r/Projects/checkit-web-ui/README.md"
-  "README.md"
-  'markdown-mode
-  '(visual-line-mode flycheck-mode ergoemacs-mode auto-revert-mode)
-  1676
-  '(644 nil)
+  "/home/rmoola/Projects/checkit-hub-tests/e2e/pages/hub-ui-dashboard.js"
+  "hub-ui-dashboard.js"
+  'js2-mode
+  '(flycheck-mode company-mode ergoemacs-mode tern-mode auto-revert-mode)
+  761
+  '(515 nil)
   nil
   nil
-  '((tab-width . 4) (buffer-file-coding-system . undecided-unix) (truncate-lines)))
+  '((buffer-file-coding-system . undecided-unix)))
 
 (desktop-create-buffer 206
-  "/mnt/develop/android-handheld/src/AutomationTests/testInfoEho.py"
-  "testInfoEho.py"
-  'python-mode
-  '(visual-line-mode flycheck-mode ergoemacs-mode auto-revert-mode)
-  374
-  '(2232 nil)
+  "/home/rmoola/Projects/checkit-hub-fixtures/src/database/cloud/customers/index.js"
+  "index.js"
+  'js2-mode
+  '(flycheck-mode company-mode ergoemacs-mode tern-mode auto-revert-mode)
+  800
+  '(500 nil)
   nil
   nil
-  '((tab-width . 8) (indent-tabs-mode) (buffer-file-coding-system . utf-8-unix) (truncate-lines)))
+  '((buffer-file-coding-system . undecided-unix)))
 
 (desktop-create-buffer 206
-  "/mnt/develop/android-handheld/src/AutomationTests/CatfConfig.py"
-  "CatfConfig.py"
-  'python-mode
-  '(visual-line-mode flycheck-mode ergoemacs-mode auto-revert-mode)
-  2844
-  '(1124 nil)
+  "/home/rmoola/Projects/checkit-hub-fixtures/src/index.js"
+  "index.js"
+  'js2-mode
+  '(flycheck-mode company-mode ergoemacs-mode tern-mode auto-revert-mode)
+  1
+  '(nil nil)
   nil
   nil
-  '((tab-width . 8) (indent-tabs-mode) (buffer-file-coding-system . undecided-unix) (truncate-lines)))
+  '((buffer-file-coding-system . undecided-unix)))
 
 (desktop-create-buffer 206
-  "/mnt/develop/android-handheld/src/AutomationTests/testLogin.py"
-  "testLogin.py"
-  'python-mode
-  '(visual-line-mode flycheck-mode ergoemacs-mode auto-revert-mode)
-  1624
-  '(1743 nil)
+  "/home/rmoola/Projects/checkit-hub-scripts/check-for-macaddress-csd-1434.js"
+  "check-for-macaddress-csd-1434.js"
+  'js2-mode
+  '(flycheck-mode company-mode ergoemacs-mode tern-mode auto-revert-mode)
+  738
+  '(738 nil)
   nil
   nil
-  '((tab-width . 8) (indent-tabs-mode) (buffer-file-coding-system . undecided-unix) (truncate-lines)))
+  '((buffer-file-coding-system . utf-8-unix) (overwrite-mode)))
 
 (desktop-create-buffer 206
-  "/mnt/develop/android-handheld/src/AutomationTests/CatfBaseTest.py"
-  "CatfBaseTest.py"
-  'python-mode
-  '(visual-line-mode eldoc-mode flycheck-mode ergoemacs-mode auto-revert-mode elpy-mode company-mode highlight-indentation-mode yas-minor-mode)
-  8229
-  '(8009 nil)
+  "/home/rmoola/Projects/node-webserver/views/home.hbs"
+  "home.hbs"
+  'html-mode
+  '(flycheck-mode company-mode ergoemacs-mode)
+  121
+  '(181 nil)
   nil
   nil
-  '((tab-width . 8) (indent-tabs-mode) (buffer-file-coding-system . undecided-unix) (truncate-lines)))
+  '((buffer-file-coding-system . utf-8-unix)))
 
 (desktop-create-buffer 206
-  "/mnt/develop/android-handheld/src/AutomationTests/CatfUi.py"
-  "CatfUi.py"
-  'python-mode
-  '(visual-line-mode flycheck-mode ergoemacs-mode auto-revert-mode)
-  6069
-  '(5710 nil)
+  "/home/rmoola/Projects/node-webserver/server.js"
+  "server.js"
+  'js2-mode
+  '(flycheck-mode company-mode ergoemacs-mode tern-mode)
+  780
+  '(305 nil)
   nil
   nil
-  '((tab-width . 8) (indent-tabs-mode) (buffer-file-coding-system . undecided-unix) (truncate-lines)))
+  '((buffer-file-coding-system . undecided-unix)))
 
 (desktop-create-buffer 206
-  "/mnt/develop/CSD-362-LPShumtemp.json"
-  "CSD-362-LPShumtemp.json"
-  'js-mode
-  '(visual-line-mode flycheck-mode ergoemacs-mode tern-mode)
-  20696
-  '(20499 nil)
+  "/home/rmoola/Projects/node-webserver/views/about.hbs"
+  "about.hbs"
+  'html-mode
+  '(flycheck-mode company-mode ergoemacs-mode)
+  147
+  '(105 nil)
   nil
   nil
-  '((buffer-file-coding-system . utf-8-unix) (truncate-lines)))
+  '((buffer-file-coding-system . utf-8-unix)))
 
 (desktop-create-buffer 206
-  "/mnt/develop/csd-13-trace.log"
-  "csd-13-trace.log"
+  "/home/rmoola/Projects/node-webserver/views/partials/footer.hbs"
+  "footer.hbs"
   'lisp-interaction-mode
-  '(visual-line-mode flycheck-mode ergoemacs-mode)
-  22412
+  '(flycheck-mode company-mode ergoemacs-mode)
+  97
   '(1 nil)
   nil
   nil
-  '((buffer-file-coding-system . utf-8-unix) (truncate-lines)))
+  '((buffer-file-coding-system . utf-8-unix)))
 
 (desktop-create-buffer 206
-  "/mnt/dropbox/seinfeld.md"
-  "seinfeld.md"
-  'markdown-mode
-  '(visual-line-mode flycheck-mode ergoemacs-mode)
-  5701
-  '(4312 nil)
+  "/home/rmoola/Projects/node-webserver/views/partials/header.hbs"
+  "header.hbs"
+  'lisp-interaction-mode
+  '(flycheck-mode company-mode ergoemacs-mode)
+  91
+  '(61 nil)
   nil
   nil
-  '((tab-width . 4) (buffer-file-coding-system . undecided-unix) (truncate-lines)))
+  '((buffer-file-coding-system . utf-8-unix)))
 
 (desktop-create-buffer 206
-  "/mnt/dropbox/rhymes/misc.txt"
-  "misc.txt"
-  'text-mode
-  '(visual-line-mode flycheck-mode ergoemacs-mode)
-  1030
-  '(782 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . undecided-unix) (truncate-lines)))
-
-(desktop-create-buffer 206
-  "/mnt/dropbox/rhymes/laura.txt"
-  "laura.txt"
-  'text-mode
-  '(visual-line-mode flycheck-mode ergoemacs-mode)
-  7444
-  '(1 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . utf-8-unix) (truncate-lines)))
-
-(desktop-create-buffer 206
-  "/mnt/h/log/bikerules.org"
-  "bikerules.org"
-  'org-mode
-  '(visual-line-mode flycheck-mode ergoemacs-mode)
-  731
-  '(223 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . utf-8-unix) (truncate-lines)))
-
-(desktop-create-buffer 206
-  "/mnt/develop/creatework.py"
-  "creatework.py"
-  'python-mode
-  '(visual-line-mode flycheck-mode ergoemacs-mode)
-  1780
-  '(1663 nil)
-  nil
-  nil
-  '((tab-width . 8) (indent-tabs-mode) (buffer-file-coding-system . utf-8-unix) (truncate-lines)))
-
-(desktop-create-buffer 206
-  "/mnt/develop/CSD-362-sealedsensor.json"
-  "CSD-362-sealedsensor.json"
-  'js-mode
-  '(visual-line-mode flycheck-mode ergoemacs-mode tern-mode)
-  343
-  '(1 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . utf-8-unix) (truncate-lines)))
-
-(desktop-create-buffer 206
-  "/mnt/develop/CSD-362-LPScontact.json"
-  "CSD-362-LPScontact.json"
-  'js-mode
-  '(visual-line-mode flycheck-mode ergoemacs-mode tern-mode)
-  1377
-  '(1 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . utf-8-unix) (truncate-lines)))
-
-(desktop-create-buffer 206
-  "/mnt/develop/CSD-362-LPStemp.json"
-  "CSD-362-LPStemp.json"
-  'js-mode
-  '(visual-line-mode flycheck-mode ergoemacs-mode tern-mode)
-  1
-  '(nil nil)
-  nil
-  nil
-  '((buffer-file-coding-system . undecided-unix) (truncate-lines)))
-
-(desktop-create-buffer 206
-  "/mnt/develop/android-handheld/src/AutomationTests/CatfDevice.py"
-  "CatfDevice.py"
-  'python-mode
-  '(visual-line-mode flycheck-mode ergoemacs-mode auto-revert-mode)
-  5119
-  '(5152 nil)
-  nil
-  nil
-  '((tab-width . 8) (indent-tabs-mode) (buffer-file-coding-system . undecided-unix) (truncate-lines)))
-
-(desktop-create-buffer 206
-  "/mnt/develop/android-handheld/src/AutomationTests/CatfHelpers.py"
-  "CatfHelpers.py"
-  'python-mode
-  '(visual-line-mode flycheck-mode ergoemacs-mode auto-revert-mode)
-  1257
-  '(1775 nil)
-  nil
-  nil
-  '((tab-width . 8) (indent-tabs-mode) (buffer-file-coding-system . undecided-unix) (truncate-lines)))
-
-(desktop-create-buffer 206
-  "/mnt/develop/android-handheld/src/AutomationTests/CatfRes.py"
-  "CatfRes.py"
-  'python-mode
-  '(visual-line-mode flycheck-mode ergoemacs-mode auto-revert-mode)
-  1918
-  '(nil nil)
-  nil
-  nil
-  '((tab-width . 8) (indent-tabs-mode) (buffer-file-coding-system . undecided-unix) (truncate-lines)))
-
-(desktop-create-buffer 206
-  "/mnt/develop/checkit-webengine/tests/e2e/library/messageAnalysis/messageAnalysis.md"
-  "messageAnalysis.md"
-  'markdown-mode
-  '(visual-line-mode flycheck-mode ergoemacs-mode auto-revert-mode)
-  1568
-  '(299 nil)
-  nil
-  nil
-  '((tab-width . 4) (buffer-file-coding-system . undecided-unix) (truncate-lines)))
-
-(desktop-create-buffer 206
-  "/mnt/develop/checkit-webengine/tests/e2e/library/messageAnalysis/messageAnalysis.js"
-  "messageAnalysis.js"
+  "/home/rmoola/Projects/NodeSSH/samples/simpleSample.js"
+  "simpleSample.js"
   'js2-mode
-  '(visual-line-mode flycheck-mode ergoemacs-mode auto-revert-mode tern-mode)
-  483
+  '(flycheck-mode company-mode ergoemacs-mode tern-mode auto-revert-mode)
+  580
+  '(580 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/rmoola/Projects/NodeSSH/test/promiseWrapper.spec.js"
+  "promiseWrapper.spec.js"
+  'js2-mode
+  '(flycheck-mode company-mode ergoemacs-mode tern-mode auto-revert-mode smerge-mode)
+  1178
   '(1 nil)
   nil
   nil
-  '((buffer-file-coding-system . undecided-unix) (truncate-lines)))
+  '((buffer-file-coding-system . undecided-unix)))
 
 (desktop-create-buffer 206
-  "/mnt/dropbox/acronym.md"
-  "acronym.md"
-  'markdown-mode
-  '(visual-line-mode flycheck-mode ergoemacs-mode)
-  1119
-  '(1522 nil)
-  nil
-  nil
-  '((tab-width . 4) (buffer-file-coding-system . utf-8-unix) (truncate-lines)))
-
-(desktop-create-buffer 206
-  "/mnt/develop/checkit-webengine/tests/e2e/library/messageAnalysis/setvars.sh"
-  "setvars.sh"
-  'sh-mode
-  '(visual-line-mode flycheck-mode ergoemacs-mode)
-  482
-  '(315 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . utf-8-unix) (truncate-lines)))
-
-(desktop-create-buffer 206
-  "/home/r/.bashrc-anaconda2.bak"
-  ".bashrc-anaconda2.bak"
-  'fundamental-mode
-  '(visual-line-mode ergoemacs-mode)
-  643
-  '(1 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . undecided-unix) (truncate-lines)))
-
-(desktop-create-buffer 206
-  "/mnt/develop/checkit-webengine/tests/e2e/library/library.js"
-  "library.js"
+  "/home/rmoola/Projects/checkit-hub-tests/e2e/pages/hub-ui-wifi.js"
+  "hub-ui-wifi.js"
   'js2-mode
-  '(visual-line-mode flycheck-mode ergoemacs-mode auto-revert-mode tern-mode)
-  676
-  '(332 nil)
+  '(flycheck-mode company-mode ergoemacs-mode tern-mode auto-revert-mode)
+  16
+  '(355 nil)
   nil
   nil
-  '((buffer-file-coding-system . undecided-unix) (truncate-lines)))
+  '((buffer-file-coding-system . undecided-unix)))
 
 (desktop-create-buffer 206
-  "/mnt/develop/checkit-webengine/tests/e2e/library/hub_command.exp"
-  "hub_command.exp"
-  'tcl-mode
-  '(visual-line-mode flycheck-mode ergoemacs-mode auto-revert-mode)
-  341
-  '(342 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . undecided-unix) (truncate-lines)))
-
-(desktop-create-buffer 206
-  "/mnt/develop/checkit-webengine/tests/e2e/physicalDeviceTests/performance_cpuFree.spec.js"
-  "performance_cpuFree.spec.js"
+  "/home/rmoola/Projects/checkit-hub-tests/e2e/pages/hub-ui-ethernet.js"
+  "hub-ui-ethernet.js"
   'js2-mode
-  '(visual-line-mode flycheck-mode ergoemacs-mode auto-revert-mode tern-mode)
-  2186
-  '(343 nil)
+  '(flycheck-mode company-mode ergoemacs-mode tern-mode auto-revert-mode)
+  335
+  '(274 nil)
   nil
   nil
-  '((buffer-file-coding-system . undecided-unix) (truncate-lines)))
-
-(desktop-create-buffer 206
-  "/home/r/.emacs"
-  ".emacs"
-  'emacs-lisp-mode
-  '(visual-line-mode flycheck-mode ergoemacs-mode)
-  6086
-  '(5840 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . undecided-dos) (truncate-lines)))
-
-(desktop-create-buffer 206
-  "/mnt/h/log/20161222.org"
-  "20161222.org"
-  'org-mode
-  '(visual-line-mode flycheck-mode ergoemacs-mode)
-  992
-  '(627 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . utf-8-unix) (truncate-lines)))
-
-(desktop-create-buffer 206
-  "/mnt/h/log/20161206.org"
-  "20161206.org"
-  'org-mode
-  '(visual-line-mode flycheck-mode ergoemacs-mode)
-  184
-  '(183 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . undecided-unix) (truncate-lines)))
-
-(desktop-create-buffer 206
-  "/mnt/h/mqtt/mqttAuthentication.json"
-  "mqttAuthentication.json"
-  'js-mode
-  '(visual-line-mode flycheck-mode ergoemacs-mode tern-mode)
-  169
-  '(1 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . utf-8-unix) (truncate-lines)))
-
-(desktop-create-buffer 206
-  "/home/r/Projects/checkit-mqtt/certs/getHubCerts.js"
-  "getHubCerts.js"
-  'js2-mode
-  '(visual-line-mode flycheck-mode ergoemacs-mode auto-revert-mode tern-mode)
-  644
-  '(1 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . undecided-dos) (truncate-lines)))
-
-(desktop-create-buffer 206
-  "/mnt/h/log/20161220.org"
-  "20161220.org"
-  'org-mode
-  '(visual-line-mode flycheck-mode ergoemacs-mode)
-  1
-  '(77 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . utf-8-unix) (truncate-lines)))
-
-(desktop-create-buffer 206
-  "/mnt/h/log/20161216.org"
-  "20161216.org"
-  'org-mode
-  '(visual-line-mode flycheck-mode ergoemacs-mode)
-  486
-  '(174 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . utf-8-unix) (truncate-lines)))
-
-(desktop-create-buffer 206
-  "/mnt/h/log/20161130.org"
-  "20161130.org"
-  'org-mode
-  '(visual-line-mode flycheck-mode ergoemacs-mode)
-  957
-  '(957 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . undecided-unix) (truncate-lines)))
-
-(desktop-create-buffer 206
-  nil
-  "log"
-  'dired-mode
-  '(visual-line-mode ergoemacs-mode)
-  852
-  '(852 nil)
-  t
-  '("/mnt/h/log/")
-  '((truncate-lines)))
-
-(desktop-create-buffer 206
-  "/mnt/h/log/20161208.org"
-  "20161208.org"
-  'org-mode
-  '(visual-line-mode flycheck-mode ergoemacs-mode)
-  457
-  '(249 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . utf-8-unix) (truncate-lines)))
-
-(desktop-create-buffer 206
-  "/mnt/h/log/20161121"
-  "20161121"
-  'fundamental-mode
-  '(visual-line-mode ergoemacs-mode)
-  277
-  '(1 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . undecided-unix) (truncate-lines)))
-
-(desktop-create-buffer 206
-  "/home/r/linux_protractor_environ.sh"
-  "linux_protractor_environ.sh"
-  'sh-mode
-  '(visual-line-mode flycheck-mode ergoemacs-mode)
-  1274
-  '(1 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . undecided-unix) (truncate-lines)))
-
-(desktop-create-buffer 206
-  "/home/r/Projects/elektron/checkit/hub/applications/webengine/tests/e2e/physicalDeviceTests/performance_webSocketSpeed.spec.js"
-  "performance_webSocketSpeed.spec.js"
-  'js2-mode
-  '(visual-line-mode flycheck-mode ergoemacs-mode auto-revert-mode tern-mode)
-  354
-  '(5643 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . undecided-unix) (truncate-lines)))
-
-(desktop-create-buffer 206
-  "/home/r/Downloads/test/test.js"
-  "test.js"
-  'js2-mode
-  '(visual-line-mode flycheck-mode ergoemacs-mode tern-mode)
-  256
-  '(251 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . utf-8-unix) (truncate-lines)))
-
-(desktop-create-buffer 206
-  "/home/r/Downloads/test/package.json"
-  "package.json"
-  'js-mode
-  '(visual-line-mode flycheck-mode ergoemacs-mode tern-mode)
-  36
-  '(36 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . utf-8-unix) (truncate-lines)))
-
-(desktop-create-buffer 206
-  "/home/r/Projects/elektron/checkit/hub/applications/webengine/tests/e2e/continuousTests/commonTests.spec.js"
-  "commonTests.spec.js"
-  'js2-mode
-  '(visual-line-mode flycheck-mode ergoemacs-mode auto-revert-mode tern-mode)
-  1
-  '(1104 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . undecided-unix) (truncate-lines)))
-
-(desktop-create-buffer 206
-  "/home/r/Projects/elektron/checkit/hub/applications/webengine/tests/e2e/continuousTests/README.md"
-  "README.md"
-  'markdown-mode
-  '(visual-line-mode flycheck-mode ergoemacs-mode auto-revert-mode)
-  920
-  '(920 nil)
-  nil
-  nil
-  '((tab-width . 4) (buffer-file-coding-system . undecided-unix) (truncate-lines)))
+  '((buffer-file-coding-system . undecided-unix)))
 
 (desktop-create-buffer 206
   nil
   "*info*"
   'Info-mode
-  '(visual-line-mode ergoemacs-mode)
-  2987
-  '(1 nil)
+  '(company-mode ergoemacs-mode)
+  381
+  '(381 nil)
   t
-  '("/usr/share/info/info" "Getting Started" ((history ("/usr/share/info/info" "Top" 1007) ("/usr/share/info/info" "Help" 5956) ("/usr/share/info/info" "Getting Started" 2987) ("/usr/share/info/info" "Top" 1007) ("/usr/share/info/info" "Help" 5956) ("/home/r/.emacs.d/elpa/flycheck-20141102.652/flycheck" "Top" 1099) ("/usr/share/info/emacs-24/info" "Top" 1134) ("/usr/share/info/emacs-24/info" "Help" 5895) ("/usr/share/info/emacs-24/info" "Top" 2984) ("/usr/share/info/emacs-24/info" "Getting Started" 3842) ("/usr/share/info/emacs-24/info" "Top" 1134) ("/usr/share/info/emacs-24/info" "Help" 5895))))
-  '((tab-width . 8) (buffer-file-coding-system . utf-8-unix) (case-fold-search . t) (truncate-lines)))
-
-(desktop-create-buffer 206
-  "/mnt/h/log/2017.html"
-  "2017.html"
-  'html-mode
-  '(visual-line-mode flycheck-mode ergoemacs-mode)
-  1
-  '(nil nil)
-  nil
-  nil
-  '((buffer-file-coding-system . utf-8-unix) (truncate-lines)))
+  '("dir" "Top" nil)
+  '((tab-width . 8) (case-fold-search . t)))
 
