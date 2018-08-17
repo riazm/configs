@@ -29,7 +29,7 @@ https://mail.elektronuser.com/owa/ for now
 ditto email at the moment
 
 # github
-sudo apt-get install git
+```sudo apt-get install git
 
 ssh-keygen -t rsa -b 4096 -C "corporate-email-address"
 eval "$(ssh-agent -s)"
@@ -40,9 +40,9 @@ git config --global user.email "corporate-email-address"
 git config --global core.editor "nano"
 PATH=$PATH:~/bin
 source env-setup.sh
-
+```
 # emacs
-
+```
 sudo add-apt-repository ppa:kelleyk/emacs
 sudo apt-get update
 sudo apt-get install emacs
@@ -50,7 +50,7 @@ cd
 git init .
 git remote add -t \* -f origin https://github.com/riazm/configs.git
 git checkout master
-
+```
 ## node.js js2 mode
 ```
 cd ~/bin/
@@ -94,7 +94,7 @@ nvm use 8.9.4nvm install 8.9.4
 # e2e tests
 ## JDK for selenium webdriver
 
-sudo apt-get install jdk
+```sudo apt-get install jdk```
 
 ## webdriver-manager
 install using latest version of node so that you get the latest webdriver
