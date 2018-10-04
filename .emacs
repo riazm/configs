@@ -23,10 +23,10 @@
  '(canlock-password "41fca07147d8079925eb3f447acd09118c25942c")
  '(custom-safe-themes
    (quote
-    ("e9460a84d876da407d9e6accf9ceba453e2f86f8b86076f37c08ad155de8223c" "12b6c73d2985afdc01619d8b527483cfcdaf01300b0d6a7ee821e8aa5d1944d8" "abba1c64e90bcfc6288c62bed95cc00dfa058cd9" default)))
+    ("117284df029007a8012cae1f01c3156d54a0de4b9f2f381feab47809b8a1caef" "e9460a84d876da407d9e6accf9ceba453e2f86f8b86076f37c08ad155de8223c" "12b6c73d2985afdc01619d8b527483cfcdaf01300b0d6a7ee821e8aa5d1944d8" "abba1c64e90bcfc6288c62bed95cc00dfa058cd9" default)))
  '(electric-pair-mode t)
- '(global-flycheck-mode t)
  '(global-company-mode t)
+ '(global-flycheck-mode t)
  '(package-selected-packages
    (quote
     (atom-dark-theme color-theme-modern confluence twittering-mode company-tern exec-path-from-shell tern js3-mode ssh-agency ssh w3m elpy org-journal web-mode js2-mode flycheck magit writeroom-mode pastebin mediawiki markdown-mode flycheck-tcl flycheck-package dark-souls ctags csv-mode company)))
@@ -259,3 +259,9 @@ This one changes the cursor color on each blink. Define colors in `blink-cursor-
 ;;  ;; If there is more than one, they won't work right.
 ;;  '(default ((t (:inherit nil :stipple nil :background "#042028" :foreground "#708183" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 120 :width normal :foundry "unknown" :family "Ubuntu Mono"))))
 ;;  '(p4-diff-ins-face ((t (:foreground "yellow"))) t))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
