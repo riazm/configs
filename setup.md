@@ -77,6 +77,13 @@ just get it
 
 whatever
 
+# signal?
+
+jq --compact-output if .envelope.isReceipt then {receiptFrom: .envelope.source} elif .envelope.dataMessage then {source: .envelope.source, message: .envelope.dataMessage.message} else empty end
+
+https://github.com/AsamK/signal-cli/wiki/DBus-service
+dbus running on system as signal-cli, pw scrambled, use signal-cli.bash fork on your own repo
+
 # nvm 
 
 https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubuntu-16-04
@@ -93,7 +100,7 @@ nvm use 8.9.4nvm install 8.9.4
 
 # e2e tests
 ## JDK for selenium webdriver
-
+q
 ```sudo apt-get install jdk```
 
 ## webdriver-manager
