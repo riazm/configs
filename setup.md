@@ -155,6 +155,11 @@ jq --compact-output if .envelope.isReceipt then {receiptFrom: .envelope.source} 
 https://github.com/AsamK/signal-cli/wiki/DBus-service
 dbus running on system as signal-cli, pw scrambled, use signal-cli.bash fork on your own repo
 
+to link try
+ 
+`qrencode -t ANSIUTF8 -o - "tsdevice:/?uuid=QGeXLf0s1HyJJtxwqhV2yg&pub_key=BbG5m907zWH3L9IHlHH5N6qomt%2BLQEGvri%2F5wcu5uGZm"'
+
+
 # nvm 
 
 https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubuntu-16-04
@@ -177,6 +182,4 @@ q
 ## webdriver-manager
 install using latest version of node so that you get the latest webdriver
 
-## environment
-HUB_FIXTURE_CLOUD_API_HOST
     
