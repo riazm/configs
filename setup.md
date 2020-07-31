@@ -153,11 +153,13 @@ whatever
 jq --compact-output if .envelope.isReceipt then {receiptFrom: .envelope.source} elif .envelope.dataMessage then {source: .envelope.source, message: .envelope.dataMessage.message} else empty end
 
 https://github.com/AsamK/signal-cli/wiki/DBus-service
-dbus running on system as signal-cli, pw scrambled, use signal-cli.bash fork on your own repo
+dbus running on system as signal-cli, pw in keep, register in signal-cli (the configs are linked to your local stuff for some reason)
 
 to link try
  
-`qrencode -t ANSIUTF8 -o - "tsdevice:/?uuid=QGeXLf0s1HyJJtxwqhV2yg&pub_key=BbG5m907zWH3L9IHlHH5N6qomt%2BLQEGvri%2F5wcu5uGZm"'
+qrencode -t ANSIUTF8 -o - "tsdevice:/?uuid=7xNI0jsecnqT8jMlXts0_w&pub_key=BYBA6phUvW1Bhwn1fnhY7aJ83cqf5PK%2FUGjh1202XQc0"
+
+use signal-cli.bash fork on your own repo
 
 
 # nvm 
