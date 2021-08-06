@@ -117,10 +117,13 @@ source env-setup.sh
 sudo add-apt-repository ppa:kelleyk/emacs
 sudo apt-get update
 sudo apt-get install emacs
-cd 
-git init .
-git remote add -t \* -f origin https://github.com/riazm/configs.git
-git checkout master
+
+mkdir Projects && cd Projects
+git clone https://github.com/riazm/configs.git
+cd
+ln -s ~/Projects/configs/.emacs
+ln -s ~/Projects/configs/.emacs.d
+
 ```
 ## node.js js2 mode
 ```
