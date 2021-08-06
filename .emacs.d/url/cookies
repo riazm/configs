@@ -1,0 +1,20 @@
+;; Emacs-W3 HTTP cookies file
+;; Automatically generated file!!! DO NOT EDIT!!!
+
+(setq url-cookie-storage
+ '((".stackoverflow.com"
+  [url-cookie "prov" "e75cf5ea-86f5-479d-bcef-d803e1c0bac1" "01-Jan-2055 00:00:00.00 GMT" "/" ".stackoverflow.com" nil]
+  [url-cookie "HttpOnly" nil "01-Jan-2055 00:00:00.00 GMT" "/" ".stackoverflow.com" nil])
+ ("www.thetimes.co.uk"
+  [url-cookie "main_uuid" "354e9c3f2d060a61a07987d4140c42f4" "Mon, 31-Dec-2038 23:59:59 GMT" "/" "www.thetimes.co.uk" nil]
+  [url-cookie "anon_main_split" "true" "Mon, 31-Dec-2038 23:59:59 GMT" "/" "www.thetimes.co.uk" nil])
+ (".thetimes.co.uk"
+  [url-cookie "ak_bmsc" "DC4FA50452D92BC1E3EA0AF2C05D960CB81CC64C824B0000AA98FC5E77D4B769~plJ/ftihkpR7kDtYTwNRLmIJdMD8T4CKJgOpN7DyhNk5gScj9e4JZCZVAgyZd7LyVNZAffiRV3cRzIVNrQpJYcYrWGY6oxy48Nhkia5ce5uXA4zKY5RVz6pzQNn+JasR70TSlD/iEqJf8dy5r7uwUhHwVTyVRE6cIO28KL+Wjhjs1g4zOtwEtCsadKtaQSGrVj1MzAubPm+bQoTTZ3dCEBIV7GCLyMjkyO6zg6BEKgRWA=" "Wed Jul 01 16:07:38 2020 GMT" "/" ".thetimes.co.uk" nil]))
+)
+(setq url-cookie-secure-storage
+ 'nil)
+
+;; Local Variables:
+;; version-control: never
+;; no-byte-compile: t
+;; End:

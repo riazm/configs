@@ -1,0 +1,128 @@
+p4 login
+p4 client
+p4-set-client rm10_unix1 
+p4 set-client rm10_unix1 
+p4 set
+p4 help
+p4 help simple
+p4 client rm10_unix1
+ls
+cd perforce/test/private/rm10/
+~/local/bin/ctags -f TAGS -e -R --exclude=logs
+~/local/bin/etags -f TAGS -e -R --exclude=logs
+~/local/bin/etags -f TAGS -R --exclude=logs
+echo "HOLLE"
+echo FATS_crescendo_emulator_trig/CONFIG=crescendo_rom_partial_emu,label=audiocpulab05_windows_cresc_emu
+echo FATS_crescendo_emulator_trig/CONFIG=crescendo_rom_partial_emu,label=audiocpulab05_windows_cresc_emu | sed 's/FATS_\(.\+\)_\(trig\|daily\|weekly\)\/.*/\1/'`
+echo FATS_crescendo_emulator_trig/CONFIG=crescendo_rom_partial_emu,label=audiocpulab05_windows_cresc_emu | sed s/FATS_\(.\+\)_\(trig\|daily\|weekly\)
+echo FATS_crescendo_emulator_trig/CONFIG=crescendo_rom_partial_emu,label=audiocpulab05_windows_cresc_emu | sed s/FATS_\(.\+\)_\(trig\|daily\|weekly\)/
+echo FATS_crescendo_emulator_trig/CONFIG=crescendo_rom_partial_emu,label=audiocpulab05_windows_cresc_emu | sed s/FATS_\(.\+\)_\(trig\|daily\|weekly\)/\2/
+echo FATS_crescendo_emulator_trig/CONFIG=crescendo_rom_partial_emu,label=audiocpulab05_windows_cresc_emu | sed s/FATS/what/
+echo FATS_crescendo_emulator_trig/CONFIG=crescendo_rom_partial_emu,label=audiocpulab05_windows_cresc_emu | sed s/FATS_\(.\+\)_\(trig\|daily\|weekly\)/
+echo FATS_crescendo_emulator_trig/CONFIG=crescendo_rom_partial_emu,label=audiocpulab05_windows_cresc_emu | sed 's/FATS_\(.\+\)_\(trig\|daily\|weekly\)\/.*/\1/'
+echo FATS_crescendo_emulator_trig/CONFIG=crescendo_rom_partial_emu,label=audiocpulab05_windows_cresc_emu | sed 's/FATS_\(.\+\)_\(trig\|daily\|weekly\)\/.*/\2/'
+echo echo FATS_crescendo_emulator_trig/CONFIG=crescendo_rom_partial_emu,label=audiocpulab05_windows_cresc_emu | sed 's/FATS_\(.\+\)_\(trig\|daily\|weekly\)\/.*/\2/'
+echo FATS_crescendo_emulator_trig/CONFIG=crescendo_rom_partial_emu,label=audiocpulab05_windows_cresc_emu | sed 's/FATS_\(.\+\)_\(trig\|daily\|weekly\)\/.*/\2/'
+echo FATS_crescendo_emulator_trig/CONFIG=crescendo_rom_partial_emu,label=audiocpulab05_windows_cresc_emu | sed s/FATS_\(.\+\)_\(trig\|daily\|weekly\)\/.*/\2/
+echo FATS_crescendo_emulator_trig/CONFIG=crescendo_rom_partial_emu,label=audiocpulab05_windows_cresc_emu | sed 's/FATS_\(.\+\)_\(trig\|daily\|weekly\)\/.*/\2/'
+JOB_NAME=FATS_crescendo_emulator_trig/CONFIG=crescendo_rom_partial_emu,label=audiocpulab05_windows_cresc_emu
+JOB_NAME=FATS_crescendo_emulator_trig/CONFIG=crescendo_rom_partial_emu,label=audiocpulab05_windows_cresc_emu
+JOB_NAME="FATS_crescendo_emulator_trig/CONFIG=crescendo_rom_partial_emu,label=audiocpulab05_windows_cresc_emu"
+echo
+echo echo
+JOB_NAME="FATS_crescendo_emulator_trig/CONFIG=crescendo_rom_partial_emu,label=audiocpulab05_windows_cresc_emu"
+echo $JOB_NAME
+testTarget=`echo $JOB_NAME | sed 's/FATS_\(.\+\)_\(trig\|daily\|weekly\)\.*/\1/'`
+FATS_build.sh -branch crescendo_dev -fatsRoot '/home/rm10/tmp' -config crescendo_sqif_emu
+./FATS_build.sh -branch crescendo_dev -fatsRoot '/home/rm10/tmp' -config crescendo_sqif_emu
+chmod FATS_build.sh -777
+chmod +x FATS_build.sh
+./FATS_build.sh -branch crescendo_dev -fatsRoot '/home/rm10/tmp' -config crescendo_sqif_emu
+quit
+exit()
+ssh jenkins@192.168.100.250
+exit
+w3m https://www.rockpapershotgun.com/2017/05/31/tokyo-42-review-pc/#more-447535
+ls
+source ~/linux_protractor_environ.sh 
+protractor tests/protractor.conf.js --specs tests/protractor/tests/graphs/graph-page.spec.js 
+protractor tests/protractor.conf.js --specs tests/protractor/tests/graphs/graph-page.spec.js 
+protractor tests/protractor.conf.js --specs tests/protractor/tests/graphs/graph-page.spec.js 
+protractor tests/protractor.conf.js --specs tests/protractor/tests/graphs/graph-page.spec.js 
+ls
+mv readJson.py ~/Projects/
+cd ~/Projects/
+python readJson.py fluidity/app/src/androidTest/assets/results_for_export/files/12345-ExperimentResult-cafefood-722c-466a-bd5f-babadbadbad.json 
+python readJson.py fluidity/app/src/androidTest/assets/results_for_export/files/12345-ExperimentResult-cafefood-722c-466a-bd5f-babadbadbad.json 
+python readJson.py fluidity/app/src/androidTest/assets/results_for_export/files/12345-ExperimentResult-cafefood-722c-466a-bd5f-babadbadbad.json 
+python readJson.py fluidity/app/src/androidTest/assets/results_for_export/files/12345-ExperimentResult-cafefood-722c-466a-bd5f-babadbadbad.json 
+python readJson.py fluidity/app/src/androidTest/assets/results_for_export/files/12345-ExperimentResult-cafefood-722c-466a-bd5f-babadbadbad.json 
+python readJson.py fluidity/app/src/androidTest/assets/results_for_export/files/12345-ExperimentResult-cafefood-722c-466a-bd5f-babadbadbad.json 
+python readJson.py fluidity/app/src/androidTest/assets/results_for_export/files/12345-ExperimentResult-cafefood-722c-466a-bd5f-babadbadbad.json 
+python readJson.py fluidity/app/src/androidTest/assets/results_for_export/files/12345-ExperimentResult-cafefood-722c-466a-bd5f-babadbadbad.json 
+python readJson.py fluidity/app/src/androidTest/assets/results_for_export/files/12345-ExperimentResult-cafefood-722c-466a-bd5f-babadbadbad.json 
+python readJson.py fluidity/app/src/androidTest/assets/results_for_export/files/12345-ExperimentResult-cafefood-722c-466a-bd5f-babadbadbad.json 
+python readJson.py fluidity/app/src/androidTest/assets/results_for_export/files/12345-ExperimentResult-cafefood-722c-466a-bd5f-babadbadbad.json 
+python readJson.py fluidity/app/src/androidTest/assets/results_for_export/files/12345-ExperimentResult-cafefood-722c-466a-bd5f-babadbadbad.json 
+python readJson.py fluidity/app/src/androidTest/assets/results_for_export/files/12345-ExperimentResult-cafefood-722c-466a-bd5f-babadbadbad.json 
+python readJson.py fluidity/app/src/androidTest/assets/results_for_export/files/12345-ExperimentResult-cafefood-722c-466a-bd5f-babadbadbad.json 
+python readJson.py fluidity/app/src/androidTest/assets/results_for_export/files/12345-ExperimentResult-cafefood-722c-466a-bd5f-babadbadbad.json 
+python readJson.py fluidity/app/src/androidTest/assets/results_for_export/files/12345-ExperimentResult-cafef00d-722c-466a-bd5f-babadbadbad.json 
+python readJson.py fluidity/app/src/androidTest/assets/results_for_export/files/12345-ExperimentResult-cafef00d-722c-466a-bd5f-badbadbadbad.json
+python readJson.py fluidity/app/src/androidTest/assets/results_for_export/files/12345-ExperimentResult-cafef00d-722c-466a-bd5f-badbadbadbad.json
+python readJson.py fluidity/app/src/androidTest/assets/results_for_export/files/12345-ExperimentResult-cafef00d-722c-466a-bd5f-badbadbadbad.json
+python readJson.py fluidity/app/src/androidTest/assets/results_for_export/files/12345-ExperimentResult-cafef00d-722c-466a-bd5f-badbadbadbad.json
+python readJson.py fluidity/app/src/androidTest/assets/results_for_export/files/12345-ExperimentResult-cafef00d-722c-466a-bd5f-badbadbadbad.json
+python readJson.py fluidity/app/src/androidTest/assets/results_for_export/files/12345-ExperimentResult-cafef00d-722c-466a-bd5f-badbadbadbad.json
+python readJson.py fluidity/app/src/androidTest/assets/results_for_export/files/12345-ExperimentResult-cafef00d-722c-466a-bd5f-badbadbadbad.json
+python readJson.py fluidity/app/src/androidTest/assets/results_for_export/files/12345-ExperimentResult-cafef00d-722c-466a-bd5f-badbadbadbad.json
+python readJson.py fluidity/app/src/androidTest/assets/results_for_export/files/12345-ExperimentResult-cafef00d-722c-466a-bd5f-badbadbadbad.json
+python readJson.py fluidity/app/src/androidTest/assets/results_for_export/files/12345-ExperimentResult-cafef00d-722c-466a-bd5f-badbadbadbad.json
+python readJson.py fluidity/app/src/androidTest/assets/results_for_export/files/12345-ExperimentResult-cafef00d-722c-466a-bd5f-badbadbadbad.json
+python readJson.py fluidity/app/src/androidTest/assets/results_for_export/files/12345-ExperimentResult-cafef00d-722c-466a-bd5f-badbadbadbad.json
+python readJson.py fluidity/app/src/androidTest/assets/results_for_export/files/12345-ExperimentResult-cafef00d-722c-466a-bd5f-badbadbadbad.json
+python readJson.py fluidity/app/src/androidTest/assets/results_for_export/files/12345-ExperimentResult-cafef00d-722c-466a-bd5f-badbadbadbad.json
+python readJson.py fluidity/app/src/androidTest/assets/results_for_export/files/12345-ExperimentResult-cafef00d-722c-466a-bd5f-badbadbadbad.json
+python readJson.py fluidity/app/src/androidTest/assets/results_for_export/files/12345-ExperimentResult-cafef00d-722c-466a-bd5f-badbadbadbad.json
+python readJson.py fluidity/app/src/androidTest/assets/results_for_export/files/12345-ExperimentResult-cafef00d-722c-466a-bd5f-badbadbadbad.json
+python readJson.py fluidity/app/src/androidTest/assets/results_for_export/files/12345-ExperimentResult-cafef00d-722c-466a-bd5f-badbadbadbad.json
+python readJson.py fluidity/app/src/androidTest/assets/results_for_export/files/12345-ExperimentResult-cafef00d-722c-466a-bd5f-badbadbadbad.json
+python readJson.py fluidity/app/src/androidTest/assets/results_for_export/files/12345-ExperimentResult-cafef00d-722c-466a-bd5f-badbadbadbad.json
+python readJson.py fluidity/app/src/androidTest/assets/results_for_export/files/12345-ExperimentResult-cafef00d-722c-466a-bd5f-badbadbadbad.json
+python readJson.py fluidity/app/src/androidTest/assets/results_for_export/files/12345-ExperimentResult-cafef00d-722c-466a-bd5f-badbadbadbad.json
+python readJson.py fluidity/app/src/androidTest/assets/results_for_export/files/12345-ExperimentResult-cafef00d-722c-466a-bd5f-badbadbadbad.json
+python readJson.py fluidity/app/src/androidTest/assets/results_for_export/files/12345-ExperimentResult-cafef00d-722c-466a-bd5f-badbadbadbad.json
+python readJson.py fluidity/app/src/androidTest/assets/results_for_export/files/12345-ExperimentResult-cafef00d-722c-466a-bd5f-badbadbadbad.json
+python readJson.py fluidity/app/src/androidTest/assets/results_for_export/files/12345-ExperimentResult-cafef00d-722c-466a-bd5f-badbadbadbad.json
+python readJson.py fluidity/app/src/androidTest/assets/results_for_export/files/12345-ExperimentResult-cafef00d-722c-466a-bd5f-badbadbadbad.json
+ls
+2017-05-11T21:02:01.932Z
+ls
+cd dump
+ls
+cat parameter_comparison.csv 
+ls
+cd ..
+ls
+mkdir generateResultFiles
+mv readJson.py generateResultFiles/
+cd generateResultFiles/
+python readJson.py fluidity/app/src/androidTest/assets/results_for_export/files/12345-ExperimentResult-cafef00d-722c-466a-bd5f-badbadbadbad.json
+ls
+python readJson.py ../fluidity/app/src/androidTest/assets/results_for_export/files/12345-ExperimentResult-cafef00d-722c-466a-bd5f-badbadbadbad.json
+python readJson.py ../fluidity/app/src/androidTest/assets/results_for_export/files/12345-ExperimentResult-cafef00d-722c-466a-bd5f-badbadbadbad.json
+ls
+rm 12345-ExperimentResult-01609b9a-4794-d9f3-564c-e99caa19f650dupe.json 
+rm 12345-ExperimentResult-91e80bde-38c9-0c76-23c3-a0d5398cffa8dupe.json
+python readJson.py ../fluidity/app/src/androidTest/assets/results_for_export/files/12345-ExperimentResult-cafef00d-722c-466a-bd5f-badbadbadbad.json
+python readJson.py ../fluidity/app/src/androidTest/assets/results_for_export/files/12345-ExperimentResult-cafef00d-722c-466a-bd5f-badbadbadbad.json
+python readJson.py ../fluidity/app/src/androidTest/assets/results_for_export/files/12345-ExperimentResult-cafef00d-722c-466a-bd5f-badbadbadbad.json
+python readJson.py ../fluidity/app/src/androidTest/assets/results_for_export/files/12345-ExperimentResult-cafef00d-722c-466a-bd5f-badbadbadbad.json
+python readJson.py ../fluidity/app/src/androidTest/assets/results_for_export/files/12345-ExperimentResult-cafef00d-722c-466a-bd5f-badbadbadbad.json
+python readJson.py ../fluidity/app/src/androidTest/assets/results_for_export/files/12345-ExperimentResult-cafef00d-722c-466a-bd5f-badbadbadbad.json
+python readJson.py ../fluidity/app/src/androidTest/assets/results_for_export/files/12345-ExperimentResult-cafef00d-722c-466a-bd5f-badbadbadbad.json
+python readJson.py ../fluidity/app/src/androidTest/assets/results_for_export/files/12345-ExperimentResult-cafef00d-722c-466a-bd5f-badbadbadbad.json
+cp 6m0j.pdb test_6m0j.pdb
+exit
+ls
+exit

@@ -1,5 +1,5 @@
 ;; EXUBERANT ctags not normal ctags
-(setq path-to-ctags "/usr/bin/ctags") ;; <- your exuberant ctags path here
+(setq path-to-ctags "/usr/local/Cellar/universal-ctags/HEAD-f6234d0/bin/ctags") ;; <- your exuberant ctags path here
 (defun create-tags (dir-name)
   "Create tags file."
   (interactive "DDirectory: ")
@@ -11,33 +11,38 @@
   (require 'package)
   (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t)
   (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/"))
-  (add-to-list 'package-archives '("flycheck" . "http://elpa.gnu.org/packages/"))
   (package-initialize)
   )
+
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(ansi-color-names-vector
-   ["#212526" "#ff4b4b" "#b4fa70" "#fce94f" "#729fcf" "#e090d7" "#8cc4ff" "#eeeeec"])
  '(browse-url-text-browser "emacs")
  '(canlock-password "41fca07147d8079925eb3f447acd09118c25942c")
  '(custom-safe-themes
-   (quote
-    ("e9460a84d876da407d9e6accf9ceba453e2f86f8b86076f37c08ad155de8223c" "12b6c73d2985afdc01619d8b527483cfcdaf01300b0d6a7ee821e8aa5d1944d8" "abba1c64e90bcfc6288c62bed95cc00dfa058cd9" default)))
+   '("8db4b03b9ae654d4a57804286eb3e332725c84d7cdab38463cb6b97d5762ad26" "a27c00821ccfd5a78b01e4f35dc056706dd9ede09a8b90c6955ae6a390eb1c1e" "3c83b3676d796422704082049fc38b6966bcad960f896669dfc21a7a37a748fa" "117284df029007a8012cae1f01c3156d54a0de4b9f2f381feab47809b8a1caef" "e9460a84d876da407d9e6accf9ceba453e2f86f8b86076f37c08ad155de8223c" "12b6c73d2985afdc01619d8b527483cfcdaf01300b0d6a7ee821e8aa5d1944d8" "abba1c64e90bcfc6288c62bed95cc00dfa058cd9" default))
  '(electric-pair-mode t)
+ '(flycheck-python-flake8-executable "python3")
+ '(flycheck-python-pycompile-executable "python3")
+ '(flycheck-python-pylint-executable "python3")
  '(global-company-mode t)
  '(global-flycheck-mode t)
+ '(logview-additional-timestamp-formats
+   '(("logcat datetime"
+      (java-pattern . "dd-MM HH:mm:ss.SSS"))))
  '(package-selected-packages
-   (quote
-    (ham-mode ix unfill atom-dark-theme color-theme-modern confluence twittering-mode company-tern exec-path-from-shell tern js3-mode ssh-agency ssh w3m elpy org-journal web-mode js2-mode flycheck magit writeroom-mode mediawiki markdown-mode flycheck-tcl flycheck-package dark-souls ctags csv-mode company)))
+   '(lsp-mode tide unfill typescript-mode dockerfile-mode racer flycheck-rust cargo rust-mode ix logview yaml-mode flycheck-yamllint color-theme-solarized smart-mode-line org-jira ivy discover yafolding json-mode json-reformat atom-dark-theme color-theme-modern confluence twittering-mode company-tern exec-path-from-shell tern js3-mode ssh-agency ssh w3m elpy org-journal web-mode js2-mode flycheck magit writeroom-mode pastebin mediawiki markdown-mode flycheck-tcl flycheck-package dark-souls ctags csv-mode company))
  '(tcl-auto-newline nil))
 
 (put 'narrow-to-region 'disabled nil)
 
 (setq c-default-style "bsd")
+
+;;(setq sml/theme 'solarized-dark)
+;;(sml/setup)
 
 ;; Org-mode settings
 (add-to-list 'auto-mode-alist '("\\.org$" . org-mode))
@@ -125,7 +130,7 @@
 (setq auto-save-file-name-transforms
       `((".*" ,temporary-file-directory t)))
 (setq auto-save-interval 50)
-(message "Loading smex")
+
 ;;(global-set-key
 ;; "\M-a"
 (add-to-list 'load-path "~/.emacs.d/smex")
@@ -181,8 +186,29 @@
 (setq-default js2-basic-offset 2)
 (setq-default js-indent-level 2)
 
-;; Update this or js2 mode won't work
-(add-to-list 'load-path "/home/rmoola/bin/tern/emacs/")
+;; pulled it from a stack overflow
+(defun my/use-eslint-from-node-modules () 
+  (let* ((root (locate-dominating-file 
+                (or (buffer-file-name) default-directory)
+                "node_modules"))
+         (eslint
+          (and root
+               (expand-file-name "node_modules/.bin/eslint"
+                                 root))))
+    (when (and eslint (file-executable-p eslint))
+      (setq-local flycheck-javascript-eslint-executable eslint))))
+
+(add-hook 'flycheck-mode-hook #'my/use-eslint-from-node-modules)
+
+;; set typescript indent
+(setq-default typescript-indent-level 2)
+
+;; path to 'which tern'
+ 
+(setenv "PATH" (concat (getenv "PATH") ":/Users/riaz.moola/.nvm/versions/node/v10.12.0/bin"))
+    (setq exec-path (append exec-path '(":/Users/riaz.moola/.nvm/versions/node/v10.12.0/bin")))
+;; path to 'tern.el'
+(add-to-list 'load-path "/Users/riaz.moola/bin/tern/emacs/")
 (autoload 'tern-mode "tern.el" nil t)
 (add-hook 'js-mode-hook (lambda () (tern-mode t)))
 
@@ -211,7 +237,7 @@
   (define-key eshell-mode-map [up] 'previous-line)
   (define-key eshell-mode-map [down] 'next-line)
 )
- 
+
 (add-hook 'eshell-mode-hook 'm-eshell-hook)
 
 ;; Window Switchings
@@ -227,21 +253,6 @@
 
 (global-set-key (kbd "M-<right>") 'select-next-window)
 (global-set-key (kbd "M-<left>")  'select-previous-window)
-
-
-;;basic twine mode for twine games
-(setq twee-highlights
-      '(("^::.*$" . font-lock-function-name-face) ; ::passage_title
-        ("\\$\\sw*" . font-lock-variable-name-face) ; $variables
-        ("(\\(\\sw*:.*?\\)" 1 font-lock-constant-face) ; (macro:)
-        ("\\(<<.+>>\\)" . font-lock-comment-face) ; <bar>
-        ("\\(\\[\\[\\(.+\\)\\]\\]\\)" . font-lock-keyword-face) ; [[stuff]]
-        ))
-
-(define-derived-mode tweene-mode fundamental-mode "tweene"
-  "major mode for editing twee twine code."
-  (setq font-lock-defaults '(twee-highlights)))
-
 
 ;; Kill the menu bar, toolbar
 (menu-bar-mode 0)
@@ -265,3 +276,17 @@ This one changes the cursor color on each blink. Define colors in `blink-cursor-
     )
   (internal-show-cursor nil (not (internal-show-cursor-p)))
   )
+
+;; (custom-set-faces
+;;  ;; custom-set-faces was added by Custom.
+;;  ;; If you edit it by hand, you could mess it up, so be careful.
+;;  ;; Your init file should contain only one such instance.
+;;  ;; If there is more than one, they won't work right.
+;;  '(default ((t (:inherit nil :stipple nil :background "#042028" :foreground "#708183" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 120 :width normal :foundry "unknown" :family "Ubuntu Mono"))))
+;;  '(p4-diff-ins-face ((t (:foreground "yellow"))) t))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
