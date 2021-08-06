@@ -101,6 +101,7 @@
 
 ;; ----- ido-work-directory-list -----
 (
+ "/home/riaz/"
  "/Users/riaz.moola/tmp/prepep1_logs/2021/08/03/"
  "/Users/riaz.moola/tmp/prepep1_logs/2021/08/02/"
  "/Users/riaz.moola/Projects/fluidity/.idea/"
@@ -150,11 +151,12 @@
  "/Users/riaz.moola/Projects/password_store/passwords/"
  "/Users/riaz.moola/Projects/cloudapi/browser-tests/resources/S2_S4_HMN385103_080920_good/"
  "/Users/riaz.moola/Projects/cloudapi/browser-tests/resources/"
- "/Users/riaz.moola/Projects/data-analytics/.circleci/"
 )
 
 ;; ----- ido-work-file-list -----
 (
+ ".emacs"
+ ".zshrc"
  "PC.LOG"
  "XYZ.LOG"
  "VC.LOG"
@@ -163,12 +165,16 @@
  "workspace.xml"
  "fluidity-orb.yml"
  "config.yml"
- "instrument.yaml"
- "reflashing.txt"
 )
 
 ;; ----- ido-dir-file-cache -----
 (
+ ("/home/riaz/Projects/configs/.emacs.d/" (24845 10007 174789 878000) "codepad.el" ".org-id-locations" "csv-mode.el" "p4/" "server/" "package.el" "ergoemacs-keybindings-5.3.3/" "../" "csv-mode.elc" "logview-cache.extmap" "color-theme-solarized.el" "transient/" "color-theme-6.6.0/" "network-security.data" "README.md" "tumble/" "elpa/" "emacs-color-theme-solarized/" "solarized-dark-theme.el" "tramp" "icicles/" "eshell/" "./" "recentf" "url/" "lisp/" "auto-save-list/" "smex/" "solarized-light-theme.el" "solarized-definitions.el" "newsticker/" ".emacs.desktop.lock" "ido.last" "session.10414fbde1f21c6b13134363362929785100000038230024" "LICENSE" "mediawiki.el")
+
+ ("/home/riaz/Projects/configs/" (24845 16686 964610 767000) ".git/" ".emacs" "../" ".bashrc" ".gitignore" ".emacs.d/" "./" "setup.md" ".emacs-w3m" "signal-dbus.py")
+
+ ("/home/riaz/" (24845 15894 613255 728000) ".shell.pre-oh-my-zsh" ".ssh/" "Public/" "zsh-syntax-highlighting/" ".config/" "Downloads/" ".gnupg/" ".emacs" "Pictures/" ".zcompdump-riaz-Latitude-7490-5.8" ".zsh_history" "../" ".condarc" ".local/" ".bashrc" ".gnome/" ".python_history" ".conda/" ".android/" ".oh-my-zsh/" ".emacs.d/" "Projects/" ".gitconfig" ".bash_logout" ".zcompdump" ".zshrc.pre-oh-my-zsh-2021-08-06_11-26-07" ".zshrc" "Desktop/" ".zsh/" ".cache/" ".smex-items" "Templates/" "snap/" "Documents/" "./" ".profile" ".doom.d/" "Videos/" "Music/" ".pki/" ".bash_history" "anaconda3/" ".sudo_as_admin_successful" ".zshrc.pre-oh-my-zsh" ".mozilla/" ".autosaves/")
+
  ("/Users/riaz.moola/tmp/prepep1_logs/2021/08/03/" (24841 25357 578380 389000) "HUB.LOG" "XYZ.LOG" "NFC.LOG" "NFX.LOG" "PC.LOG" "DV.LOG" "VC.LOG" "../" "./")
 
  ("/Users/riaz.moola/tmp/prepep1_logs/2021/08/02/" (24841 25658 67435 655000) "HUB.LOG" "XYZ.LOG" "NFC.LOG" "NFX.LOG" "PC.LOG" "DV.LOG" "VC.LOG" "../" "./")
@@ -362,12 +368,6 @@
  ("/Users/riaz.moola/tmp/emma/files/" (24785 56632 130409 647000) "91524b76-99e8-4aae-b052-da8f57691e2f.json" "91769477-640f-4a48-ad1d-dc34f4c52076" "077c8ecc-0370-4826-9f5c-72a15a4a6ba8_minimal.json" "f0a7aef7-316a-4986-a792-4871c9c81e00.json" "87d7e60d-2c45-4114-921e-07afb66c4f19" "gaClientId" "bcb81cdd-c6cb-4453-9ce0-f91401e6e59e_minimal.json" "0a0bc072-67a6-457f-b130-96fc494fd38d.json" "backup_2021-06-09_11-41-00_config.json" "4eee4666-919a-4bef-98ba-3723c08a2088_minimal.json" "data/" "666f1d6d-4884-4566-933b-c52547ede80d" "5920edfa-90b1-43e8-9a71-6da71af36132" "Fluidic-Admin_2021-06-15_11-15-28_Notes_run1.json" "dbseed.json" "4eee4666-919a-4bef-98ba-3723c08a2088.json" "0a0bc072-67a6-457f-b130-96fc494fd38d_minimal.json" "backup_2021-06-16_11-09-47_config.json" "91524b76-99e8-4aae-b052-da8f57691e2f_minimal.json" "d385e491-fefe-40cc-b0be-4a813b2ab214.json" "4d95a01c-b44b-4df6-a57a-28086bafec7e" "1dc9b264-e721-4f28-8f8e-9b21a9c5e5e0" "b23a7780-f702-4ff3-ad1e-598c94cff1f0_minimal.json" "56f09c5d-a926-4d49-ba39-bdfaf274454c_minimal.json" "backup_2021-06-15_10-06-46_config.json" "56f09c5d-a926-4d49-ba39-bdfaf274454c.json" "0cc2d952-c95d-4f5b-8339-360a1d2df13e" "f0a7aef7-316a-4986-a792-4871c9c81e00_minimal.json" "backup_2021-06-16_10-41-50_config.json" "backup_2021-06-09_11-51-10_config.json" "01def0e7-6799-4359-be80-adf49de1a710_minimal.json" "backup_2021-06-09_14-13-25_config.json" "2021-06-15_11-12-00_test-run.json" "backup_2021-06-09_11-46-48_config.json" "977c5a35-d553-4076-a9ad-928ad9ad092b" "c116725e-633e-4410-bb1b-317a189aa870" "2021-06-10_09-10-29_test.json" "917001db-7b68-43d8-b869-11b097a23ab5" "backup_2021-06-16_11-26-21_config.json" "backup_2021-06-09_11-43-20_config.json" "backup_2021-06-09_11-33-49_config.json" "8592185f-b4a9-48ea-b4d2-15f37ae05f8d" "07411195-7fcd-4b8f-a015-50199e56a6f7_minimal.json" "backup_2021-06-09_11-43-07_config.json" "1e17f6f9-1645-4ead-9a34-bcabdfdd70aa_minimal.json" "df7a5a92-5e64-4ca7-a5ee-67cddbd75e7e" "backup_2021-06-15_09-58-23_config.json" "1189c964-558a-46a3-b58d-b74dc867bd8b" "cloud.json" "2bdc5619-dc6b-4ec3-8012-c48dbd73a479" "bcb81cdd-c6cb-4453-9ce0-f91401e6e59e.json" "2021-06-15_11-47-09_gygy.json" "31240871-c16e-462d-be1b-ca2c662b3370" "c6dff9f1-1c0a-4e87-8f96-fc06ea084a11" "1e17f6f9-1645-4ead-9a34-bcabdfdd70aa.json" "config.json" "backup_2021-06-09_14-13-37_config.json" "8d1960d9-ceb4-4714-a719-c72d86c4c25b.json" "backup_2021-06-09_10-27-59_config.json" "backup_2021-06-16_10-57-44_config.json" "backup_2021-06-16_11-42-15_config.json" "config/" "f40431fb-30c0-42ef-9338-6de2a39da689.json" "59429f4c-fa1b-4ef4-ab9a-a85d2e0c22bd_minimal.json" "key.json" "backup_2021-06-09_14-13-58_config.json" "Fluidic-Admin_2021-06-15_11-47-16_Notes_testing.json" "45cdba10-82bb-456f-aad7-882f4015624e" "f40431fb-30c0-42ef-9338-6de2a39da689_minimal.json" "07411195-7fcd-4b8f-a015-50199e56a6f7.json" "92200935-f1d4-4d50-823f-27c0f56d4d48" "b23a7780-f702-4ff3-ad1e-598c94cff1f0.json" "backup_2021-06-16_10-34-42_config.json" "01def0e7-6799-4359-be80-adf49de1a710.json" "974949a5-27eb-4960-ae5b-5379927ebb93" "hardware_info.txt" "../" "./")
 
  ("/Users/riaz.moola/Projects/tmp/" (24461 22026 610108 285000) "tebira/" "board/" "../" "./")
-
- ("/Users/riaz.moola/Projects/tmp/board/" (24461 22043 330759 516000) "files/" "../" "./")
-
- ("/Users/riaz.moola/Projects/tmp/board/files/" (24785 53626 221359 833000) ".tern-port" "dbseed.json" "._F1W-002_cloud.json" "cloud.json" "config.json" "../" "./")
-
- ("/Volumes/WINDOWS20_0/.TemporaryItems/" (24785 49766 0 0) "._Guest-User_2021-06-22_10-35-09_Pretreatment_cgcfg.json" "Guest-User_2021-06-22_10-35-09_Pretreatment_cgcfg.json" "folders.502/" "../" "./")
 )
 
 ;; ----- ido-unc-hosts-cache -----

@@ -1,4 +1,4 @@
-;; EXUBERANT ctags not normal ctags
+ ;; EXUBERANT ctags not normal ctags
 (setq path-to-ctags "/usr/local/Cellar/universal-ctags/HEAD-f6234d0/bin/ctags") ;; <- your exuberant ctags path here
 (defun create-tags (dir-name)
   "Create tags file."
@@ -34,12 +34,14 @@
    '(("logcat datetime"
       (java-pattern . "dd-MM HH:mm:ss.SSS"))))
  '(package-selected-packages
-   '(lsp-mode tide unfill typescript-mode dockerfile-mode racer flycheck-rust cargo rust-mode ix logview yaml-mode flycheck-yamllint color-theme-solarized smart-mode-line org-jira ivy discover yafolding json-mode json-reformat atom-dark-theme color-theme-modern confluence twittering-mode company-tern exec-path-from-shell tern js3-mode ssh-agency ssh w3m elpy org-journal web-mode js2-mode flycheck magit writeroom-mode pastebin mediawiki markdown-mode flycheck-tcl flycheck-package dark-souls ctags csv-mode company))
+   '(solarized-theme tide unfill typescript-mode dockerfile-mode racer flycheck-rust cargo rust-mode ix logview yaml-mode flycheck-yamllint color-theme-solarized smart-mode-line org-jira ivy discover yafolding json-mode json-reformat atom-dark-theme color-theme-modern confluence company-tern exec-path-from-shell tern js3-mode ssh-agency ssh w3m elpy org-journal web-mode js2-mode flycheck magit writeroom-mode pastebin markdown-mode flycheck-tcl flycheck-package ctags csv-mode company))
  '(tcl-auto-newline nil))
 
 (put 'narrow-to-region 'disabled nil)
 
 (setq c-default-style "bsd")
+
+(load-theme 'solarized-dark t)
 
 ;;(setq sml/theme 'solarized-dark)
 ;;(sml/setup)
