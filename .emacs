@@ -24,12 +24,25 @@
  '(canlock-password "41fca07147d8079925eb3f447acd09118c25942c")
  '(custom-safe-themes
    '("8db4b03b9ae654d4a57804286eb3e332725c84d7cdab38463cb6b97d5762ad26" "a27c00821ccfd5a78b01e4f35dc056706dd9ede09a8b90c6955ae6a390eb1c1e" "3c83b3676d796422704082049fc38b6966bcad960f896669dfc21a7a37a748fa" "117284df029007a8012cae1f01c3156d54a0de4b9f2f381feab47809b8a1caef" "e9460a84d876da407d9e6accf9ceba453e2f86f8b86076f37c08ad155de8223c" "12b6c73d2985afdc01619d8b527483cfcdaf01300b0d6a7ee821e8aa5d1944d8" "abba1c64e90bcfc6288c62bed95cc00dfa058cd9" default))
+ '(datetime-timezone 'Greenwich)
  '(electric-pair-mode t)
  '(flycheck-python-flake8-executable "python3")
  '(flycheck-python-pycompile-executable "python3")
  '(flycheck-python-pylint-executable "python3")
  '(global-company-mode t)
  '(global-flycheck-mode t)
+ '(logview-additional-level-mappings
+   '(("logcat"
+      (error "E")
+      (warning "W")
+      (information "I")
+      (debug "D")
+      (trace))))
+ '(logview-additional-submodes
+   '(("logcat"
+      (format . "TIMESTAMP THREAD LEVEL NAME :")
+      (levels . "logcat")
+      (timestamp))))
  '(logview-additional-timestamp-formats
    '(("logcat datetime"
       (java-pattern . "dd-MM HH:mm:ss.SSS"))))
