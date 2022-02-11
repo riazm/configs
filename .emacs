@@ -40,7 +40,7 @@
       (trace))))
  '(logview-additional-submodes
    '(("logcat"
-      (format . "TIMESTAMP THREAD LEVEL NAME :")
+      (format . "TIMESTAMP  THREAD  IGNORED LEVEL NAME:")
       (levels . "logcat")
       (timestamp))))
  '(logview-additional-timestamp-formats
