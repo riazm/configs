@@ -44,7 +44,9 @@
       (levels . "logcat")
       (timestamp))))
  '(logview-additional-timestamp-formats
-   '(("logcat datetime"
+   '(("logcat badtime"
+      (java-pattern . "MM-dd HH:mm:ss.SSS"))
+     ("logcat datetime"
       (java-pattern . "dd-MM HH:mm:ss.SSS"))))
  '(package-selected-packages
    '(solarized-theme tide unfill typescript-mode dockerfile-mode racer flycheck-rust cargo rust-mode ix logview yaml-mode flycheck-yamllint color-theme-solarized smart-mode-line org-jira ivy discover yafolding json-mode json-reformat atom-dark-theme color-theme-modern confluence company-tern exec-path-from-shell tern js3-mode ssh-agency ssh w3m elpy org-journal web-mode js2-mode flycheck magit writeroom-mode pastebin markdown-mode flycheck-tcl flycheck-package ctags csv-mode company))

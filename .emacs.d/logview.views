@@ -1,0 +1,74 @@
+view machine_logs_only
+submode logcat
+m+ MACHINE_LOG_RUNNER
+m- TemperatureControl
+m- heartbeat
+
+view BRE+FIDUCIAL
+submode logcat
+m- TemperatureControl
+m- heartbeat
+m- BackReflectionScan
+m- Moving to global
+m- LONG STEP
+m+ Moving RedBreFocus
+m+ FIDUCIAL RESULT
+m+ SMmain_service_running_find.cpp
+m- Read BRE
+
+view fiducial_and_more
+submode logcat
+a- ActivityManager
+a- WifiVendorHal
+m- SERIAL_LAYER
+m- MULTI_DROP_LAYER
+m- LAYER3
+m- UI
+m- heartbeat
+m- TemperatureControl
+
+view removed layers + audio
+submode logcat
+a- audio_hw_primary
+m- SERIAL_LAYER
+m- MULTI_DROP_LAYER
+m- LAYER3
+
+view bre + fiducial + peak fit
+submode logcat
+m+ PEAK FIT
+m+ PEAK GUESS
+m- TemperatureControl
+m- heartbeat
+
+m- Moving to global
+m- LONG STEP
+m+ Moving RedBreFocus
+m+ FIDUCIAL RESULT
+m+ SMmain_service_running_find.cpp
+m- Read BRE
+
+view filtered errors + warnings
+submode logcat
+lv W
+a- audio_hw_primary
+m- SERIAL_LAYER
+m- MULTI_DROP_LAYER
+m- LAYER3
+t- 3212
+a- ContextImpl
+a- SurfaceFlinger
+m- LONG STEP
+
+view fiducials_only
+submode logcat
+m- TemperatureControl
+m- heartbeat
+m- BackReflectionScan
+m- Moving to global
+m- LONG STEP
+m- Moving RedBreFocus
+m+ FIDUCIAL RESULT
+m+ SMmain_service_running_find.cpp
+m- Read BRE
+m- Enabling Red LED
