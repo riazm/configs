@@ -271,6 +271,13 @@
 (global-set-key (kbd "M-<right>") 'select-next-window)
 (global-set-key (kbd "M-<left>")  'select-previous-window)
 
+;; easier smerge command
+(setq smerge-command-prefix "\C-cv")
+
+
+;; server mode
+(server-start)
+
 ;; Kill the menu bar, toolbar
 (menu-bar-mode 0)
 (tool-bar-mode 0)

@@ -72,3 +72,15 @@ m+ FIDUCIAL RESULT
 m+ SMmain_service_running_find.cpp
 m- Read BRE
 m- Enabling Red LED
+
+view starting sizing
+submode logcat
+m+ Starting sizing
+
+view TrcHub
+submode logcat
+m+ TrcHub
+
+view PressureControl
+submode logcat
+m+ PressureControl
