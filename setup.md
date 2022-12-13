@@ -93,7 +93,6 @@ sudo apt install ./dropbox_2015.10.28_amd64.deb
 
 # email
 
-https://mail.elektronuser.com/owa/ for now
 
 # calendar
 

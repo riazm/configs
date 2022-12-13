@@ -39,7 +39,12 @@
       (debug "D")
       (trace))))
  '(logview-additional-submodes
-   '(("logcat"
+   '(("machine_log_runner"
+      (format . "THREAD: IGNORED TIMESTAMP NAME ")
+      (levels . "SLF4J")
+      (timestamp)
+      (aliases))
+     ("logcat"
       (format . "TIMESTAMP  THREAD  IGNORED LEVEL NAME:")
       (levels . "logcat")
       (timestamp))))
@@ -57,6 +62,7 @@
 (setq c-default-style "bsd")
 
 (load-theme 'solarized-dark t)
+(setq elpy-rpc-python-command "/usr/bin/python3")
 
 ;;(setq sml/theme 'solarized-dark)
 ;;(sml/setup)

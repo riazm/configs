@@ -1,0 +1,129 @@
+export MK1APP_LOCATION="/data/data/com.fluidicanalytics.mk1app"
+export ONEM_LOCATION="/data/data/com.fluidicanalytics.onem"
+
+# The Deepak Collection
+alias fullbkup='adb pull -a $MK1APP_LOCATION/files & adb pull -a $MK1APP_LOCATION/databases & adb pull -a data/app'
+alias getres='adb pull -a $MK1APP_LOCATION/files'
+alias bkup='adb pull -a $MK1APP_LOCATION/files/config.json & adb pull -a $MK1APP_LOCATION/files/dbseed.json & adb pull -a $MK1APP_LOCATION/files/key.json & adb pull -a $MK1APP_LOCATION/files/cloud.json & adb pull -a $MK1APP_LOCATION/databases'
+alias bkup='adb pull -a $ONEM_LOCATION/databases & adb pull -a $ONEM_LOCATION/files'
+alias backupbackup='adb pull -a /data/data/com.fluidicanalytics.fluiditymanager/files/backups & adb pull -a /data/data/com.fluidicanalytics.fluiditymanager/databases'
+alias getdb='adb pull -a $MK1APP_LOCATION/databases'
+alias ex='adb shell fa-exit-app'
+alias i='adb shell input text '
+alias ins='adb install -r -d '
+#alias capp='adb shell pm clear com.fluidicanalytics.mk1app'
+alias dapp='adb shell "su 0 rm -r $ONEM_LOCATION"'                      
+alias capp='adb shell "su 0 rm -r $ONEM_LOCATION/databases/" 
+adb shell "su 0 rm -r $ONEM_LOCATION/files/"'
+# alias cman='adb shell pm clear com.fluidicanalytics.fluiditymanager'
+alias cman='adb shell "su 0 rm -r /data/data/com.fluidicanalytics.fluiditymanager/databases/"
+adb shell "su 0 rm -r /data/data/com.fluidicanalytics.fluiditymanager/files/"'
+alias fanet='adb shell input text niAdzo16!'
+alias fagnet='adb shell input text Cavend1sh'
+alias hmfiles='adb pull /data/data/com.fluidicanalytics.healthmonitor/files'
+alias grp='adb shell cat $MK1APP_LOCATION/files/config.json | grep'
+alias rmlog=' adb shell rm -rf /data/data/com.fluidicanalytics.healthmonitor/files/log_archive' 
+alias rmrlog='adb shell rm -rf /data/data/com.fluidicanalytics.healthmonitor/files/logcat_recordings'
+alias getts='adb pull /data/tombstones/'
+alias anrt='adb pull /data/anr/traces.txt'
+alias mkdirs='mkdir {apk,logs,screenshot,bkup}'
+alias alldir='mkdir {apk,logs,screenshot,bkup,migrated-config,original-config}'
+alias dui='adb shell disable-ui'
+alias eui='adb shell enable-ui'
+alias clog='adb logcat -c'
+alias getconfig='adb pull -a $MK1APP_LOCATION/files/config.json'
+alias pulltoml='adb pull -a $MK1APP_LOCATION/files/config'
+alias deltoml=' adb shell rm -rf $MK1APP_LOCATION/files/config'
+alias appbkup='adb pull -a /data/data/com.fluidicanalytics.fluiditymanager/files/backups/'
+alias lup='adb logcat | grep "Last update"'
+
+alias overrides='adb shell "su 0 cat $ONEM_LOCATION/files/config/overrides.toml"'
+alias constants='adb shell "su 0 cat $ONEM_LOCATION/files/config/constants.toml"'
+
+
+# Experimental restore
+alias restore_fluiditymanager_backup='
+ adb install -r -d com.fluidicanalytics.mk1app/com.fluidicanalytics.mk1app.apk &&
+ adb push -a com.fluidicanalytics.mk1app/data/* $MK1APP_LOCATION/  &&
+ adb shell chown -R u0_a8:u0_a8 $MK1APP_LOCATION/ &&
+ adb install -r -d com.fluidicanalytics.fluidityhub/com.fluidicanalytics.fluidityhub.apk &&
+ adb install -r -d com.fluidicanalytics.sudoservice/com.fluidicanalytics.sudoservice.apk &&
+ adb install -r -d com.tebira.qrcameraservice/com.tebira.qrcameraservice.apk && 
+ adb install -r -d com.tebira.trcservice/com.tebira.trcservice.apk
+'
+
+alias adb_install_oneW_packages='
+ adb install -r -d app-oneW-release-signed.apk &&
+ adb install -r -d qr-camera-service-release-signed.apk &&
+ adb install -r -d sudo_service-release-unsigned.apk &&
+ adb install -r -d fluidity_hub-signed.apk &&
+ adb install -r -d simple-keyboard-release-signed.apk &&
+ adb install -r -d trc-service-release-signed.apk' 
+
+alias uninstall_all_oneW_packages='
+ adb uninstall com.fluidicanalytics.mk1app &&
+ adb uninstall com.fluidicanalytics.fluidityhub &&
+ adb uninstall com.fluidicanalytics.sudoservice &&
+ adb uninstall com.tebira.qrcameraservice &&
+ adb uninstall com.tebira.trcservice &&
+ adb uninstall rkr.simplekeyboard.inputmethod'
+
+alias uninstall_all_oneM_packages='
+ adb uninstall com.fluidicanalytics.onem &&
+ adb uninstall com.fluidicanalytics.fluidityhub &&
+ adb uninstall com.fluidicanalytics.rpc_bridge &&
+ adb uninstall com.fluidicanalytics.healthmonitor &&
+ adb uninstall rkr.simplekeyboard.inputmethod &&
+  adb uninstall com.fluidicanalytics.sudoservice &&
+   adb uninstall com.fluidicanalytics.fluiditymanager'
+ 
+alias get_admin_pw='adb shell cat $MK1APP_LOCATION/files/cloud.json'
+alias get_config='adb shell cat $MK1APP_LOCATION/files/config.json'
+alias get_dbseed='adb shell cat $MK1APP_LOCATION/files/dbseed.json'
+alias get_key='adb shell cat $MK1APP_LOCATION/files/key.json'
+
+alias check_files='adb shell ls -la $MK1APP_LOCATION/files'
+alias permission_files='adb shell chown u0_a8:u0_a8 $MK1APP_LOCATION/files/*.json'
+
+alias reset_staging='ENCRYPTION_PASSWORD=$(fpass cloud/staging/encryption_password) \
+AUTH_DOMAIN=$(fpass cloud/development/auth0/domain) \
+POSTGRES_URL=$(fpass cloud/staging/postgres/uri) \
+AUTH_CLIENT_ID=$(fpass cloud/development/auth0/id) \
+AUTH_CLIENT_SECRET=$(fpass cloud/development/auth0/secret) \
+AUTH_PUBLIC_KEY=$(fpass cloud/development/auth0/public_key_pem) \
+API_DOMAIN=http://localhost:8000 \
+cargo run --bin seed_db --features fs_storage -- --reset-data'
+
+# Pipe commands to root shell
+alias m_root_shell='adb shell su 0'
+alias tebira='cd /home/riaz/Projects/tebira'
+alias freertos='cd /home/riaz/Projects/firmwareonem_freertos'
+
+# Log stuff
+clean_log() {
+    sed -n -e 's/^.*(MACHINE_LOG_RUNNER): //p'
+}
+
+logcat() {
+    adb logcat | tee $(date %d_%m_%Y_%s).log
+}
+
+colour_log() {
+    colout '.*TrcHub.*' 10 | colout '.*XYZ.*' 11 | colout '.*PressureControl.*' 12  | colout '.*NfcControl.*' 13 | colout '.* W FLUIDIC.*' black.yellow bold | colout '.* E FLUIDIC.*' black.red |colout '.*Drawer and ValveBlock.*' 14 | colout '.*OpticsControl.*' 36 |colout '(.* E ActivityManager.*)(.*Received heartbeat.*)(.*handling livedata.*)' 8
+}
+
+filter_log() {
+    grep -v -e SERIAL_LAYER -e LAYER3 -e MULTI_DROP_LAYER -e audio_hw_primary -e 'E ActivityManager'
+}
+
+update_fw_false() {
+    adb shell "su 0 sed -i -e 's/updateFirmware = true/updateFirmware = false/g' $ONEM_LOCATION/files/config/constants.toml"
+    adb shell "su 0 sed -i -e 's/updateFirmware = true/updateFirmware = false/g' $ONEM_LOCATION/files/config/overrides.toml"
+    adb shell "su 0 cat $ONEM_LOCATION/files/config/constants.toml"
+}
+
+update_fw_true() {
+    adb shell "su 0 sed -i -e 's/updateFirmware = false/updateFirmware = true/g' $ONEM_LOCATION/files/config/constants.toml"
+        adb shell "su 0 sed -i -e 's/updateFirmware = false/updateFirmware = true/g' $ONEM_LOCATION/files/config/overrides.toml"  
+    adb shell "su 0 cat $ONEM_LOCATION/files/config/constants.toml"
+}
