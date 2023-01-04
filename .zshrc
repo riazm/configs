@@ -138,3 +138,13 @@ fi
 if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
+
+#Pyenv stuff
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
+eval "$(pyenv virtualenv-init -)"
+
+export FLUIDIC_PASSWORD_STORE_DIR="/home/r/Projects/password_store/passwords"
+alias fpass="PASSWORD_STORE_DIR=\"$FLUIDIC_PASSWORD_STORE_DIR\" pass"

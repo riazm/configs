@@ -1,75 +1,12 @@
 UBUNTU 17.10 setup
 
 # Manually installed apps
-android-tools-adb
-bison
-build-essential
-cabextract
-chromium-chromedriver
-cifs-utils
-curl
-default-jdk
-default-jre
-dkms
-docker-compose
-docker.io
-dropbox
-duplicity
-emacs
-emacs25
-expect
-flex
-git
-gnome-tweaks
-gnumeric
-google-chrome-stable
-google-play-music-desktop-player
-gpaint
-gperf
-kolourpaint
-libgconf2-4
-libicu-dev
-libqpdf21
-libssl-dev
-libwebpdemux2
-libxslt1-dev
-mate-utils
-mongodb-clients
-mosquitto
-mosquitto-clients
-mtpaint
-ndiswrapper
-net-tools
-nmap
-nodejs
-nomachine
-npm
-openprinting-ppds-postscript-ricoh
-openssh-server
-orca
-python
-python3-pip
-python3-smbc
-python-gi
-python-pip
-qrencode
-r8168-dkms
-ruby
-screen
-scudcloud
-signal-desktop
-smb4k
-smbclient
-sshpass
-unrar-free
-veeam
-veeam-release-deb
-virtualbox
-w3m
-winehq-devel
-wine-stable
-xclip
+android-tools-adb bison build-essential cabextract chromium-chromedriver cifs-utils curl default-jdk default-jre dkms docker-compose docker.io duplicity emacs expect flex git gnome-tweaks gnumeric google-chrome-stable gpaint gperf kolourpaint libicu-dev libssl-dev libwebpdemux2 libxslt1-dev mate-utils mtpaint net-tools nmap nodejs npm openssh-server orca python python3-pip python3-smbc python-gi python-pip qrencode r8168-dkms ruby screen smb4k smbclient sshpass unrar-free virtualbox w3m xclip
 
+
+# zshrc
+ln -s ~/Projects/configs/.zshrc
+ln -s ~/Projects/configs/.zshrc.fluidicaliases
 
 # Duel monitor support with displaylink:
 
@@ -122,6 +59,8 @@ git clone https://github.com/riazm/configs.git
 cd
 ln -s ~/Projects/configs/.emacs
 ln -s ~/Projects/configs/.emacs.d
+
+install flycheck from package-list packages
 
 ```
 ## node.js js2 mode

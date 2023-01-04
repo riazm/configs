@@ -83,8 +83,8 @@
 (global-font-lock-mode 1)
 
 ;; Save desktop each time you shut down
-(setq desktop-save 'if-exists)
-(desktop-save-mode 1)
+(desktop-save-mode)
+(desktop-read)
 
 ;; save a bunch of variables to the desktop file
 ;; for lists specify the len of the maximal saved data also
