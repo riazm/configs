@@ -5,6 +5,9 @@ android-tools-adb bison build-essential cabextract chromium-chromedriver cifs-ut
 
 
 # zshrc
+sudo apt-get install zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+sudo npm install --global pure-prompt
 ln -s ~/Projects/configs/.zshrc
 ln -s ~/Projects/configs/.zshrc.fluidicaliases
 
