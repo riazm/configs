@@ -7,11 +7,61 @@
    (format "%s -f %s/TAGS -R %s" path-to-ctags dir-name (directory-file-name dir-name)))
   )
 
+;; 
 (when (>= emacs-major-version 24)
   (require 'package)
   (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t)
-  (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/"))
   (package-initialize)
+  ;; If there are no archived package contents, refresh them
+
+  (when (not package-archive-contents) 
+    (package-refresh-contents))
+  ;; Installs packages
+  ;;
+  ;; myPackages contains a list of package names
+  (defvar myPackages
+    '(better-defaults                 ;; Set up some better Emacs defaults
+      material-theme                  ;; Theme
+      tide
+      unfill
+      typescript-mode
+      dockerfile-mode
+      racer
+      ix
+      logview
+      yaml-mode
+      flycheck-yamllint
+      smart-mode-line
+      org-jira
+      ivy
+      discover
+      yafolding
+      json-mode
+      json-reformat
+      exec-path-from-shell
+      tern
+      ssh-agency
+      ssh
+      w3m
+      elpy
+      org-journal
+      web-mode
+      flycheck
+      magit
+      writeroom-mode
+      pastebin
+      markdown-mode
+      flycheck-package
+      csv-mode
+      company
+      )
+    )
+  ;; Scans the list in myPackages
+  ;; If the package listed is not already installed, install it
+  (mapc #'(lambda (package)
+            (unless (package-installed-p package)
+              (package-install package)))
+        myPackages)
   )
 
 
