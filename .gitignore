@@ -2,6 +2,6 @@
 #!.*
 .emacs.d/elpa*
 .emacs.d/.emacs.desktop
-.emacs.desktop.lock
-ido.last
-history.el
+.emacs.d/.emacs.desktop.lock
+.emacs.d/ido.last
+.emacs.d/transient/history.el
