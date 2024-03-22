@@ -1,7 +1,13 @@
 UBUNTU 17.10 setup
 
 # Manually installed apps
-android-tools-adb bison build-essential cabextract chromium-chromedriver cifs-utils curl default-jdk default-jre dkms docker-compose docker.io duplicity emacs expect flex git gnome-tweaks gnumeric google-chrome-stable gpaint gperf kolourpaint libicu-dev libssl-dev libwebpdemux2 libxslt1-dev mate-utils mtpaint net-tools nmap nodejs npm openssh-server orca python python3-pip python3-smbc python-gi python-pip qrencode r8168-dkms ruby screen smb4k smbclient sshpass unrar-free virtualbox w3m xclip
+android-tools-adb bison build-essential cabextract chromium-chromedriver cifs-utils curl default-jdk default-jre dkms docker-compose docker.io duplicity emacs expect flex git gnome-tweaks gnumeric google-chrome-stable gpaint gperf kolourpaint libicu-dev libssl-dev libwebpdemux2 libxslt1-dev mate-utils mtpaint net-tools nmap nodejs npm openssh-server orca qrencode r8168-dkms ruby screen smb4k smbclient sshpass unrar-free virtualbox w3m xclip
+
+
+# python
+pipenv is the best python environment thingie don't fight it
+sudo apt install python3-jedi black python3-autopep8 yapf3 python3-yapfD
+
 
 
 # zshrc

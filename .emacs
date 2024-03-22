@@ -1,3 +1,24 @@
+
+
+;; ErgoEmacs
+(setenv "ERGOEMACS_KEYBOARD_LAYOUT" "dv") ; US Dvorak layout
+
+;; load ErgoEmacs keybinding
+(load "~/.emacs.d/ergoemacs-keybindings-5.3.3/ergoemacs-mode")
+
+;; turn on minor mode ergoemacs-mode
+(ergoemacs-mode 1)
+
+;; Keyboard Shortcuts
+(global-set-key (kbd "C-z") 'suspend-frame) ; ctrl+z
+(global-set-key (kbd "M-b") 'goto-line) ; gotoline
+(define-key global-map "\M-b" 'goto-line)
+(global-set-key "\M-/" 'hippie-expand)
+(global-set-key "\M-m" 'transpose-chars)
+(global-set-key "\M-M" 'transpose-words)
+(global-set-key "\M-0" 'pop-to-mark-command)
+
+
  ;; EXUBERANT ctags not normal ctags
 (setq path-to-ctags "/usr/local/Cellar/universal-ctags/HEAD-f6234d0/bin/ctags") ;; <- your exuberant ctags path here
 (defun create-tags (dir-name)
@@ -44,6 +65,8 @@
       ssh
       w3m
       elpy
+      py-autopep8                     ;; Run autopep8 on save
+      blacken                         ;; Black formatting on save
       org-journal
       web-mode
       flycheck
@@ -76,9 +99,6 @@
    '("8db4b03b9ae654d4a57804286eb3e332725c84d7cdab38463cb6b97d5762ad26" "a27c00821ccfd5a78b01e4f35dc056706dd9ede09a8b90c6955ae6a390eb1c1e" "3c83b3676d796422704082049fc38b6966bcad960f896669dfc21a7a37a748fa" "117284df029007a8012cae1f01c3156d54a0de4b9f2f381feab47809b8a1caef" "e9460a84d876da407d9e6accf9ceba453e2f86f8b86076f37c08ad155de8223c" "12b6c73d2985afdc01619d8b527483cfcdaf01300b0d6a7ee821e8aa5d1944d8" "abba1c64e90bcfc6288c62bed95cc00dfa058cd9" default))
  '(datetime-timezone 'Greenwich)
  '(electric-pair-mode t)
- '(flycheck-python-flake8-executable "python3")
- '(flycheck-python-pycompile-executable "python3")
- '(flycheck-python-pylint-executable "python3")
  '(global-company-mode t)
  '(global-flycheck-mode t)
  '(logview-additional-level-mappings
@@ -105,14 +125,28 @@
       (java-pattern . "dd-MM HH:mm:ss.SSS"))))
  '(package-selected-packages
    '(zone-sl solarized-theme tide unfill typescript-mode dockerfile-mode racer flycheck-rust cargo rust-mode ix logview yaml-mode flycheck-yamllint color-theme-solarized smart-mode-line org-jira ivy discover yafolding json-mode json-reformat atom-dark-theme color-theme-modern confluence company-tern exec-path-from-shell tern js3-mode ssh-agency ssh w3m elpy org-journal web-mode js2-mode flycheck magit writeroom-mode pastebin markdown-mode flycheck-tcl flycheck-package ctags csv-mode company))
- '(tcl-auto-newline nil))
+ '(tcl-auto-newline nil)
+ '(w3m-search-default-engine "duckduckgo"))
 
 (put 'narrow-to-region 'disabled nil)
 
 (setq c-default-style "bsd")
 
 (load-theme 'solarized-dark t)
-(setq elpy-rpc-python-command "/usr/bin/python3")
+
+;; =================================
+;; python setup
+;; =================================
+(elpy-enable)
+
+;; Enable Flycheck
+(when (require 'flycheck nil t)
+  (setq elpy-modules (delq 'elpy-module-flymake elpy-modules))
+  (add-hook 'elpy-mode-hook 'flycheck-mode))
+
+;; Enable autopep8
+(require 'py-autopep8)
+(add-hook 'elpy-mode-hook 'py-autopep8-mode)
 
 ;;(setq sml/theme 'solarized-dark)
 ;;(sml/setup)
@@ -168,24 +202,6 @@
 (setq-default indent-tabs-mode nil) 
 (setq-default tab-width 2) ; or any other preferred value
 (setq-default standard-indent 2)
-
-;; ErgoEmacs
-(setenv "ERGOEMACS_KEYBOARD_LAYOUT" "dv") ; US Dvorak layout
-
-;; load ErgoEmacs keybinding
-(load "~/.emacs.d/ergoemacs-keybindings-5.3.3/ergoemacs-mode")
-
-;; turn on minor mode ergoemacs-mode
-(ergoemacs-mode 1)
-
-;; Keyboard Shortcuts
-(global-set-key (kbd "C-z") 'suspend-frame) ; ctrl+z
-(global-set-key (kbd "M-b") 'goto-line) ; gotoline
-(define-key global-map "\M-b" 'goto-line)
-(global-set-key "\M-/" 'hippie-expand)
-(global-set-key "\M-m" 'transpose-chars)
-(global-set-key "\M-M" 'transpose-words)
-(global-set-key "\M-0" 'pop-to-mark-command)
 
 ;; Ctags
 (global-set-key (kbd "M-(") 'find-tag)      ; search ctags
@@ -247,7 +263,7 @@
 (require 'flycheck)
 
 ;; turn on flychecking globally
-(add-hook 'after-init-hook #'global-flycheck-mode)
+;;(add-hook 'after-init-hook #'global-flycheck-mode)
 
 ;; disable jshint since we prefer eslint checking
 (setq-default flycheck-disabled-checkers
