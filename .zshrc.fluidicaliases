@@ -4,7 +4,7 @@ export ONEM_LOCATION="/data/data/com.fluidicanalytics.onem"
 # The Deepak Collection
 alias fullbkup='adb pull -a $MK1APP_LOCATION/files & adb pull -a $MK1APP_LOCATION/databases & adb pull -a data/app'
 alias getres='adb pull -a $MK1APP_LOCATION/files'
-alias bkup='adb pull -a $MK1APP_LOCATION/files/config.json & adb pull -a $MK1APP_LOCATION/files/dbseed.json & adb pull -a $MK1APP_LOCATION/files/key.json & adb pull -a $MK1APP_LOCATION/files/cloud.json & adb pull -a $MK1APP_LOCATION/databases'
+#alias bkup='adb pull -a $MK1APP_LOCATION/files/config.json & adb pull -a $MK1APP_LOCATION/files/dbseed.json & adb pull -a $MK1APP_LOCATION/files/key.json & adb pull -a $MK1APP_LOCATION/files/cloud.json & adb pull -a $MK1APP_LOCATION/databases'
 alias bkup='adb pull -a $ONEM_LOCATION/databases & adb pull -a $ONEM_LOCATION/files'
 alias backupbackup='adb pull -a /data/data/com.fluidicanalytics.fluiditymanager/files/backups & adb pull -a /data/data/com.fluidicanalytics.fluiditymanager/databases'
 alias getdb='adb pull -a $MK1APP_LOCATION/databases'
@@ -96,8 +96,8 @@ cargo run --bin seed_db --features fs_storage -- --reset-data'
 
 # Pipe commands to root shell
 alias m_root_shell='adb shell su 0'
-alias tebira='cd /home/riaz/Projects/tebira'
-alias freertos='cd /home/riaz/Projects/firmwareonem_freertos'
+alias tebira='cd /home/r/Projects/tebira'
+alias freertos='cd /home/r/Projects/firmwareonem_freertos'
 
 # Log stuff
 clean_log() {
@@ -105,15 +105,16 @@ clean_log() {
 }
 
 logcat() {
-    adb logcat | tee $(date %d_%m_%Y_%s).log
+    adb logcat | tee $(date +%d_%m_%Y_%s).log | filter_log | colour_log
 }
 
 colour_log() {
-    colout '.*TrcHub.*' 10 | colout '.*XYZ.*' 11 | colout '.*PressureControl.*' 12  | colout '.*NfcControl.*' 13 | colout '.* W FLUIDIC.*' black.yellow bold | colout '.* E FLUIDIC.*' black.red |colout '.*Drawer and ValveBlock.*' 14 | colout '.*OpticsControl.*' 36 |colout '(.* E ActivityManager.*)(.*Received heartbeat.*)(.*handling livedata.*)' 8
+    colout '.*TrcHub.*' 10 | colout '.*XYZ.*' 11 | colout '.*PressureControl.*' 12  | colout '.*NfcControl.*' 13 | colout '.* W FLUIDIC.*' black.yellow bold | colout '.* E FLUIDIC.*' black.red |colout '.*Drawer and ValveBlock.*' 14 | colout '.*OpticsControl.*' 36 |colout '(.* E ActivityManager.*)|(.*Received heartbeat.*)|(.*handling livedata.*)' 244
 }
 
+
 filter_log() {
-    grep -v -e SERIAL_LAYER -e LAYER3 -e MULTI_DROP_LAYER -e audio_hw_primary -e 'E ActivityManager'
+    grep -v -e SERIAL_LAYER -e LAYER3 -e MULTI_DROP_LAYER -e audio_hw_primary -e 'E ActivityManager' 
 }
 
 update_fw_false() {
@@ -127,3 +128,18 @@ update_fw_true() {
         adb shell "su 0 sed -i -e 's/updateFirmware = false/updateFirmware = true/g' $ONEM_LOCATION/files/config/overrides.toml"  
     adb shell "su 0 cat $ONEM_LOCATION/files/config/constants.toml"
 }
+
+# for release tools
+export ANDROID_SDK_HOME="/home/r/AndroidSDK"
+export PATH="$PATH:$ANDROID_SDK_HOME"
+export PATH="$PATH:$ANDROID_SDK_HOME/build-tools/33.0.1/"
+export PATH="$PATH:$ANDROID_SDK_HOME/platform-tools/"
+
+export JIRA_USER="software@fluidic.com"
+
+
+export NEXUS_PASSWORD="iwish"
+
+
+# for pip installed modules
+export PATH="$PATH:$HOME/.local/bin/"
