@@ -60,7 +60,6 @@
       json-mode
       json-reformat
       exec-path-from-shell
-      tern
       ssh-agency
       ssh
       w3m
@@ -77,6 +76,7 @@
       flycheck-package
       csv-mode
       company
+      projectile
       )
     )
   ;; Scans the list in myPackages
@@ -117,14 +117,19 @@
      ("logcat"
       (format . "TIMESTAMP  THREAD  IGNORED LEVEL NAME:")
       (levels . "logcat")
-      (timestamp))))
+      (timestamp))
+     ("cloud"
+      (format . "LEVEL     TIMESTAMP - THREAD:NAME - MESSAGE")
+      (levels . "SLF4J")
+      (timestamp)
+      (aliases))))
  '(logview-additional-timestamp-formats
    '(("logcat badtime"
       (java-pattern . "MM-dd HH:mm:ss.SSS"))
      ("logcat datetime"
       (java-pattern . "dd-MM HH:mm:ss.SSS"))))
  '(package-selected-packages
-   '(zone-sl solarized-theme tide unfill typescript-mode dockerfile-mode racer flycheck-rust cargo rust-mode ix logview yaml-mode flycheck-yamllint color-theme-solarized smart-mode-line org-jira ivy discover yafolding json-mode json-reformat atom-dark-theme color-theme-modern confluence company-tern exec-path-from-shell tern js3-mode ssh-agency ssh w3m elpy org-journal web-mode js2-mode flycheck magit writeroom-mode pastebin markdown-mode flycheck-tcl flycheck-package ctags csv-mode company))
+   '(wc-mode rainbow-mode projectile zone-sl solarized-theme tide unfill typescript-mode dockerfile-mode racer flycheck-rust cargo rust-mode ix logview yaml-mode flycheck-yamllint color-theme-solarized smart-mode-line org-jira ivy discover yafolding json-mode json-reformat atom-dark-theme color-theme-modern confluence company exec-path-from-shell js3-mode ssh-agency ssh w3m elpy org-journal web-mode js2-mode flycheck magit writeroom-mode pastebin markdown-mode flycheck-tcl flycheck-package ctags csv-mode company))
  '(tcl-auto-newline nil)
  '(w3m-search-default-engine "duckduckgo"))
 
@@ -147,9 +152,9 @@
 ;; Enable autopep8
 (require 'py-autopep8)
 (add-hook 'elpy-mode-hook 'py-autopep8-mode)
+;; go forward with M-( and backwards with M-*
+(add-hook 'elpy-mode-hook (lambda () (define-key elpy-mode-map (kbd "M-(") 'elpy-goto-definition)))
 
-;;(setq sml/theme 'solarized-dark)
-;;(sml/setup)
 
 ;; Org-mode settings
 (add-to-list 'auto-mode-alist '("\\.org$" . org-mode))
@@ -276,30 +281,30 @@
 (setq-default js-indent-level 2)
 
 ;; pulled it from a stack overflow
-(defun my/use-eslint-from-node-modules () 
-  (let* ((root (locate-dominating-file 
-                (or (buffer-file-name) default-directory)
-                "node_modules"))
-         (eslint
-          (and root
-               (expand-file-name "node_modules/.bin/eslint"
-                                 root))))
-    (when (and eslint (file-executable-p eslint))
-      (setq-local flycheck-javascript-eslint-executable eslint))))
+;; (defun my/use-eslint-from-node-modules () 
+;;   (let* ((root (locate-dominating-file 
+;;                 (or (buffer-file-name) default-directory)
+;;                 "node_modules"))
+;;          (eslint
+;;           (and root
+;;                (expand-file-name "node_modules/.bin/eslint"
+;;                                  root))))
+;;     (when (and eslint (file-executable-p eslint))
+;;       (setq-local flycheck-javascript-eslint-executable eslint))))
 
-(add-hook 'flycheck-mode-hook #'my/use-eslint-from-node-modules)
+;; (add-hook 'flycheck-mode-hook #'my/use-eslint-from-node-modules)
 
 ;; set typescript indent
 (setq-default typescript-indent-level 2)
 
 ;; path to 'which tern'
  
-(setenv "PATH" (concat (getenv "PATH") ":/Users/riaz.moola/.nvm/versions/node/v10.12.0/bin"))
-    (setq exec-path (append exec-path '(":/Users/riaz.moola/.nvm/versions/node/v10.12.0/bin")))
+;;(setenv "PATH" (concat (getenv "PATH") ":/Users/riaz.moola/.nvm/versions/node/v10.12.0/bin"))
+;;    (setq exec-path (append exec-path '(":/Users/riaz.moola/.nvm/versions/node/v10.12.0/bin")))
 ;; path to 'tern.el'
-(add-to-list 'load-path "/Users/riaz.moola/bin/tern/emacs/")
-(autoload 'tern-mode "tern.el" nil t)
-(add-hook 'js-mode-hook (lambda () (tern-mode t)))
+;;(add-to-list 'load-path "/Users/riaz.moola/bin/tern/emacs/")
+;;(autoload 'tern-mode "tern.el" nil t)
+;;(add-hook 'js-mode-hook (lambda () (tern-mode t)))
 
 ;; use eslint with web-mode for jsx files
 (flycheck-add-mode 'javascript-eslint 'web-mode)
@@ -372,6 +377,18 @@ This one changes the cursor color on each blink. Define colors in `blink-cursor-
     )
   (internal-show-cursor nil (not (internal-show-cursor-p)))
   )
+
+
+(setq ring-bell-function 'ignore)
+
+;; turn on longlines when you turn on text mode
+(defun turn-on-visual-line () (visual-line-mode 1))
+(add-hook 'text-mode-hook 'turn-on-visual-line)
+
+;; turn on wc mode when you turn on text mode
+(require 'wc-mode)
+(defun turn-on-wc () (wc-mode 1))
+(add-hook 'text-mode-hook 'turn-on-wc)
 
 ;; (custom-set-faces
 ;;  ;; custom-set-faces was added by Custom.

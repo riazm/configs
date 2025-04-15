@@ -32,6 +32,7 @@ alias dui='adb shell disable-ui'
 alias eui='adb shell enable-ui'
 alias clog='adb logcat -c'
 alias getconfig='adb pull -a $MK1APP_LOCATION/files/config.json'
+
 alias pulltoml='adb pull -a $MK1APP_LOCATION/files/config'
 alias deltoml=' adb shell rm -rf $MK1APP_LOCATION/files/config'
 alias appbkup='adb pull -a /data/data/com.fluidicanalytics.fluiditymanager/files/backups/'
@@ -52,28 +53,12 @@ alias restore_fluiditymanager_backup='
  adb install -r -d com.tebira.trcservice/com.tebira.trcservice.apk
 '
 
-alias adb_install_oneW_packages='
- adb install -r -d app-oneW-release-signed.apk &&
- adb install -r -d qr-camera-service-release-signed.apk &&
- adb install -r -d sudo_service-release-unsigned.apk &&
- adb install -r -d fluidity_hub-signed.apk &&
- adb install -r -d simple-keyboard-release-signed.apk &&
- adb install -r -d trc-service-release-signed.apk'
-
-alias uninstall_all_oneW_packages='
- adb uninstall com.fluidicanalytics.mk1app &&
- adb uninstall com.fluidicanalytics.fluidityhub &&
- adb uninstall com.fluidicanalytics.sudoservice &&
- adb uninstall com.tebira.qrcameraservice &&
- adb uninstall com.tebira.trcservice &&
- adb uninstall rkr.simplekeyboard.inputmethod'
-
 alias uninstall_all_oneM_packages='
- adb uninstall com.fluidicanalytics.onem &&
- adb uninstall com.fluidicanalytics.fluidityhub &&
- adb uninstall com.fluidicanalytics.rpc_bridge &&
- adb uninstall com.fluidicanalytics.healthmonitor &&
- adb uninstall rkr.simplekeyboard.inputmethod'
+ adb uninstall --user 0 com.fluidicanalytics.onem &&
+ adb uninstall --user 0 com.fluidicanalytics.fluidityhub &&
+ adb uninstall --user 0 com.fluidicanalytics.rpc_bridge &&
+ adb uninstall --user 0 com.fluidicanalytics.healthmonitor &&
+ adb uninstall --user 0 rkr.simplekeyboard.inputmethod'
 
 
 alias get_admin_pw='adb shell cat $MK1APP_LOCATION/files/cloud.json'
@@ -104,7 +89,7 @@ clean_log() {
 }
 
 logcat() {
-    adb logcat | tee $(date +%d_%m_%Y_%s).log | filter_log | colour_log
+    adb logcat | tee $(date +%d_%m_%Y__%H:%M:%s).log | filter_log | colour_log
 }
 
 colour_log() {
