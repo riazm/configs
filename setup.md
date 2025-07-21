@@ -8,7 +8,7 @@ android-tools-adb bison build-essential cabextract chromium-chromedriver cifs-ut
 pipenv is the best python environment thingie don't fight it
 sudo apt install python3-jedi black python3-autopep8 yapf3 python3-yapfD
 
-
+# testing this
 
 # zshrc
 sudo apt-get install zsh
