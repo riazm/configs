@@ -1,12 +1,11 @@
 
 
-;; ErgoEmacs
-(setenv "ERGOEMACS_KEYBOARD_LAYOUT" "dv") ; US Dvorak layout
+;; ;; ErgoEmacs
+(setq ergoemacs-theme nil) ;; Uses Standard Ergoemacs keyboard theme
+(setq ergoemacs-keyboard-layout "dv") ; US Dvorak layout
+(require 'ergoemacs-mode)
 
-;; load ErgoEmacs keybinding
-(load "~/.emacs.d/ergoemacs-keybindings-5.3.3/ergoemacs-mode")
-
-;; turn on minor mode ergoemacs-mode
+;; ;; turn on minor mode ergoemacs-mode
 (ergoemacs-mode 1)
 
 ;; Keyboard Shortcuts
@@ -129,9 +128,10 @@
      ("logcat datetime"
       (java-pattern . "dd-MM HH:mm:ss.SSS"))))
  '(package-selected-packages
-   '(wc-mode rainbow-mode projectile zone-sl solarized-theme tide unfill typescript-mode dockerfile-mode racer flycheck-rust cargo rust-mode ix logview yaml-mode flycheck-yamllint color-theme-solarized smart-mode-line org-jira ivy discover yafolding json-mode json-reformat atom-dark-theme color-theme-modern confluence company exec-path-from-shell js3-mode ssh-agency ssh w3m elpy org-journal web-mode js2-mode flycheck magit writeroom-mode pastebin markdown-mode flycheck-tcl flycheck-package ctags csv-mode company))
+   '(ergoemacs-mode wc-mode rainbow-mode projectile zone-sl solarized-theme tide unfill typescript-mode dockerfile-mode racer flycheck-rust cargo rust-mode ix logview yaml-mode flycheck-yamllint color-theme-solarized smart-mode-line org-jira ivy discover yafolding json-mode json-reformat atom-dark-theme color-theme-modern confluence company exec-path-from-shell js3-mode ssh-agency ssh w3m elpy org-journal web-mode js2-mode flycheck magit writeroom-mode pastebin markdown-mode flycheck-tcl flycheck-package ctags csv-mode company))
  '(tcl-auto-newline nil)
- '(w3m-search-default-engine "duckduckgo"))
+ '(w3m-search-default-engine "duckduckgo")
+ '(writeroom-header-line 'mode-line))
 
 (put 'narrow-to-region 'disabled nil)
 
