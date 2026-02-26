@@ -9,9 +9,9 @@
 (ergoemacs-mode 1)
 
 ;; Keyboard Shortcuts
+(define-key ergoemacs-user-keymap (kbd "M-g") 'backward-word)
+
 (global-set-key (kbd "C-z") 'suspend-frame) ; ctrl+z
-(global-set-key (kbd "M-b") 'goto-line) ; gotoline
-(define-key global-map "\M-b" 'goto-line)
 (global-set-key "\M-/" 'hippie-expand)
 (global-set-key "\M-m" 'transpose-chars)
 (global-set-key "\M-M" 'transpose-words)
