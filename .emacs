@@ -230,7 +230,7 @@
 (add-to-list 'load-path "~/.emacs.d/smex")
 (require 'smex)
 (smex-initialize)
-(global-set-key (kbd "M-a") 'smex)
+(define-key ergoemacs-user-keymap (kbd "M-a") 'smex)
 (global-set-key (kbd "M-X") 'smex-major-mode-commands)
 ;; This is your old M-x.
 (global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
