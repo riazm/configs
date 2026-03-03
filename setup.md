@@ -8,7 +8,9 @@ android-tools-adb bison build-essential cabextract chromium-chromedriver cifs-ut
 pipenv is the best python environment thingie don't fight it
 sudo apt install python3-jedi black python3-autopep8 yapf3 python3-yapfD
 
-# testing this
+# Turn off switching keyboard shortcut
+To turn off the keyboard layout switch in Windows,
+disable the hotkeys (Alt+Shift or Win+Space) in Settings > Time & Language > Typing > Advanced keyboard settings > Input language hot keys, setting them to "Not Assigned". Remove unwanted keyboard layouts in Settings > Time & Language > Language > Options.
 
 # zshrc
 sudo apt-get install zsh

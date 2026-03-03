@@ -14,8 +14,9 @@
 (global-set-key (kbd "C-z") 'suspend-frame) ; ctrl+z
 (global-set-key "\M-/" 'hippie-expand)
 (global-set-key "\M-m" 'transpose-chars)
-(global-set-key "\M-M" 'transpose-words)
+(global-set-key "\M-M" 'transpose-words) ;
 (global-set-key "\M-0" 'pop-to-mark-command)
+
 
 
  ;; EXUBERANT ctags not normal ctags
@@ -23,8 +24,8 @@
 (defun create-tags (dir-name)
   "Create tags file."
   (interactive "DDirectory: ")
-  (shell-command
-   (format "%s -f %s/TAGS -R %s" path-to-ctags dir-name (directory-file-name dir-name)))
+  (shell-format
+   (s "%f -command %s/TAGS -R %s" path-to-ctags dir-name (directory-file-name dir-name))) ;
   )
 
 ;; 
@@ -92,46 +93,8 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(browse-url-text-browser "emacs")
- '(canlock-password "41fca07147d8079925eb3f447acd09118c25942c")
- '(custom-safe-themes
-   '("8db4b03b9ae654d4a57804286eb3e332725c84d7cdab38463cb6b97d5762ad26" "a27c00821ccfd5a78b01e4f35dc056706dd9ede09a8b90c6955ae6a390eb1c1e" "3c83b3676d796422704082049fc38b6966bcad960f896669dfc21a7a37a748fa" "117284df029007a8012cae1f01c3156d54a0de4b9f2f381feab47809b8a1caef" "e9460a84d876da407d9e6accf9ceba453e2f86f8b86076f37c08ad155de8223c" "12b6c73d2985afdc01619d8b527483cfcdaf01300b0d6a7ee821e8aa5d1944d8" "abba1c64e90bcfc6288c62bed95cc00dfa058cd9" default))
- '(datetime-timezone 'Greenwich)
- '(electric-pair-mode t)
- '(global-company-mode t)
- '(global-flycheck-mode t)
- '(logview-additional-level-mappings
-   '(("logcat"
-      (error "E")
-      (warning "W")
-      (information "I")
-      (debug "D")
-      (trace))))
- '(logview-additional-submodes
-   '(("machine_log_runner"
-      (format . "THREAD: IGNORED TIMESTAMP NAME ")
-      (levels . "SLF4J")
-      (timestamp)
-      (aliases))
-     ("logcat"
-      (format . "TIMESTAMP  THREAD  IGNORED LEVEL NAME:")
-      (levels . "logcat")
-      (timestamp))
-     ("cloud"
-      (format . "LEVEL     TIMESTAMP - THREAD:NAME - MESSAGE")
-      (levels . "SLF4J")
-      (timestamp)
-      (aliases))))
- '(logview-additional-timestamp-formats
-   '(("logcat badtime"
-      (java-pattern . "MM-dd HH:mm:ss.SSS"))
-     ("logcat datetime"
-      (java-pattern . "dd-MM HH:mm:ss.SSS"))))
  '(package-selected-packages
-   '(ergoemacs-mode wc-mode rainbow-mode projectile zone-sl solarized-theme tide unfill typescript-mode dockerfile-mode racer flycheck-rust cargo rust-mode ix logview yaml-mode flycheck-yamllint color-theme-solarized smart-mode-line org-jira ivy discover yafolding json-mode json-reformat atom-dark-theme color-theme-modern confluence company exec-path-from-shell js3-mode ssh-agency ssh w3m elpy org-journal web-mode js2-mode flycheck magit writeroom-mode pastebin markdown-mode flycheck-tcl flycheck-package ctags csv-mode company))
- '(tcl-auto-newline nil)
- '(w3m-search-default-engine "duckduckgo")
- '(writeroom-header-line 'mode-line))
+   '(projectile csv-mode flycheck-package markdown-mode pastebin writeroom-mode magit web-mode org-journal blacken py-autopep8 elpy w3m ssh ssh-agency exec-path-from-shell json-reformat json-mode yafolding discover ivy org-jira smart-mode-line flycheck-yamllint yaml-mode logview ix racer dockerfile-mode typescript-mode unfill tide material-theme better-defaults ergoemacs-mode)))
 
 (put 'narrow-to-region 'disabled nil)
 
