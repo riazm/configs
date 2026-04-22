@@ -59,7 +59,6 @@
       yafolding
       json-mode
       json-reformat
-      exec-path-from-shell
       ssh-agency
       ssh
       w3m
@@ -77,6 +76,8 @@
       csv-mode
       company
       projectile
+      smex
+      wc-mode
       )
     )
   ;; Scans the list in myPackages
@@ -93,8 +94,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages
-   '(projectile csv-mode flycheck-package markdown-mode pastebin writeroom-mode magit web-mode org-journal blacken py-autopep8 elpy w3m ssh ssh-agency exec-path-from-shell json-reformat json-mode yafolding discover ivy org-jira smart-mode-line flycheck-yamllint yaml-mode logview ix racer dockerfile-mode typescript-mode unfill tide material-theme better-defaults ergoemacs-mode)))
+ '(package-selected-packages nil))
 
 (put 'narrow-to-region 'disabled nil)
 

@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/riaz/.oh-my-zsh"
+export ZSH="/home/r/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -73,8 +73,7 @@ HYPHEN_INSENSITIVE="true"
 plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
-source ~/.zshrc.fluidicaliases
-source ~/.zshrc.pre-oh-my-zsh
+
 
 
 # User configuration
