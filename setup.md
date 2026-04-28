@@ -60,18 +60,17 @@ PATH=$PATH:~/bin
 source env-setup.sh
 ```
 # emacs
-```
-sudo add-apt-repository ppa:kelleyk/emacs
-sudo apt-get update
-sudo apt-get install emacs
+sudo snap install 
+install ergoemacs from package-list-packages
 
-mkdir Projects && cd Projects
+# config files
+mkdir projects && cd projects
 git clone https://github.com/riazm/configs.git
 cd
-ln -s ~/Projects/configs/.emacs
-ln -s ~/Projects/configs/.emacs.d
+ln -s ~/projects/configs/.emacs
+ln -s ~/projects/configs/.emacs.d
+ln -s ~/projects/conifgs/.zshrc
 
-install flycheck from package-list packages
 
 ```
 ## node.js js2 mode

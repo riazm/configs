@@ -74,7 +74,16 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
-
+## tramp gets hung up on precmd(), unset some features
+if [[ "$TERM" == "dumb" ]]; then
+    unsetopt zle
+    unsetopt prompt_cr
+    unsetopt prompt_subst
+    unfunction precmd
+    unfunction preexec
+    PS1='$ '
+    return
+fi
 
 # User configuration
 
