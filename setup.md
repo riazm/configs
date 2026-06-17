@@ -6,7 +6,7 @@ android-tools-adb bison build-essential cabextract chromium-chromedriver cifs-ut
 
 # python
 pipenv is the best python environment thingie don't fight it
-sudo apt install python3-jedi black python3-autopep8 yapf3 python3-yapfD
+```sudo apt install python3-jedi black python3-autopep8 yapf3 python3-yapfD```
 
 # Turn off switching keyboard shortcut
 To turn off the keyboard layout switch in Windows,
@@ -34,8 +34,10 @@ sudo apt install ./thechromedeb
 # Dropbox
 
 https://www.dropbox.com/download?dl=packages/ubuntu/dropbox_2015.10.28_amd64.deb
+```
 sudo apt-get install python-gpgme
 sudo apt install ./dropbox_2015.10.28_amd64.deb
+```
 
 # shared drive
 
