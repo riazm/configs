@@ -31,7 +31,7 @@
 ;; 
 (when (>= emacs-major-version 24)
   (require 'package)
-  (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t)
+  (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
   (package-initialize)
   ;; If there are no archived package contents, refresh them
 
@@ -95,7 +95,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(projectile csv-mode flycheck-package markdown-mode pastebin writeroom-mode magit web-mode org-journal blacken py-autopep8 elpy w3m ssh ssh-agency exec-path-from-shell json-reformat json-mode yafolding discover ivy org-jira smart-mode-line flycheck-yamllint yaml-mode logview ix racer dockerfile-mode typescript-mode unfill tide material-theme better-defaults ergoemacs-mode))
+   '(diff-hl projectile csv-mode flycheck-package markdown-mode pastebin writeroom-mode magit web-mode org-journal blacken py-autopep8 elpy w3m ssh ssh-agency exec-path-from-shell json-reformat json-mode yafolding discover ivy org-jira smart-mode-line flycheck-yamllint yaml-mode logview ix racer dockerfile-mode typescript-mode unfill tide material-theme better-defaults ergoemacs-mode))
  '(tramp-verbose 6))
 
 (put 'narrow-to-region 'disabled nil)
@@ -375,9 +375,10 @@ This one changes the cursor color on each blink. Define colors in `blink-cursor-
                     "--query-driver=**/*arm-none-eabi*"
                     "--header-insertion=iwyu"))))
 
+
 ;; Lsp / Code Navigation Shortcuts
-(define-key ergoemacs-user-keymap (kbd "M-.") 'xref-find-definitions)
-(define-key ergoemacs-user-keymap (kbd "M-,") 'xref-go-back)
+(define-key ergoemacs-user-keymap (kbd "C-.") 'xref-find-definitions)
+(define-key ergoemacs-user-keymap (kbd "C-,") 'xref-go-back)
 (define-key ergoemacs-user-keymap (kbd "<f2>") 'eglot-rename)
 (define-key ergoemacs-user-keymap (kbd "M-?") 'xref-find-references)
 
@@ -385,19 +386,22 @@ This one changes the cursor color on each blink. Define colors in `blink-cursor-
 ;; =================================
 ;; Build & Error Tracking
 ;; =================================
+;; Set the default build command
+(setq compile-command "ninja -C build/Debug")
 
-(defun my-build-project ()
-  "Always find the project root (where .git is) before compiling."
-  (interactive)
-  (let ((default-directory (or (locate-dominating-file default-directory ".git")
-                               default-directory)))
-    (compile "ninja -C build/Debug")))
+;; Use the native project-wide compile command
+(define-key ergoemacs-user-keymap (kbd "<f5>") 'project-compile)
 
-;; F5 to trigger the project-wide build
-(define-key ergoemacs-user-keymap (kbd "<f5>") 'my-build-project)
-
-;; F6 to instantly jump to the next error in the code
+;; Error jumping (these remain the same)
 (define-key ergoemacs-user-keymap (kbd "<f6>") 'next-error)
-
-;; Shift+F6 to jump to the previous error
 (define-key ergoemacs-user-keymap (kbd "<S-f6>") 'previous-error)
+
+;; =================================
+;; Git Margin Indicators (VSCode style)
+;; =================================
+(use-package diff-hl
+  :ensure t
+  :hook ((magit-pre-refresh . diff-hl-magit-pre-refresh)
+         (magit-post-refresh . diff-hl-magit-post-refresh))
+  :config
+  (global-diff-hl-mode))
