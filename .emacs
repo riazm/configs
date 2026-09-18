@@ -288,6 +288,12 @@
 (when (memq window-system '(mac ns))
   (exec-path-from-shell-initialize))
 
+(use-package exec-path-from-shell
+  :ensure t
+  :config
+  (when (memq window-system '(mac ns x pgtk))
+    (exec-path-from-shell-initialize)))
+
 (defun m-eshell-hook ()
 ; define control p, control n and the up/down arrow in eshell
   (define-key eshell-mode-map (kbd "M-m") 'eshell-previous-matching-input-from-input)
@@ -355,6 +361,8 @@ This one changes the cursor color on each blink. Define colors in `blink-cursor-
 (defun turn-on-wc () (wc-mode 1))
 (add-hook 'text-mode-hook 'turn-on-wc)
 
+
+
 ;; (custom-set-faces
 ;;  ;; custom-set-faces was added by Custom.
 ;;  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -368,3 +376,41 @@ This one changes the cursor color on each blink. Define colors in `blink-cursor-
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(default ((t (:inherit nil :extend nil :stipple nil :background "#042028" :foreground "#708183" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight regular :height 95 :width normal :foundry "PfEd" :family "DejaVu Sans Mono")))))
+
+
+;; =================================
+;; C/C++ LSP Setup (clangd + eglot)
+;; =================================
+
+;; Start eglot automatically for C and C++
+(add-hook 'c-mode-hook 'eglot-ensure)
+(add-hook 'c++-mode-hook 'eglot-ensure)
+
+;; You already have 'company' installed via myPackages.
+;; Enable it for C/C++ so you get the nice visual dropdowns:
+(add-hook 'c-mode-common-hook 'company-mode)
+(setq company-minimum-prefix-length 1)
+(setq company-idle-delay 0.1)
+
+;; (Optional) Format code on save using your project's .clang-format rules
+(add-hook 'c-mode-hook (lambda () (add-hook 'before-save-hook 'eglot-format-buffer nil t)))
+(add-hook 'c++-mode-hook (lambda () (add-hook 'before-save-hook 'eglot-format-buffer nil t)))
+
+(with-eval-after-load 'eglot
+  (add-to-list 'eglot-server-programs
+               '((c-mode c++-mode)
+                 . ("clangd"
+                    "--query-driver=**/*arm-none-eabi*"
+                    "--header-insertion=iwyu"))))
+
+;; Lsp / Code Navigation Shortcuts
+(define-key ergoemacs-user-keymap (kbd "M-.") 'xref-find-definitions)
+(define-key ergoemacs-user-keymap (kbd "M-,") 'xref-go-back)
+(define-key ergoemacs-user-keymap (kbd "<f2>") 'eglot-rename)
+
+;; Auto-format C/C++ files with clang-format on save
+(add-hook 'c-mode-hook
+          (lambda () (add-hook 'before-save-hook 'eglot-format-buffer nil t)))
+
+(add-hook 'c++-mode-hook
+          (lambda () (add-hook 'before-save-hook 'eglot-format-buffer nil t)))
