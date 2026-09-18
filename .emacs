@@ -245,31 +245,12 @@
 (setq-default js2-basic-offset 2)
 (setq-default js-indent-level 2)
 
-;; pulled it from a stack overflow
-;; (defun my/use-eslint-from-node-modules () 
-;;   (let* ((root (locate-dominating-file 
-;;                 (or (buffer-file-name) default-directory)
-;;                 "node_modules"))
-;;          (eslint
-;;           (and root
-;;                (expand-file-name "node_modules/.bin/eslint"
-;;                                  root))))
-;;     (when (and eslint (file-executable-p eslint))
-;;       (setq-local flycheck-javascript-eslint-executable eslint))))
 
-;; (add-hook 'flycheck-mode-hook #'my/use-eslint-from-node-modules)
 
 ;; set typescript indent
 (setq-default typescript-indent-level 2)
 
-;; path to 'which tern'
- 
-;;(setenv "PATH" (concat (getenv "PATH") ":/Users/riaz.moola/.nvm/versions/node/v10.12.0/bin"))
-;;    (setq exec-path (append exec-path '(":/Users/riaz.moola/.nvm/versions/node/v10.12.0/bin")))
-;; path to 'tern.el'
-;;(add-to-list 'load-path "/Users/riaz.moola/bin/tern/emacs/")
-;;(autoload 'tern-mode "tern.el" nil t)
-;;(add-hook 'js-mode-hook (lambda () (tern-mode t)))
+
 
 ;; use eslint with web-mode for jsx files
 (flycheck-add-mode 'javascript-eslint 'web-mode)
@@ -285,8 +266,7 @@
 ;; https://github.com/purcell/exec-path-from-shell
 ;; only need exec-path-from-shell on OSX OR IF USING NVM
 ;; this hopefully sets up path and other vars better
-(when (memq window-system '(mac ns))
-  (exec-path-from-shell-initialize))
+
 
 (use-package exec-path-from-shell
   :ensure t
@@ -363,13 +343,7 @@ This one changes the cursor color on each blink. Define colors in `blink-cursor-
 
 
 
-;; (custom-set-faces
-;;  ;; custom-set-faces was added by Custom.
-;;  ;; If you edit it by hand, you could mess it up, so be careful.
-;;  ;; Your init file should contain only one such instance.
-;;  ;; If there is more than one, they won't work right.
-;;  '(default ((t (:inherit nil :stipple nil :background "#042028" :foreground "#708183" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 120 :width normal :foundry "unknown" :family "Ubuntu Mono"))))
-;;  '(p4-diff-ins-face ((t (:foreground "yellow"))) t))
+
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -393,8 +367,6 @@ This one changes the cursor color on each blink. Define colors in `blink-cursor-
 (setq company-idle-delay 0.1)
 
 ;; (Optional) Format code on save using your project's .clang-format rules
-(add-hook 'c-mode-hook (lambda () (add-hook 'before-save-hook 'eglot-format-buffer nil t)))
-(add-hook 'c++-mode-hook (lambda () (add-hook 'before-save-hook 'eglot-format-buffer nil t)))
 
 (with-eval-after-load 'eglot
   (add-to-list 'eglot-server-programs
@@ -407,10 +379,25 @@ This one changes the cursor color on each blink. Define colors in `blink-cursor-
 (define-key ergoemacs-user-keymap (kbd "M-.") 'xref-find-definitions)
 (define-key ergoemacs-user-keymap (kbd "M-,") 'xref-go-back)
 (define-key ergoemacs-user-keymap (kbd "<f2>") 'eglot-rename)
+(define-key ergoemacs-user-keymap (kbd "M-?") 'xref-find-references)
 
-;; Auto-format C/C++ files with clang-format on save
-(add-hook 'c-mode-hook
-          (lambda () (add-hook 'before-save-hook 'eglot-format-buffer nil t)))
 
-(add-hook 'c++-mode-hook
-          (lambda () (add-hook 'before-save-hook 'eglot-format-buffer nil t)))
+;; =================================
+;; Build & Error Tracking
+;; =================================
+
+(defun my-build-project ()
+  "Always find the project root (where .git is) before compiling."
+  (interactive)
+  (let ((default-directory (or (locate-dominating-file default-directory ".git")
+                               default-directory)))
+    (compile "ninja -C build/Debug")))
+
+;; F5 to trigger the project-wide build
+(define-key ergoemacs-user-keymap (kbd "<f5>") 'my-build-project)
+
+;; F6 to instantly jump to the next error in the code
+(define-key ergoemacs-user-keymap (kbd "<f6>") 'next-error)
+
+;; Shift+F6 to jump to the previous error
+(define-key ergoemacs-user-keymap (kbd "<S-f6>") 'previous-error)
