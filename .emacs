@@ -170,8 +170,12 @@
 
 ;; Smart tabs or w/e for c, c++ cc modes
 (setq-default indent-tabs-mode nil) 
-(setq-default tab-width 2) ; or any other preferred value
-(setq-default standard-indent 2)
+(setq-default tab-width 4) 
+(setq-default standard-indent 4)
+
+;; Align C/C++ mode indentation with .clang-format (which uses 4)
+(setq c-default-style "linux"
+      c-basic-offset 4)
 
 ;; Ctags
 (global-set-key (kbd "M-(") 'find-tag)      ; search ctags
@@ -332,6 +336,12 @@ This one changes the cursor color on each blink. Define colors in `blink-cursor-
 
 (setq ring-bell-function 'ignore)
 
+;; =================================
+;; Writeroom Mode Configuration
+;; =================================
+(with-eval-after-load 'writeroom-mode
+  (setq writeroom-mode-line t))
+
 ;; turn on longlines when you turn on text mode
 (defun turn-on-visual-line () (visual-line-mode 1))
 (add-hook 'text-mode-hook 'turn-on-visual-line)
@@ -387,10 +397,52 @@ This one changes the cursor color on each blink. Define colors in `blink-cursor-
 ;; Build & Error Tracking
 ;; =================================
 ;; Set the default build command
-(setq compile-command "ninja -C build/Debug")
+(setq compile-command "cmake --build build/Debug")
 
-;; Use the native project-wide compile command
-(define-key ergoemacs-user-keymap (kbd "<f5>") 'project-compile)
+;; Don't prompt for the compile command, just run it immediately
+(setq compilation-read-command nil)
+(setq compilation-scroll-output t)
+
+;; =================================
+;; GDB Debugger Setup (VSCode Style)
+;; =================================
+(setq gdb-many-windows t) ;; 5-pane VSCode-style UI
+(setq gdb-show-main t)    ;; Show the source code automatically
+(setq gdb-non-stop-setting t) ;; async, disable if using stmlink, fine with jlink
+
+
+(defun my-build-and-debug ()
+
+  (interactive)
+  (save-some-buffers t)
+
+  ;; Safely build from the project root
+  (project-compile)
+
+  (defun my-debug-on-success (buf str)
+    (if (string-match "finished" str)
+        (progn
+          ;; 1. Kill old JLink server
+          (ignore-errors (call-process "killall" nil nil nil "-9" "JLinkGDBServer"))
+
+          ;; 2. Start JLink Server natively in Emacs
+          (start-process "jlink-server" nil "JLinkGDBServer" "-device" "STM32F767ZI" "-if" "SWD" "-speed" "4000" "-port" "2331" "-nogui")
+          (sleep-for 1)
+
+          ;; 3. Run GDB directly so Emacs recognizes the debugger and enables breakpoints!
+          (gdb "/home/r/.local/share/stm32cube/bundles/gnu-gdb-for-stm32/14.3.1+st.2/bin/arm-none-eabi-gdb -i=mi build/Debug/lister_F76ZI.elf -ex \"target extended-remote localhost:2331\" -ex \"monitor reset\" -ex \"monitor
+  halt\" -ex \"load\" -ex \"monitor reset\" -ex \"tbreak main\" -ex \"continue\"")
+
+          (remove-hook 'compilation-finish-functions 'my-debug-on-success))
+      (message "Build failed! Aborting debug.")
+      (remove-hook 'compilation-finish-functions 'my-debug-on-success)))
+
+  (add-hook 'compilation-finish-functions 'my-debug-on-success))
+
+;; Use F5 to Build, Flash, and Debug!
+(define-key ergoemacs-user-keymap (kbd "<f5>") 'my-build-and-debug)
+;; Bind F7 to just Build (without debugging)
+(define-key ergoemacs-user-keymap (kbd "<f7>") 'project-compile)
 
 ;; Error jumping (these remain the same)
 (define-key ergoemacs-user-keymap (kbd "<f6>") 'next-error)
@@ -405,3 +457,16 @@ This one changes the cursor color on each blink. Define colors in `blink-cursor-
          (magit-post-refresh . diff-hl-magit-post-refresh))
   :config
   (global-diff-hl-mode))
+
+
+;; =================================
+;; Unit Testing Configuration
+;; =================================
+(defun my-run-tests ()
+  "Run both C++ and Python unit tests."
+  (interactive)
+  (let ((default-directory (locate-dominating-file default-directory ".git")))
+    ;; Use compilation-start instead of compile to avoid polluting compile-command history
+    (compilation-start "make -C build_unittest && ctest --test-dir build_unittest && pipenv run pytest -m 'not hil'")))
+
+(define-key ergoemacs-user-keymap (kbd "<f8>") 'my-run-tests)
