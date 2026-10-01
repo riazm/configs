@@ -95,7 +95,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(diff-hl projectile csv-mode flycheck-package markdown-mode pastebin writeroom-mode magit web-mode org-journal blacken py-autopep8 elpy w3m ssh ssh-agency exec-path-from-shell json-reformat json-mode yafolding discover ivy org-jira smart-mode-line flycheck-yamllint yaml-mode logview ix racer dockerfile-mode typescript-mode unfill tide material-theme better-defaults ergoemacs-mode))
+   '(plantuml-mode diff-hl projectile csv-mode flycheck-package markdown-mode pastebin writeroom-mode magit web-mode org-journal blacken py-autopep8 elpy w3m ssh ssh-agency exec-path-from-shell json-reformat json-mode yafolding discover ivy org-jira smart-mode-line flycheck-yamllint yaml-mode logview ix racer dockerfile-mode typescript-mode unfill tide material-theme better-defaults ergoemacs-mode))
  '(tramp-verbose 6))
 
 (put 'narrow-to-region 'disabled nil)
@@ -137,6 +137,9 @@
 (global-font-lock-mode 1)
 
 ;; Save desktop each time you shut down
+;; Prevent desktop-save from superficially restoring eglot without a server
+(require 'desktop)
+(add-to-list 'desktop-minor-mode-table '(eglot--managed-mode . nil))
 (desktop-save-mode)
 (desktop-read)
 
@@ -174,7 +177,7 @@
 (setq-default standard-indent 4)
 
 ;; Align C/C++ mode indentation with .clang-format (which uses 4)
-(setq c-default-style "linux"
+(setq c-default-style "bsd"
       c-basic-offset 4)
 
 ;; Ctags
@@ -376,7 +379,11 @@ This one changes the cursor color on each blink. Define colors in `blink-cursor-
 (setq company-minimum-prefix-length 1)
 (setq company-idle-delay 0.1)
 
-;; (Optional) Format code on save using your project's .clang-format rules
+;; Format code on save using your project's .clang-format rules
+(add-hook 'c-mode-common-hook
+          (lambda ()
+            (setq indent-tabs-mode nil)
+            (add-hook 'before-save-hook 'eglot-format-buffer -10 t)))
 
 (with-eval-after-load 'eglot
   (add-to-list 'eglot-server-programs
@@ -397,7 +404,7 @@ This one changes the cursor color on each blink. Define colors in `blink-cursor-
 ;; Build & Error Tracking
 ;; =================================
 ;; Set the default build command
-(setq compile-command "cmake --build build/Debug")
+(setq compile-command "cmake --build build/Debug -j$(nproc)")
 
 ;; Don't prompt for the compile command, just run it immediately
 (setq compilation-read-command nil)
@@ -427,11 +434,11 @@ This one changes the cursor color on each blink. Define colors in `blink-cursor-
 
           ;; 2. Start JLink Server natively in Emacs
           (start-process "jlink-server" nil "JLinkGDBServer" "-device" "STM32F767ZI" "-if" "SWD" "-speed" "4000" "-port" "2331" "-nogui")
-          (sleep-for 1)
+          ;; Disable Emacs's own built-in debuginfod prompt
+          (setq gdb-debuginfod-enable-setting nil)
 
           ;; 3. Run GDB directly so Emacs recognizes the debugger and enables breakpoints!
-          (gdb "/home/r/.local/share/stm32cube/bundles/gnu-gdb-for-stm32/14.3.1+st.2/bin/arm-none-eabi-gdb -i=mi build/Debug/lister_F76ZI.elf -ex \"target extended-remote localhost:2331\" -ex \"monitor reset\" -ex \"monitor
-  halt\" -ex \"load\" -ex \"monitor reset\" -ex \"tbreak main\" -ex \"continue\"")
+          (gdb "/home/r/.local/share/stm32cube/bundles/gnu-gdb-for-stm32/14.3.1+st.2/bin/arm-none-eabi-gdb -i=mi build/Debug/lister_F76ZI.elf -ex \"target extended-remote localhost:2331\" -ex \"monitor reset\" -ex \"monitor halt\" -ex \"load\" -ex \"monitor reset\" -ex \"tbreak main\" -ex \"continue\"")
 
           (remove-hook 'compilation-finish-functions 'my-debug-on-success))
       (message "Build failed! Aborting debug.")
@@ -467,6 +474,64 @@ This one changes the cursor color on each blink. Define colors in `blink-cursor-
   (interactive)
   (let ((default-directory (locate-dominating-file default-directory ".git")))
     ;; Use compilation-start instead of compile to avoid polluting compile-command history
-    (compilation-start "make -C build_unittest && ctest --test-dir build_unittest && pipenv run pytest -m 'not hil'")))
+    (compilation-start "make -j$(nproc) -C build_unittest && ctest --test-dir build_unittest && pipenv run pytest -m 'not hil'")))
 
 (define-key ergoemacs-user-keymap (kbd "<f8>") 'my-run-tests)
+
+;; Disable legacy flymake-cc backend globally and locally to prevent 'check-syntax' make errors
+(with-eval-after-load 'flymake
+  (setq-default flymake-diagnostic-functions (delq 'flymake-cc flymake-diagnostic-functions)))
+(add-hook 'c-mode-common-hook
+          (lambda ()
+            (remove-hook 'flymake-diagnostic-functions 'flymake-cc t)
+            (remove-hook 'flymake-diagnostic-functions 'flymake-cc)))
+
+;; Force .h files to open in C++ mode instead of C mode
+(add-to-list 'auto-mode-alist '("\\.h\\'" . c++-mode))
+
+;; Automatically wrap selected regions in brackets/quotes
+(electric-pair-mode 1)
+
+
+;; =======================
+;; PLant UML
+;;===============
+(use-package plantuml-mode
+  :ensure t
+  :config
+  ;; Tell Emacs to use plantuml-mode for these extensions
+  (add-to-list 'auto-mode-alist '("\\.plantuml\\'" . plantuml-mode))
+  (add-to-list 'auto-mode-alist '("\\.puml\\'" . plantuml-mode))
+
+  ;; Configure it to use a local JAR file (highly recommended over the slow remote server)
+  ;; NOTE: Requires `sudo apt-get install graphviz` on your system for state diagrams!
+  (setq plantuml-default-exec-mode 'jar)
+  (setq plantuml-jar-path (expand-file-name "~/.emacs.d/plantuml.jar"))
+  
+  ;; Force a white background for the preview so it's readable on dark themes
+  (setq plantuml-jar-args '("-charset" "UTF-8" "-Sbackgroundcolor=white"))
+  (setq plantuml-output-type "png"))
+
+;; --- StateSmith Autocomplete Hack ---
+(defun company-statesmith (command &optional arg &rest ignored)
+  "Company backend to autocomplete functions from a matching *Base.h file in plantuml-mode."
+  (interactive (list 'interactive))
+  (cl-case command
+    (interactive (company-begin-backend 'company-statesmith))
+    (prefix (and (derived-mode-p 'plantuml-mode)
+                 (company-grab-symbol)))
+    (candidates
+     (let* ((base-file (replace-regexp-in-string "\\.plantuml\\'" "Base.h" (buffer-file-name)))
+            (matches nil))
+       (when (and base-file (file-exists-p base-file))
+         (with-temp-buffer
+           (insert-file-contents base-file)
+           (goto-char (point-min))
+           (while (re-search-forward "virtual\\s-+[a-zA-Z0-9_:]+\\s-+\\([a-zA-Z0-9_]+\\)\\s-*(" nil t)
+             (push (concat (match-string 1) "()") matches))))
+       (all-completions arg (delete-dups matches))))))
+
+(with-eval-after-load 'company
+  (add-to-list 'company-backends 'company-statesmith))
+
+(add-hook 'plantuml-mode-hook 'company-mode)
