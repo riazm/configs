@@ -1,3 +1,41 @@
+# github
+```
+sudo apt-get install git
+
+ssh-keygen -t rsa -b 4096 -C "corporate-email-address"
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_rsa
+
+git config --global user.name "Riaz Moola"
+git config --global user.email "corporate-email-address"
+git config --global core.editor "nano"
+```
+
+
+# zshrc
+```
+sudo apt-get install zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+sudo npm install --global pure-prompt
+ln -s ~/Projects/configs/.zshrc
+ln -s ~/Projects/configs/.zshrc.fluidicaliases
+```
+
+# emacs
+sudo snap install 
+install ergoemacs from package-list-packages
+
+# config files
+```
+mkdir projects && cd projects
+git clone https://github.com/riazm/configs.git
+cd
+ln -s ~/Projects/configs/.emacs
+ln -s ~/Projects/configs/.emacs.d
+ln -s ~/Projects/conifgs/.zshrc
+```
+
+
 UBUNTU 17.10 setup
 
 # Manually installed apps
@@ -11,21 +49,6 @@ pipenv is the best python environment thingie don't fight it
 # Turn off switching keyboard shortcut
 To turn off the keyboard layout switch in Windows,
 disable the hotkeys (Alt+Shift or Win+Space) in Settings > Time & Language > Typing > Advanced keyboard settings > Input language hot keys, setting them to "Not Assigned". Remove unwanted keyboard layouts in Settings > Time & Language > Language > Options.
-
-# zshrc
-sudo apt-get install zsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-sudo npm install --global pure-prompt
-ln -s ~/Projects/configs/.zshrc
-ln -s ~/Projects/configs/.zshrc.fluidicaliases
-
-# Duel monitor support with displaylink:
-
-https://support.displaylink.com/knowledgebase/articles/684649-how-to-install-displaylink-software-on-ubuntu
-
-sudo apt-get install dkms
-
-http://www.displaylink.com/downloads/ubuntu
 
 # chrome
 
@@ -48,33 +71,8 @@ sudo apt install ./dropbox_2015.10.28_amd64.deb
 
 ditto email at the moment
 
-# github
-```sudo apt-get install git
-
-ssh-keygen -t rsa -b 4096 -C "corporate-email-address"
-eval "$(ssh-agent -s)"
-ssh-add ~/.ssh/id_rsa
-
-git config --global user.name "Riaz Moola"
-git config --global user.email "corporate-email-address"
-git config --global core.editor "nano"
-PATH=$PATH:~/bin
-source env-setup.sh
-```
-# emacs
-sudo snap install 
-install ergoemacs from package-list-packages
-
-# config files
-mkdir projects && cd projects
-git clone https://github.com/riazm/configs.git
-cd
-ln -s ~/projects/configs/.emacs
-ln -s ~/projects/configs/.emacs.d
-ln -s ~/projects/conifgs/.zshrc
 
 
-```
 ## node.js js2 mode
 ```
 cd ~/bin/
